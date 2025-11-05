@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+/* Custom navbar underline animation (for extra smoothness if needed) */
+.nav-underline {
+	transition: left 0.5s cubic-bezier(0.4,0,0.2,1), width 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* Optional: Enhance backdrop blur for nav when scrolled */
+.navbar-blur {
+	backdrop-filter: blur(16px) saturate(180%);
+	-webkit-backdrop-filter: blur(16px) saturate(180%);
+}
+/* ----------- WHY US Section Custom Animations ----------- */
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.4);
+  }
+}
+
+.feature-card:hover {
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+/* Floating subtle effect for illustration */
+.floating-image {
+  animation: floatY 6s ease-in-out infinite;
+}
+
+@keyframes floatY {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+  100% { transform: translateY(0); }
+}
