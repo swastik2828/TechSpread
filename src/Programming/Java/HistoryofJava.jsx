@@ -1,5 +1,5 @@
 import React from "react";
-import javaLogo from "../../assets/Java_Image/javaLogoOld.PNG";
+import javaLogo from "../../assets/Java_Image/JavaLogoOld.PNG";
 const HistoryofJava = () => {
   return (
     <div className="p-4 md:p-8 rounded-2xl bg-gray-900/60 backdrop-blur-xl shadow-xl space-y-6">
