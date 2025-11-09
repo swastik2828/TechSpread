@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useLayoutEffect, useRef } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { ArrowRightCircle, X, Menu } from "lucide-react";
-import TechSpreadLogo from "../assets/TechSpread/Logo.png";
+import TechSpreadLogo from "../assets/TechSpread/Logo2.png";
 
 const links = [
   { name: "Home", path: "/" },
