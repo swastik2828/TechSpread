@@ -31,7 +31,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000); // Loader duration
+    const timer = setTimeout(() => setLoading(false), 3000); // Loader duration
     return () => clearTimeout(timer);
   }, []);
    const list = [
@@ -46,7 +46,7 @@ const Home = () => {
       icon: <Code2 size={50} />,
       title: "Programming",
       desc: "Learn C, C++, Java, Python — master syntax, logic, and problem-solving.",
-      path: "/tutorial",
+      path: "/programming",
     },
     {
       icon: <Globe size={50} />,
@@ -314,7 +314,7 @@ const Home = () => {
 
             <div className="mt-8 flex flex-col sm:flex-row sm:items-center sm:gap-4 gap-3">
               <motion.a
-                href="/tutorials"
+                href="/tutorial"
                 whileHover={{ scale: 1.03 }}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-blue-500 font-semibold shadow-lg"
               >
@@ -322,7 +322,7 @@ const Home = () => {
               </motion.a>
 
               <motion.a
-                href="/tutorials/paths"
+                href="/tutorial"
                 whileHover={{ scale: 1.03 }}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-gray-700 text-gray-200 hover:text-white"
               >
