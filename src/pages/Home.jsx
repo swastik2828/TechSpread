@@ -46,7 +46,7 @@ const Home = () => {
       icon: <Code2 size={50} />,
       title: "Programming",
       desc: "Learn C, C++, Java, Python — master syntax, logic, and problem-solving.",
-      path: "/tutorial",
+      path: "/programming",
     },
     {
       icon: <Globe size={50} />,
