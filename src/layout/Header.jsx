@@ -93,16 +93,16 @@ export default function Header() {
       }`}
     >
       <nav
-        className={`relative flex items-center justify-between px-6 py-2 transition-all duration-300 overflow-hidden mx-auto max-w-7xl
+        className={`relative flex items-center justify-between transition-all duration-500 ease-in-out overflow-hidden mx-auto max-w-7xl
         ${
           isScrolled
-            ? "backdrop-blur-xl bg-black/30 border-b border-white/10 rounded-full border w-max w-left=1/2 " 
-            : "bg-gradient-to-r from-[#0f0f0f]/95 to-[#1a1a1a]/95  border-gray-800 shadow-[0_8px_30px_rgba(0,0,0,0.45)] rounded-full"
+            ? "backdrop-blur-xl bg-black/30 border-b border-white/10 rounded-full border md:w-max md:px-6 md:py-2 w-12 h-12 p-0 ml-auto mr-6" 
+            : "bg-gradient-to-r from-[#0f0f0f]/95 to-[#1a1a1a]/95 border-gray-800 shadow-[0_8px_30px_rgba(0,0,0,0.45)] rounded-full px-6 py-2"
         }`}
         aria-label="Main navigation"
       >
         <div
-          className={`flex items-center space-x-3 transition-all duration-300 shrink-0 ${
+          className={`flex items-center space-x-3 transition-all duration-500 ease-in-out shrink-0 ${
             isScrolled
               ? "opacity-0 scale-95 pointer-events-none absolute"
               : "opacity-100 scale-100 "
@@ -125,8 +125,7 @@ export default function Header() {
 
         <div
           ref={linksContainerRef}
-          // ALIGNMENT FIXES: justify-center for centering and w-max for tighter fit
-          className={`hidden md:flex items-center relative transition-all duration-300 space-x-4 justify-around ${
+          className={`hidden md:flex items-center relative transition-all duration-500 ease-in-out space-x-4 justify-around ${
             isScrolled ? "mx-auto border-rounded w-max" : "mx-auto"
           }`} 
         >
@@ -136,10 +135,9 @@ export default function Header() {
               to={link.path}
               ref={(el) => setLinkRef(el, idx)}
               className={({ isActive }) =>
-                // SIZE AND SPACING REDUCTION FOR SCROLLED STATE: text-xs and px-2 (ensures even spacing)
                 `${
                   isScrolled ? "px-2 py-2  text-s" : "px-4 py-2 text-sm " 
-                } rounded-full font-semibold transition-all duration-200 relative z-10 whitespace-nowrap last:mr-0 ${
+                } rounded-full font-semibold transition-all duration-300 ease-in-out relative z-10 whitespace-nowrap last:mr-0 ${
                   isActive
                     ? "text-white"
                     : "text-gray-300 hover:text-white hover:bg-[#222]/70"
@@ -151,7 +149,7 @@ export default function Header() {
           ))}
 
           <span
-            className={`absolute -bottom-1 h-[3px] bg-gradient-to-r from-purple-600 to-indigo-500 rounded-full transition-all duration-250 ease-out`}
+            className={`absolute -bottom-1 h-[3px] bg-gradient-to-r from-purple-600 to-indigo-500 rounded-full transition-all duration-400 ease-out`}
             style={{
               left: activeLinkPos.width > 0 ? activeLinkPos.left : 0,
               width: activeLinkPos.width > 0 ? activeLinkPos.width : 0,
@@ -160,21 +158,21 @@ export default function Header() {
           />
         </div>
 
-        <div className="md:hidden flex items-center">
+        <div className={`md:hidden flex items-center justify-center transition-all duration-500 ease-in-out ${isScrolled ? "w-full h-full" : ""}`}>
           <button
             onClick={() => setMenuOpen((v) => !v)}
             aria-expanded={menuOpen}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
-            className="relative w-10 h-10 flex items-center justify-center text-white"
+            className="relative w-10 h-10 flex items-center justify-center text-white transition-transform duration-300 ease-in-out hover:scale-110 active:scale-95"
           >
             {!menuOpen ? (
-              <Menu size={24} />
+              <Menu size={24} className="transition-transform duration-300 ease-in-out" />
             ) : (
               <div className="relative w-7 h-7 flex items-center justify-center">
-                <X size={24} className="absolute text-white" />
+                <X size={24} className="absolute text-white transition-all duration-300 ease-in-out animate-spin-slow" />
                 <X
                   size={12}
-                  className="absolute text-purple-400"
+                  className="absolute text-purple-400 transition-all duration-300 ease-in-out"
                   style={{ transform: "translate(5px,-5px) rotate(12deg)" }}
                 />
               </div>
@@ -185,7 +183,7 @@ export default function Header() {
 
       <aside
         className={`fixed top-0 right-0 h-screen md:hidden w-11/12 max-w-xs bg-[#0f0f0f]/95 backdrop-blur-xl border-l border-gray-800 z-[65]
-        transform transition-transform duration-400 ease-in-out ${
+        transform transition-all duration-500 ease-in-out ${
           menuOpen
             ? "translate-x-0 opacity-100 pointer-events-auto"
             : "translate-x-full opacity-0 pointer-events-none"
@@ -196,12 +194,12 @@ export default function Header() {
           <button
             onClick={() => setMenuOpen(false)}
             aria-label="Close sidebar"
-            className="relative w-10 h-10 flex items-center justify-center text-white"
+            className="relative w-10 h-10 flex items-center justify-center text-white transition-transform duration-300 ease-in-out hover:scale-110 hover:rotate-90 active:scale-95"
           >
-            <X size={22} className="absolute text-white" />
+            <X size={22} className="absolute text-white transition-all duration-300 ease-in-out" />
             <X
               size={12}
-              className="absolute text-purple-400"
+              className="absolute text-purple-400 transition-all duration-300 ease-in-out"
               style={{ transform: "translate(-5px,5px) rotate(-12deg)" }}
             />
           </button>
@@ -214,7 +212,7 @@ export default function Header() {
               to={l.path}
               onClick={() => setMenuOpen(false)}
               className={({ isActive }) =>
-                `w-full text-center text-lg font-semibold px-4 py-3 rounded-lg transition-all ${
+                `w-full text-center text-lg font-semibold px-4 py-3 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:-translate-y-1 active:scale-95 ${
                   isActive
                     ? "text-white bg-[#222]/80"
                     : "text-gray-300 hover:text-white hover:bg-[#222]/70"
