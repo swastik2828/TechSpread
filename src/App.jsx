@@ -11,7 +11,8 @@ import UserDashboard from "./pages/UserDashboard";
 
 // Tutorials-related pages
 import Tutorial from "./pages/Tutorial";          // main tutorials hub
-import Programming from "./Programming/Programming";      // subcategory page
+import Programming from "./Programming/Programming"; 
+   // subcategory page
 import Java from "./Programming/Java/Java";               // main java container
 import WhatisJava from "./Programming/Java/WhatisJava";   // java topic pages
 import HistoryofJava from "./Programming/Java/HistoryofJava";
