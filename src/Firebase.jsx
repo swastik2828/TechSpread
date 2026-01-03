@@ -6,7 +6,7 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBBiRRR-JfMMz2Pn_MGXjxI1PC6BQr-qrs",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: "techspread-ffc4b.firebaseapp.com",
   projectId: "techspread-ffc4b",
   storageBucket: "techspread-ffc4b.firebasestorage.app",

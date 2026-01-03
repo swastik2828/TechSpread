@@ -17,6 +17,7 @@ import Java from "./Programming/Java/Java";               // main java container
 import WhatisJava from "./Programming/Java/WhatisJava";   // java topic pages
 import HistoryofJava from "./Programming/Java/HistoryofJava";
 import FeaturesJava from "./Programming/Java/FeaturesJava";
+import WhatisJDKJVMJRE from "./Programming/Java/WhatisJDKJVMJRE"; // Add this import
 
 function App() {
   return (
@@ -47,6 +48,11 @@ function App() {
       <Route
         path="/programming/java/features"
         element={<FeaturesJava />}
+      />
+      {/* Add new route here */}
+      <Route 
+        path="/programming/java/jdk-jre-jvm" 
+        element={<WhatisJDKJVMJRE />} 
       />
 
       {/* Default route for invalid URLs */}

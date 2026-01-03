@@ -76,7 +76,7 @@ const Home = () => {
       icon: <GitBranch size={50} />,
       title: "DSA & Algorithms",
       desc: "Sharpen your problem-solving skills with structured DSA tutorials.",
-      path: "/tutorials",
+      path: "/tutorial",
     },
   ];
   
