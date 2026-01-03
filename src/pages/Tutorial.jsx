@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import SEO from "../Components/SEO.jsx";
+import SEO from "../components/SEO.jsx";
 import {
   Code,
   Globe,

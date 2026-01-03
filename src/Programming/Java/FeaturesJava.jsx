@@ -1,5 +1,5 @@
 import React from "react";
-import SEO from "../../Components/SEO.jsx";
+import SEO from "../../components/SEO.jsx";
 import { Lightbulb, Globe, Shield, Zap, Layers, Cpu, Cloud, Library } from "lucide-react";
 
 const FeaturesJava = () => {

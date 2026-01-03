@@ -1,6 +1,6 @@
 import React from "react";
 import JVM_JDK_JRE from "../../assets/Java_Image/JVM_JDK_JRE_Architecture2.jpeg";
-import SEO from "../../Components/SEO";
+import SEO from "../../components/SEO";
 
 const WhatisJDKJVMJRE = () => {
   return (

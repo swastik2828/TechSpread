@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { Coffee, FileCode2, Terminal } from "lucide-react";
-import SEO from "../Components/SEO.jsx";
+import SEO from "../components/SEO.jsx";
 import { ArrowLeft } from "lucide-react";
 const Programming = () => {
   const navigate = useNavigate();
