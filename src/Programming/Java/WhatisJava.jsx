@@ -1,10 +1,17 @@
 import React from "react";
+import SEO from "../../components/SEO";
 import What_is_java from "../../assets//Java_Image/What_is_java.png";
 import JVM_JDK_JRE from "../../assets/Java_Image/JVM_JDK_JRE_Architecture.png";
 import OOPS from "../../assets/Java_Image/OOPS_Architecture.png";
 const WhatisJava = () => {
   return (
      <div className="p-4 md:p-8 rounded-2xl bg-gray-900/60 backdrop-blur-xl shadow-xl text-gray-300 leading-relaxed">
+      <SEO 
+        title="What is Java? Introduction & Basics"
+        description="Learn what Java is, why it is platform-independent, and its core Object-Oriented Programming (OOP) concepts. A perfect start for beginners."
+        keywords="what is java, java programming introduction, object oriented programming, platform independence, java for beginners"
+        url="/programming/java/whatisjava"
+      />
       <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
         What is Java?
       </h2>

@@ -1,9 +1,16 @@
 import React from "react";
 import JVM_JDK_JRE from "../../assets/Java_Image/JVM_JDK_JRE_Architecture2.jpeg";
+import SEO from "../../Components/SEO";
 
 const WhatisJDKJVMJRE = () => {
   return (
     <div className="p-4 md:p-8 rounded-2xl bg-gray-900/60 backdrop-blur-xl shadow-xl text-gray-300 leading-relaxed">
+      <SEO 
+        title="Difference between JDK, JRE, and JVM"
+        description="Understand the core components of Java architecture: Java Development Kit (JDK), Java Runtime Environment (JRE), and Java Virtual Machine (JVM)."
+        keywords="jdk vs jre vs jvm, java architecture, java development kit, java virtual machine, how java works"
+        url="/programming/java/jdk-jre-jvm"
+      />
       <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
         The Beginner's Guide to Java: Understanding JDK, JRE, and JVM
       </h2>

@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { Coffee, FileCode2, Terminal } from "lucide-react";
+import SEO from "../Components/SEO.jsx";
 import { ArrowLeft } from "lucide-react";
 const Programming = () => {
   const navigate = useNavigate();
@@ -32,6 +33,12 @@ const Programming = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-black text-white py-16 px-6 md:px-20">
+          <SEO 
+        title="Learn Programming Languages | C, C++, Java, Python"
+        description="Master the syntax and logic of top programming languages. Beginner-friendly guides for C, C++, Java, and Python."
+        keywords="learn programming, c language tutorial, java programming, python for beginners, c++ basics, coding syntax"
+        url="/programming"
+      />
           <button
                   onClick={() => navigate("/tutorial")}
                   className="flex items-center gap-2 mb-8 px-4 py-2 rounded-xl bg-gradient-to-r from-gray-800 to-gray-900 hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg shadow-purple-500/20"

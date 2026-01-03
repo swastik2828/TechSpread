@@ -1,8 +1,15 @@
 import React from "react";
+import SEO from "../../components/SEO";
 import javaLogo from "../../assets/Java_Image/JavaLogoOld.PNG";
 const HistoryofJava = () => {
   return (
     <div className="p-4 md:p-8 rounded-2xl bg-gray-900/60 backdrop-blur-xl shadow-xl space-y-6">
+      <SEO 
+        title="History of Java | From Oak to Green Team"
+        description="Explore the complete history of Java. Learn about James Gosling, the Green Team, the Oak language, and how Java revolutionized the internet."
+        keywords="history of java, james gosling, green team, oak programming language, java versions timeline"
+        url="/programming/java/history"
+      />
       {/* Title */}
       <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent text-center">
         The Birth of Java: A Journey From Oak to Global Phenomenon

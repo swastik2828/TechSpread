@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import SEO from "../Components/SEO.jsx";
 import {
   Code,
   Globe,
@@ -64,6 +65,12 @@ const Tutorial = () => {
     <div>
       <Header />
     <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-black text-white py-16 px-6 md:px-20">
+      <SEO 
+        title="Free Coding Tutorials & Learning Paths"
+        description="Start your tech journey with our free, structured tutorials. Learn Web Development, Python, Java, DSA, and Database Management from scratch."
+        keywords="free coding tutorials, learn programming, web development course, dsa tutorials, computer science for beginners"
+        url="/tutorial"
+      />
       {/* Header */}
       <motion.h1
         initial={{ opacity: 0, y: -30 }}

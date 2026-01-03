@@ -1,4 +1,5 @@
 import React from "react";
+import SEO from "../../Components/SEO.jsx";
 import { Lightbulb, Globe, Shield, Zap, Layers, Cpu, Cloud, Library } from "lucide-react";
 
 const FeaturesJava = () => {
@@ -160,6 +161,12 @@ const FeaturesJava = () => {
 
   return (
     <div className="p-6 md:p-10 rounded-2xl bg-gray-900/70 backdrop-blur-xl shadow-2xl">
+      <SEO 
+        title="Key Features of Java Programming"
+        description="Discover the top features of Java: Simple, Secure, Robust, Multithreaded, and Platform Independent (Write Once, Run Anywhere)."
+        keywords="features of java, java characteristics, wora, java security, java multithreading, robust programming language"
+        url="/programming/java/features"
+      />
       <h2 className="text-4xl font-bold mb-6 text-center bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">
         Understanding Java’s Features
       </h2>

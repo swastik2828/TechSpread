@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Header from '../layout/Header'
 import Footer from '../layout/Footer';
 import Newsletter from '../components/Newsletter';
+import SEO from '../components/SEO';
 import { motion, AnimatePresence } from "framer-motion";
 import {Link} from 'react-router-dom'
 import { 
@@ -104,6 +105,12 @@ const Home = () => {
   ];
   return (
     <>
+    <SEO 
+        title="Home"
+        description="Master coding with TechSpread. Free, structured tutorials for Java, Web Development, DSA, and Computer Science fundamentals designed for beginners."
+        keywords="learn programming, java tutorial, web development course, dsa for beginners, computer science basics, techspread"
+        url="/"
+      />
     <AnimatePresence mode="wait">
         {loading ? (
           <motion.div

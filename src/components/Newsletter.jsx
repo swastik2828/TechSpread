@@ -1,107 +1,116 @@
+// src/components/Newsletter.jsx
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { db } from "../Firebase"; // Import the Firestore instance
+import { collection, addDoc, serverTimestamp } from "firebase/firestore"; // Firestore functions
+import { Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react"; // Icons for UI
 
-export default function Newsletter() {
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
+const Newsletter = () => {
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState({ type: "", text: "" });
 
-  const handleSubscribe = (e) => {
+  const handleSubscribe = async (e) => {
     e.preventDefault();
-    setIsPopupOpen(true);
+    setMessage({ type: "", text: "" });
+
+    // Basic Validation
+    if (!email || !email.includes("@")) {
+      setMessage({ type: "error", text: "Please enter a valid email address." });
+      return;
+    }
+
+    try {
+      setLoading(true);
+
+      // Add email to "newsletters" collection in Firestore
+      await addDoc(collection(db, "newsletters"), {
+        email: email,
+        subscribedAt: serverTimestamp(), // Store the server time
+        source: "website_footer",
+      });
+
+      // Success handling
+      setMessage({ type: "success", text: "Successfully subscribed! Stay tuned." });
+      setEmail(""); // Clear input
+    } catch (error) {
+      console.error("Error subscribing:", error);
+      setMessage({ type: "error", text: "Something went wrong. Please try again." });
+    } finally {
+      setLoading(false);
+      
+      // Clear success message after 3 seconds
+      setTimeout(() => {
+        if (message.type === "success") setMessage({ type: "", text: "" });
+      }, 3000);
+    }
   };
 
   return (
-    <>
-      {/* Newsletter Section */}
-      <motion.div
-        className="relative max-w-5xl mx-auto mt-16 rounded-2xl bg-gradient-to-r from-[#1f1a3c] via-[#111827] to-[#1f1a3c] p-8 md:p-12 shadow-xl overflow-hidden w-auto"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
-        viewport={{ once: true }}
-      >
-        {/* Optional subtle floating glow */}
-        <div className="absolute -top-20 -left-20 w-80 h-80 bg-purple-600/20 rounded-full filter blur-3xl animate-blob"></div>
-        <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-blue-500/20 rounded-full filter blur-3xl animate-blob animation-delay-2000"></div>
+    <div className="w-full max-w-4xl mx-auto my-16 p-8 rounded-3xl bg-gradient-to-br from-gray-900 via-gray-800 to-black border border-gray-700/50 shadow-2xl relative overflow-hidden group">
+      
+      {/* Background decoration */}
+      <div className="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-purple-600/20 rounded-full blur-3xl group-hover:bg-purple-600/30 transition-all duration-700"></div>
+      <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-64 h-64 bg-blue-600/20 rounded-full blur-3xl group-hover:bg-blue-600/30 transition-all duration-700"></div>
 
-        <div className="relative flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex-1 text-center md:text-left">
-            <h2 className="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-[#a855f7] to-[#3b82f6] bg-clip-text text-transparent">
-              ✉️ Stay Updated!
-            </h2>
-            <p className="mt-2 text-gray-300 max-w-lg leading-relaxed">
-              Join 1,000+ learners and get weekly tutorials, tips & coding guides straight to your inbox. No spam — just pure learning.
-            </p>
-          </div>
+      <div className="relative z-10 text-center space-y-6">
+        <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
+          Join the TechSpread Community
+        </h2>
+        <p className="text-gray-400 max-w-xl mx-auto text-lg">
+          Get the latest programming tutorials, industry trends, and tech insights delivered straight to your inbox.
+        </p>
 
-          <form
-            className="flex flex-col md:flex-row gap-3 w-full md:w-auto"
-            onSubmit={handleSubscribe}
-          >
+        <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
+          <div className="relative w-full max-w-md">
             <input
               type="email"
-              placeholder="Enter your email..."
-              required
-              className="px-5 py-3 w-full md:w-80 rounded-full bg-white/5 border border-white/10 text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#8B5CF6] transition"
+              placeholder="Enter your email address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full px-6 py-4 rounded-xl bg-gray-900/50 border border-gray-600 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 outline-none text-white placeholder-gray-500 transition-all backdrop-blur-sm"
+              disabled={loading}
             />
-            <motion.button
-              type="submit"
-              className="px-6 py-3 rounded-full bg-gradient-to-r from-[#8B5CF6] to-[#3B82F6] text-white font-medium shadow-lg hover:opacity-90 transition"
-              whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(139,92,246,0.4)" }}
-              transition={{ duration: 0.3 }}
-            >
-              Subscribe
-            </motion.button>
-          </form>
-        </div>
-      </motion.div>
+          </div>
 
-      {/* Popup */}
-      <AnimatePresence>
-        {isPopupOpen && (
-          <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+          <button
+            type="submit"
+            disabled={loading}
+            className="px-8 py-4 rounded-xl bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-semibold shadow-lg shadow-purple-500/25 transition-all transform hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
           >
-            <motion.div
-              className="bg-[#111827] text-gray-200 p-8 md:p-12 rounded-2xl max-w-md mx-4 text-center shadow-2xl relative"
-              initial={{ scale: 0.7, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.7, opacity: 0 }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
-            >
-              <h3 className="text-2xl font-bold bg-gradient-to-r from-[#a855f7] to-[#3b82f6] bg-clip-text text-transparent">
-                📬 Subscription Successful!
-              </h3>
-              <p className="mt-4 text-gray-300">
-                Thank you for subscribing! You’ll now receive weekly tutorials, tips, and coding guides straight to your inbox.
-              </p>
-              <button
-                onClick={() => setIsPopupOpen(false)}
-                className="mt-6 px-6 py-3 rounded-full bg-gradient-to-r from-[#8B5CF6] to-[#3B82F6] text-white font-medium shadow-lg hover:opacity-90 transition"
-              >
-                Close
-              </button>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            {loading ? (
+              <>
+                <Loader2 className="animate-spin" size={20} />
+                <span>Subscribing...</span>
+              </>
+            ) : (
+              <>
+                <span>Subscribe</span>
+                <Send size={18} />
+              </>
+            )}
+          </button>
+        </form>
 
-      {/* Tailwind keyframes for floating blobs */}
-      <style jsx>{`
-        @keyframes blob {
-          0%, 100% { transform: translate(0px, 0px) scale(1); }
-          33% { transform: translate(30px, -50px) scale(1.1); }
-          66% { transform: translate(-20px, 20px) scale(0.9); }
-        }
-        .animate-blob {
-          animation: blob 7s infinite;
-        }
-        .animation-delay-2000 {
-          animation-delay: 2s;
-        }
-      `}</style>
-    </>
+        {/* Feedback Message */}
+        {message.text && (
+          <div
+            className={`mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium animate-fadeIn ${
+              message.type === "success"
+                ? "bg-green-500/10 text-green-400 border border-green-500/20"
+                : "bg-red-500/10 text-red-400 border border-red-500/20"
+            }`}
+          >
+            {message.type === "success" ? <CheckCircle size={16} /> : <AlertCircle size={16} />}
+            {message.text}
+          </div>
+        )}
+        
+        <p className="text-xs text-gray-500 mt-4">
+          No spam, ever. Unsubscribe anytime.
+        </p>
+      </div>
+    </div>
   );
-}
+};
+
+export default Newsletter;
