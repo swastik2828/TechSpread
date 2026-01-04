@@ -9,8 +9,8 @@ const WhatisJava = () => {
       <SEO 
         title="What is Java? Introduction & Basics"
         description="Learn what Java is, why it is platform-independent, and its core Object-Oriented Programming (OOP) concepts. A perfect start for beginners."
-        keywords="what is java, java programming introduction, object oriented programming, platform independence, java for beginners"
-        url="/programming/java/whatisjava"
+        keywords="what is java, java programming introduction, object oriented programming, platform independence, java for beginners, java"
+        url="techspread.co.in/programming/java/whatisjava"
       />
       <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
         What is Java?
