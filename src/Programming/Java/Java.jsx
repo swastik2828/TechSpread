@@ -1,164 +1,77 @@
-import React, { useState } from "react";
+import { Outlet, NavLink, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { BookOpen, Clock, Sparkles, ArrowLeft, Menu, X, Layers } from "lucide-react"; 
-import { useNavigate } from "react-router-dom";
-import WhatisJava from "./WhatisJava";
-import HistoryofJava from "./HistoryofJava";
-import FeaturesJava from "./FeaturesJava";
-import WhatisJDKJVMJRE from "./WhatisJDKJVMJRE"; // Import the new component
+import { BookOpen, Clock, Sparkles, ArrowLeft, Menu, X, Layers } from "lucide-react";
+import { useState } from "react";
 
 const Java = () => {
-  const [activeSection, setActiveSection] = useState("whatisjava");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const navigate = useNavigate();
 
-  const handleSetActiveSection = (section) => {
-    setActiveSection(section);
-    if (isSidebarOpen) {
-      setIsSidebarOpen(false); 
-    }
-  };
-
-  const renderSection = () => {
-    switch (activeSection) {
-      case "whatisjava":
-        return <WhatisJava />;
-      case "history":
-        return <HistoryofJava />;
-      case "features":
-        return <FeaturesJava />;
-      case "jdk-jvm-jre":
-        return <WhatisJDKJVMJRE />;
-      default:
-        return <WhatisJava />;
-    }
-  };
-
-  const NavigationButtons = () => (
-    <div className="flex flex-col space-y-4">
-      <button
-        onClick={() => handleSetActiveSection("whatisjava")}
-        className={`flex items-center gap-3 p-3 rounded-xl transition-all duration-300 ${
-          activeSection === "whatisjava"
-            ? "bg-gradient-to-r from-purple-600 to-blue-600 shadow-lg shadow-purple-500/30"
-            : "hover:bg-gray-800"
-        }`}
-      >
-        <BookOpen size={20} /> What is Java
-      </button>
-
-      <button
-        onClick={() => handleSetActiveSection("history")}
-        className={`flex items-center gap-3 p-3 rounded-xl transition-all duration-300 ${
-          activeSection === "history"
-            ? "bg-gradient-to-r from-purple-600 to-blue-600 shadow-lg shadow-purple-500/30"
-            : "hover:bg-gray-800"
-        }`}
-      >
-        <Clock size={20} /> History of Java
-      </button>
-
-      <button
-        onClick={() => handleSetActiveSection("features")}
-        className={`flex items-center gap-3 p-3 rounded-xl transition-all duration-300 ${
-          activeSection === "features"
-            ? "bg-gradient-to-r from-purple-600 to-blue-600 shadow-lg shadow-purple-500/30"
-            : "hover:bg-gray-800"
-        }`}
-      >
-        <Sparkles size={20} /> Features of Java
-      </button>
-
-      <button
-        onClick={() => handleSetActiveSection("jdk-jvm-jre")}
-        className={`flex items-center gap-3 p-3 rounded-xl transition-all duration-300 ${
-          activeSection === "jdk-jvm-jre"
-            ? "bg-gradient-to-r from-purple-600 to-blue-600 shadow-lg shadow-purple-500/30"
-            : "hover:bg-gray-800"
-        }`}
-      >
-        <Layers size={20} /> What is JDK, JRE & JVM
-      </button>
-    </div>
+  const NavItem = ({ to, icon: Icon, label }) => (
+    <NavLink
+      to={to}
+      className={({ isActive }) =>
+        `flex items-center gap-3 p-3 rounded-xl transition-all duration-300 ${isActive
+          ? "bg-gradient-to-r from-purple-600 to-blue-600 shadow-lg shadow-purple-500/30"
+          : "hover:bg-gray-800"
+        }`
+      }
+      onClick={() => setIsSidebarOpen(false)}
+    >
+      <Icon size={20} /> {label}
+    </NavLink>
   );
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row bg-gradient-to-br from-gray-950 via-gray-900 to-black text-white">
-      
-      {/* 📱 Mobile Header */}
-      <header className="md:hidden sticky top-0 z-20 p-4 flex justify-between items-center bg-gray-950/95 backdrop-blur-sm border-b border-gray-800 w-full">
-        <motion.h1
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent"
-        >
+
+      {/* Mobile Header */}
+      <header className="md:hidden sticky top-0 z-20 p-4 flex justify-between items-center bg-gray-950/95 border-b border-gray-800">
+        <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent">
           Java Course
-        </motion.h1>
-        
-        <button
-          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-          className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition-colors"
-          aria-label="Toggle menu"
-        >
-          {isSidebarOpen ? <X size={24} /> : <Menu size={24} />}
+        </h1>
+        <button onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
+          {isSidebarOpen ? <X /> : <Menu />}
         </button>
       </header>
 
-      {/* 💻 Desktop Sidebar */}
-      <aside className="md:w-1/4 w-full border-r border-gray-800 p-6 md:sticky top-0 hidden md:block">
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent mb-6"
-        >
-          Java Course
-        </motion.h1>
-
+      {/* Desktop Sidebar */}
+      <aside className="md:w-1/4 border-r border-gray-800 p-6 hidden md:block">
         <button
           onClick={() => navigate("/programming")}
-          className="flex items-center gap-2 mb-8 px-4 py-2 rounded-xl bg-gradient-to-r from-gray-800 to-gray-900 hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg shadow-purple-500/20"
+          className="mb-6 flex items-center gap-2"
         >
-          <ArrowLeft size={18} /> Back to Programming
+          <ArrowLeft size={18} /> Back
         </button>
 
-        <NavigationButtons />
+        <NavLink
+          to=""
+          end
+          className={({ isActive }) =>
+            `flex items-center gap-3 p-3 rounded-xl transition-all duration-300 ${isActive
+              ? "bg-gradient-to-r from-purple-600 to-blue-600 shadow-lg shadow-purple-500/30"
+              : "hover:bg-gray-800"
+            }`
+          }
+        >
+          <BookOpen size={20} /> What is Java
+        </NavLink>
+        <NavItem to="history" icon={Clock} label="History of Java" />
+        <NavItem to="features" icon={Sparkles} label="Features of Java" />
+        <NavItem to="jdk-jre-jvm" icon={Layers} label="JDK, JRE & JVM" />
       </aside>
 
-      {/* 📱 Mobile Sidebar/Overlay */}
-      <AnimatePresence>
-        {isSidebarOpen && (
-          <motion.div
-            initial={{ opacity: 0, x: "-100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "-100%" }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-10 md:hidden bg-gray-950/95 p-6 flex flex-col space-y-8 overflow-y-auto"
-          >
-             <button
-              onClick={() => {
-                navigate("/programming");
-                setIsSidebarOpen(false);
-              }}
-              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-gray-800 to-gray-900 hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg shadow-purple-500/20"
-            >
-              <ArrowLeft size={18} /> Back to Programming
-            </button>
-            <NavigationButtons />
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Content Area */}
+      {/* Content */}
       <main className="flex-1 p-6 overflow-y-auto">
         <AnimatePresence mode="wait">
           <motion.div
-            key={activeSection}
-            initial={{ opacity: 0, x: 50 }}
+            key={location.pathname}
+            initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -50 }}
-            transition={{ duration: 0.4 }}
+            exit={{ opacity: 0, x: -40 }}
+            transition={{ duration: 0.3 }}
           >
-            {renderSection()}
+            <Outlet />
           </motion.div>
         </AnimatePresence>
       </main>

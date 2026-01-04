@@ -17,7 +17,7 @@ import Java from "./Programming/Java/Java";               // main java container
 import WhatisJava from "./Programming/Java/WhatisJava";   // java topic pages
 import HistoryofJava from "./Programming/Java/HistoryofJava";
 import FeaturesJava from "./Programming/Java/FeaturesJava";
-import WhatisJDKJVMJRE from "./Programming/Java/WhatisJDKJVMJRE"; // Add this import
+import WhatisJDKJVMJRE from "./Programming/Java/WhatisJDKJVMJRE"; 
 
 function App() {
   return (
@@ -36,24 +36,13 @@ function App() {
       <Route path="/programming" element={<Programming />} />
 
       {/* Java Course */}
-      <Route path="/programming/java" element={<Java />} />
-      <Route
-        path="/programming/java/whatisjava"
-        element={<WhatisJava />}
-      />
-      <Route
-        path="/programming/java/history"
-        element={<HistoryofJava />}
-      />
-      <Route
-        path="/programming/java/features"
-        element={<FeaturesJava />}
-      />
-      {/* Add new route here */}
-      <Route 
-        path="/programming/java/jdk-jre-jvm" 
-        element={<WhatisJDKJVMJRE />} 
-      />
+      <Route path="/programming/java" element={<Java />}>
+        <Route index element={<WhatisJava />} />
+        <Route path="history" element={<HistoryofJava />} />
+        <Route path="features" element={<FeaturesJava />} />
+        <Route path="jdk-jre-jvm" element={<WhatisJDKJVMJRE />} />
+      </Route>
+
 
       {/* Default route for invalid URLs */}
       <Route path="*" element={<Home />} />
