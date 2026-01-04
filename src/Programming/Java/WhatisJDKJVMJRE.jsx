@@ -1,6 +1,7 @@
 import React from "react";
 import JVM_JDK_JRE from "../../assets/Java_Image/JVM_JDK_JRE_Architecture2.jpeg";
 import SEO from "../../components/SEO";
+import JavaArchitectureSimulator from "../../simulators/java/JavaArchitectureSimulator"
 
 const WhatisJDKJVMJRE = () => {
   return (
@@ -188,6 +189,7 @@ const WhatisJDKJVMJRE = () => {
           </ul>
         </div>
       </div>
+      <JavaArchitectureSimulator />
     </div>
   );
 };
