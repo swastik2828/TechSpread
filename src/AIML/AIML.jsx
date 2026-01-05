@@ -15,13 +15,13 @@ const AIML = () => {
       color: "from-red-500 to-pink-600",
       route: "/aiml/ai", 
     },
-    {
-      name: "Machine Learning",
-      desc: "Dive into supervised and unsupervised learning, neural networks, and real-world ML applications.",
-      icon: <Cpu size={36} />,
-      color: "from-violet-600 to-indigo-600",
-      route: "/aiml/ml", 
-    },
+    // {
+    //   name: "Machine Learning",
+    //   desc: "Dive into supervised and unsupervised learning, neural networks, and real-world ML applications.",
+    //   icon: <Cpu size={36} />,
+    //   color: "from-violet-600 to-indigo-600",
+    //   route: "/aiml/ml", 
+    // },
   ];
 
   return (
