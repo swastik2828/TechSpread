@@ -12,12 +12,16 @@ import UserDashboard from "./pages/UserDashboard";
 // Tutorials-related pages
 import Tutorial from "./pages/Tutorial";          // main tutorials hub
 import Programming from "./Programming/Programming"; 
-   // subcategory page
+import AIML from "./AIML/AIML";
+import AI from "./AIML/AI/AI";
+// subcategory page
 import Java from "./Programming/Java/Java";               // main java container
 import WhatisJava from "./Programming/Java/WhatisJava";   // java topic pages
 import HistoryofJava from "./Programming/Java/HistoryofJava";
 import FeaturesJava from "./Programming/Java/FeaturesJava";
 import WhatisJDKJVMJRE from "./Programming/Java/WhatisJDKJVMJRE"; 
+// AI course
+import WhatisAI from "./AIML/AI/WhatisAI" 
 
 function App() {
   return (
@@ -34,6 +38,7 @@ function App() {
       {/* Tutorials Section */}
       <Route path="/tutorial" element={<Tutorial />} />
       <Route path="/programming" element={<Programming />} />
+      <Route path="/aiml" element={<AIML />} />
 
       {/* Java Course */}
       <Route path="/programming/java" element={<Java />}>
@@ -43,7 +48,11 @@ function App() {
         <Route path="jdk-jre-jvm" element={<WhatisJDKJVMJRE />} />
       </Route>
 
-
+      {/* AI Course */}
+      <Route path="/aiml/ai" element={<AI />}>
+        {/* Index route shows "What is AI" by default */}
+        <Route index element={<WhatisAI />} />
+      </Route>
       {/* Default route for invalid URLs */}
       <Route path="*" element={<Home />} />
     </Routes>

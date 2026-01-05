@@ -32,32 +32,32 @@ const Tutorial = () => {
       route: "/tutorials/webdevelopment",
     },
     {
+      name: "AI / ML",
+      icon: <Brain size={40} />,
+      desc: "Explore Artificial Intelligence, Machine Learning, and neural networks practically.",
+      color: "from-red-500 to-purple-500",
+      route: "/aiml",
+    },
+    {
       name: "Computer Fundamentals",
       icon: <BookOpen size={40} />,
       desc: "Understand the core principles of computing, operating systems, and networking.",
       color: "from-pink-500 to-rose-500",
-      route: "/tutorials/computerfundamentals",
+      route: "/computerfundamentals",
     },
     {
       name: "Data Science",
       icon: <Database size={40} />,
       desc: "Dive into data analysis, visualization, and Python-based data science projects.",
       color: "from-emerald-500 to-teal-500",
-      route: "/tutorials/datascience",
+      route: "/datascience",
     },
     {
       name: "Database & SQL",
       icon: <Cpu size={40} />,
       desc: "Learn how to design, manage, and query databases efficiently using SQL and NoSQL.",
       color: "from-yellow-500 to-orange-500",
-      route: "/tutorials/database",
-    },
-    {
-      name: "AI / ML",
-      icon: <Brain size={40} />,
-      desc: "Explore Artificial Intelligence, Machine Learning, and neural networks practically.",
-      color: "from-red-500 to-purple-500",
-      route: "/tutorials/aiml",
+      route: "/database",
     },
   ];
 
