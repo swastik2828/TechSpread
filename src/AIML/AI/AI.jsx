@@ -86,7 +86,7 @@ const AI = () => {
 
               <button
                 onClick={() => {
-                  navigate("/tutorials/aiml");
+                  navigate("/aiml");
                   setIsSidebarOpen(false);
                 }}
                 className="flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-colors"
