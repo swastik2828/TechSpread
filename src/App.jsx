@@ -20,6 +20,7 @@ import WhatisJava from "./Programming/Java/WhatisJava";   // java topic pages
 import HistoryofJava from "./Programming/Java/HistoryofJava";
 import FeaturesJava from "./Programming/Java/FeaturesJava";
 import WhatisJDKJVMJRE from "./Programming/Java/WhatisJDKJVMJRE"; 
+import JavaInstallation from "./Programming/Java/JavaInstallation";
 // AI course
 import WhatisAI from "./AIML/AI/WhatisAI" 
 
@@ -46,6 +47,7 @@ function App() {
         <Route path="history" element={<HistoryofJava />} />
         <Route path="features" element={<FeaturesJava />} />
         <Route path="jdk-jre-jvm" element={<WhatisJDKJVMJRE />} />
+        <Route path="installation" element = {<JavaInstallation/>}/>
       </Route>
 
       {/* AI Course */}

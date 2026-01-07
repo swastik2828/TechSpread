@@ -21,16 +21,22 @@ import {
   Sprout,
   Clock, 
   Zap,
-  Sparkles // Added for variety
+  Sparkles 
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import heroImg from "../assets/hero-illustration.svg";
 import illustration from "../assets/what-we-do-illustration.svg";
 import illustration2 from "../assets/why_us_illustration.png";
 
-// PART 1 UPDATE: Data Source now includes AI & Java mixed
-// Renamed from JAVA_LESSONS to RECENT_LESSONS to reflect mixed content
+// PART 1 UPDATE: Added "Java Installation" to the top
 const RECENT_LESSONS = [
+  {
+    title: "How to Install Java JDK 25 (2026)",
+    path: "/programming/java/installation",
+    desc: "Step-by-step installation guide for Windows, Linux, and macOS with troubleshooting.",
+    category: "Java",
+    isNew: true
+  },
   {
     title: "What is Artificial Intelligence?",
     path: "/aiml/ai",
@@ -43,14 +49,7 @@ const RECENT_LESSONS = [
     path: "/programming/java/jdk-jre-jvm",
     desc: "Understand the core components of Java execution: the JVM, JRE, and JDK.",
     category: "Java",
-    isNew: true
-  },
-  {
-    title: "Java Features: Why is it so popular?",
-    path: "/programming/java/features",
-    desc: "Explore platform independence, security, and robustness.",
-    category: "Java",
-    isNew: false
+    isNew: true // Updated to match the flow of new content
   }
 ];
 
@@ -241,13 +240,11 @@ const Home = () => {
               viewport={{ once: true }}
               className="flex items-center justify-between mb-8"
             >
-              {/* Updated Title */}
               <h2 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 flex items-center gap-2">
                 <Sparkles className="w-8 h-8 text-purple-400" />
                 Recently Released
               </h2>
               
-              {/* Updated Link to /tutorial */}
               <Link to="/tutorial" className="text-sm text-purple-400 hover:text-purple-300 font-medium hidden sm:block">
                 View all lessons →
               </Link>
@@ -291,7 +288,6 @@ const Home = () => {
               ))}
             </div>
             
-            {/* Mobile Link Updated */}
             <div className="mt-6 text-center sm:hidden">
               <Link to="/tutorial" className="text-sm text-purple-400 hover:text-purple-300 font-medium">
                 View all lessons →

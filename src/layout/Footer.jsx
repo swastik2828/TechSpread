@@ -31,7 +31,7 @@ export default function Footer() {
             {tutorialTopics.map((topic, i) => (
               <li key={i}>
                 <a
-                  href={`/tutorial/${topic.toLowerCase().replace(/\s/g, "")}`}
+                  href={`/${topic.toLowerCase().replace(/\s/g, "")}`}
                   className="hover:text-[#8B5CF6] transition-all duration-200"
                 >
                   {topic}
@@ -56,19 +56,19 @@ export default function Footer() {
         <div>
           <h3 className="text-gray-200 font-semibold text-lg mb-4">Connect</h3>
           <div className="flex items-center space-x-4">
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer"
+            {/* <a href="https://linkedin.com" target="_blank" rel="noreferrer"
                className="text-gray-400 hover:text-[#8B5CF6] transition duration-200 text-2xl">
               <i className="bi bi-linkedin"></i>
-            </a>
+            </a> */}
             <a href="https://instagram.com" target="_blank" rel="noreferrer"
                className="text-gray-400 hover:text-[#8B5CF6] transition duration-200 text-2xl">
               <i className="bi bi-instagram"></i>
             </a>
-            <a href="https://github.com" target="_blank" rel="noreferrer"
+            {/* <a href="https://github.com" target="_blank" rel="noreferrer"
                className="text-gray-400 hover:text-[#8B5CF6] transition duration-200 text-2xl">
               <i className="bi bi-github"></i>
-            </a>
-            <a href="https://youtube.com" target="_blank" rel="noreferrer"
+            </a> */}
+            <a href="https://youtube.com/@techspread-x3c?si=WjlalsxxMHGuGR7" target="_blank" rel="noreferrer"
                className="text-gray-400 hover:text-[#8B5CF6] transition duration-200 text-2xl">
               <i className="bi bi-youtube"></i>
             </a>
@@ -78,7 +78,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-white/10 text-center py-4 text-gray-500 text-sm">
-        © 2025 ALL RIGHTS RESERVED BY 
+        © 2026 ALL RIGHTS RESERVED BY 
         <span className="bg-gradient-to-r from-[#00D4FF] via-[#5E9FE3] to-[#8B7AC8] bg-clip-text text-transparent"> Tech</span>
         <span className="bg-gradient-to-r from-[#8B7AC8] via-[#A855F7] to-[#B24BF3] bg-clip-text text-transparent">Spread</span>.
       </div>

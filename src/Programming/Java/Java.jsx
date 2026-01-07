@@ -1,6 +1,7 @@
 import { Outlet, NavLink, useNavigate, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { BookOpen, Clock, Sparkles, ArrowLeft, Menu, X, Layers } from "lucide-react";
+// ADDED "Download" to imports
+import { BookOpen, Clock, Sparkles, ArrowLeft, Menu, X, Layers, Download } from "lucide-react";
 import { useState } from "react";
 
 const Java = () => {
@@ -45,7 +46,6 @@ const Java = () => {
       <AnimatePresence>
         {isSidebarOpen && (
           <>
-            {/* Background overlay */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.6 }}
@@ -53,8 +53,6 @@ const Java = () => {
               onClick={() => setIsSidebarOpen(false)}
               className="fixed inset-0 z-30 bg-black"
             />
-
-            {/* Sidebar */}
             <motion.aside
               initial={{ x: "-100%" }}
               animate={{ x: 0 }}
@@ -85,6 +83,8 @@ const Java = () => {
               <NavItem to="history" icon={Clock} label="History of Java" />
               <NavItem to="features" icon={Sparkles} label="Features of Java" />
               <NavItem to="jdk-jre-jvm" icon={Layers} label="JDK, JRE & JVM" />
+              {/* NEW LINK HERE */}
+              <NavItem to="installation" icon={Download} label="Installation Guide" />
             </motion.aside>
           </>
         )}
@@ -103,6 +103,8 @@ const Java = () => {
         <NavItem to="history" icon={Clock} label="History of Java" />
         <NavItem to="features" icon={Sparkles} label="Features of Java" />
         <NavItem to="jdk-jre-jvm" icon={Layers} label="JDK, JRE & JVM" />
+        {/* NEW LINK HERE */}
+        <NavItem to="installation" icon={Download} label="Installation Guide" />
       </aside>
 
       {/* 📄 Content */}
