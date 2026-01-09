@@ -1,7 +1,6 @@
 import { Outlet, NavLink, useNavigate, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-// ADDED "Download" to imports
-import { BookOpen, Clock, Sparkles, ArrowLeft, Menu, X, Layers, Download } from "lucide-react";
+import { BookOpen, Clock, Sparkles, ArrowLeft, Menu, X, Layers, Download, Scale } from "lucide-react";
 import { useState } from "react";
 
 const Java = () => {
@@ -83,8 +82,8 @@ const Java = () => {
               <NavItem to="history" icon={Clock} label="History of Java" />
               <NavItem to="features" icon={Sparkles} label="Features of Java" />
               <NavItem to="jdk-jre-jvm" icon={Layers} label="JDK, JRE & JVM" />
-              {/* NEW LINK HERE */}
               <NavItem to="installation" icon={Download} label="Installation Guide" />
+              <NavItem to="java-vs-cpp" icon={Scale} label="Java vs C++" />
             </motion.aside>
           </>
         )}
@@ -103,8 +102,8 @@ const Java = () => {
         <NavItem to="history" icon={Clock} label="History of Java" />
         <NavItem to="features" icon={Sparkles} label="Features of Java" />
         <NavItem to="jdk-jre-jvm" icon={Layers} label="JDK, JRE & JVM" />
-        {/* NEW LINK HERE */}
         <NavItem to="installation" icon={Download} label="Installation Guide" />
+        <NavItem to="java-vs-cpp" icon={Scale} label="Java vs C++" />
       </aside>
 
       {/* 📄 Content */}

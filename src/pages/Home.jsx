@@ -31,6 +31,13 @@ import illustration2 from "../assets/why_us_illustration.png";
 // PART 1 UPDATE: Added "Java Installation" to the top
 const RECENT_LESSONS = [
   {
+    title: "Difference Between Java and C++",
+    path: "/programming/java/java-vs-cpp",
+    desc: "Understand the core difference between Java and C++",
+    category: "Java",
+    isNew: true // Updated to match the flow of new content
+  },
+  {
     title: "How to Install Java JDK 25 (2026)",
     path: "/programming/java/installation",
     desc: "Step-by-step installation guide for Windows, Linux, and macOS with troubleshooting.",
@@ -44,13 +51,7 @@ const RECENT_LESSONS = [
     category: "AI & ML",
     isNew: true
   },
-  {
-    title: "What is JDK, JRE, and JVM? Architecture Explained",
-    path: "/programming/java/jdk-jre-jvm",
-    desc: "Understand the core components of Java execution: the JVM, JRE, and JDK.",
-    category: "Java",
-    isNew: true // Updated to match the flow of new content
-  }
+  
 ];
 
 const Home = () => {
