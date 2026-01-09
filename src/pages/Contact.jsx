@@ -42,14 +42,14 @@ export default function ContactPage() {
             >
               Prefer email? Drop a line at{' '}
               <a href="mailto:codesewa.in@gmail.com" className="text-gradient font-medium">
-                codesewa.in@gmail.com
+                techspread.co.in@gmail.com
               </a>. Or reach us via socials below.
             </motion.p>
 
             <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
               <InfoCard icon={<MapPin className="h-5 w-5 text-cyan-400" />} title="Location" value="Remote / India" />
               <InfoCard icon={<Clock className="h-5 w-5 text-purple-400" />} title="Availability" value="Weekdays — 9am to 7pm IST" />
-              <InfoCard icon={<Briefcase className="h-5 w-5 text-pink-400" />} title="Services" value="Articles, Web Dev, Consulting" />
+              <InfoCard icon={<Briefcase className="h-5 w-5 text-pink-400" />} title="Services" value="Education, Skill Development, Programming" />
               <InfoCard icon={<Timer className="h-5 w-5 text-blue-400" />} title="Response Time" value="Usually within 24 hours" />
             </div>
 
