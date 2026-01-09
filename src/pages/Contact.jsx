@@ -41,7 +41,7 @@ export default function ContactPage() {
               className="text-slate-300 max-w-xl"
             >
               Prefer email? Drop a line at{' '}
-              <a href="mailto:codesewa.in@gmail.com" className="text-gradient font-medium">
+              <a href="mailto:techspread.co.in@gmail.com" className="text-gradient font-medium">
                 techspread.co.in@gmail.com
               </a>. Or reach us via socials below.
             </motion.p>
@@ -80,7 +80,7 @@ export default function ContactPage() {
             </p>
             <motion.div whileHover={{ scale: 1.05 }} className="inline-block">
               <a
-                href="mailto:codesewa.in@gmail.com"
+                href="mailto:techspread.co.in@gmail.com"
                 className="rounded-full px-8 py-3 bg-gradient-to-r from-purple-500 to-cyan-400 text-black font-semibold shadow hover:shadow-lg transition-all"
               >
                 Email Us
