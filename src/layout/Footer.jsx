@@ -60,14 +60,14 @@ export default function Footer() {
                className="text-gray-400 hover:text-[#8B5CF6] transition duration-200 text-2xl">
               <i className="bi bi-linkedin"></i>
             </a> */}
-            <a href="https://instagram.com" target="_blank" rel="noreferrer"
+            <a href="https://instagram.com/techspread.co.in" target="_blank" rel="noreferrer"
                className="text-gray-400 hover:text-[#8B5CF6] transition duration-200 text-2xl">
               <i className="bi bi-instagram"></i>
             </a>
-            {/* <a href="https://github.com" target="_blank" rel="noreferrer"
+            <a href="https://github.com/TechSpread" target="_blank" rel="noreferrer"
                className="text-gray-400 hover:text-[#8B5CF6] transition duration-200 text-2xl">
               <i className="bi bi-github"></i>
-            </a> */}
+            </a>
             <a href="https://youtube.com/@techspread-x3c?si=WjlalsxxMHGuGR7" target="_blank" rel="noreferrer"
                className="text-gray-400 hover:text-[#8B5CF6] transition duration-200 text-2xl">
               <i className="bi bi-youtube"></i>

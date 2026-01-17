@@ -3,10 +3,16 @@ import { motion } from 'framer-motion';
 import { MapPin, Clock, Briefcase, Timer, Twitter, Github, Linkedin } from 'lucide-react';
 import Header from '../layout/Header.jsx';
 import Footer from '../layout/Footer.jsx';
-
+import SEO from '../components/SEO.jsx';
 export default function ContactPage() {
   return (
     <div>
+      <SEO
+              title="Contact Us - TechSpread"
+              description="Get in touch with TechSpread for collaborations, inquiries, or support. We're here to help you on your learning journey."
+              keywords="contact, techspread, support, collaboration, inquiries"
+              url="/contact"
+            />
       <Header />
       <div className="min-h-screen py-16 px-6 bg-[radial-gradient(ellipse_at_top_right,_#071022,_#070616_40%)] text-slate-100 relative overflow-hidden">
         {/* Decorative floating blobs */}
@@ -62,7 +68,7 @@ export default function ContactPage() {
               <div className="text-sm text-slate-400">Follow on</div>
               <div className="flex gap-3 mt-3">
                 {/* <SocialButton label="Twitter" href="#" icon={<Twitter className="h-4 w-4" />} /> */}
-                <SocialButton label="GitHub" href="#" icon={<Github className="h-4 w-4" />} />
+                <SocialButton label="GitHub" href="https://github.com/TechSpread" icon={<Github className="h-4 w-4" />} />
                 <SocialButton label="LinkedIn" href="#" icon={<Linkedin className="h-4 w-4" />} />
               </div>
             </motion.div>

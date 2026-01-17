@@ -1,19 +1,19 @@
 // src/components/Newsletter.jsx
-import React, { useState } from "react";
-import { db } from "../Firebase"; // Import the Firestore instance
-import { collection, addDoc, serverTimestamp } from "firebase/firestore"; // Firestore functions
-import { Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react"; // Icons for UI
+import React, { useState, useRef } from "react";
+import { db } from "../Firebase";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 
 const Newsletter = () => {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState({ type: "", text: "" });
+  const timeoutRef = useRef(null);
 
   const handleSubscribe = async (e) => {
     e.preventDefault();
     setMessage({ type: "", text: "" });
 
-    // Basic Validation
     if (!email || !email.includes("@")) {
       setMessage({ type: "error", text: "Please enter a valid email address." });
       return;
@@ -22,32 +22,36 @@ const Newsletter = () => {
     try {
       setLoading(true);
 
-      // Add email to "newsletters" collection in Firestore
-      await addDoc(collection(db, "newsletters"), {
-        email: email,
-        subscribedAt: serverTimestamp(), // Store the server time
-        source: "website_footer",
+      await addDoc(collection(db, "newsletter"), {
+        email: email.toLowerCase().trim(),
+        createdAt: serverTimestamp(), // MUST match rules
       });
 
-      // Success handling
-      setMessage({ type: "success", text: "Successfully subscribed! Stay tuned." });
-      setEmail(""); // Clear input
+      setMessage({
+        type: "success",
+        text: "Successfully subscribed! Stay tuned.",
+      });
+
+      setEmail("");
+
+      // Clear success message after 3 seconds
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = setTimeout(() => {
+        setMessage({ type: "", text: "" });
+      }, 3000);
     } catch (error) {
       console.error("Error subscribing:", error);
-      setMessage({ type: "error", text: "Something went wrong. Please try again." });
+      setMessage({
+        type: "error",
+        text: "Something went wrong. Please try again.",
+      });
     } finally {
       setLoading(false);
-      
-      // Clear success message after 3 seconds
-      setTimeout(() => {
-        if (message.type === "success") setMessage({ type: "", text: "" });
-      }, 3000);
     }
   };
 
   return (
     <div className="w-full max-w-4xl mx-auto my-16 p-8 rounded-3xl bg-gradient-to-br from-gray-900 via-gray-800 to-black border border-gray-700/50 shadow-2xl relative overflow-hidden group">
-      
       {/* Background decoration */}
       <div className="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-purple-600/20 rounded-full blur-3xl group-hover:bg-purple-600/30 transition-all duration-700"></div>
       <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-64 h-64 bg-blue-600/20 rounded-full blur-3xl group-hover:bg-blue-600/30 transition-all duration-700"></div>
@@ -56,11 +60,15 @@ const Newsletter = () => {
         <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
           Join the TechSpread Community
         </h2>
+
         <p className="text-gray-400 max-w-xl mx-auto text-lg">
           Get the latest programming tutorials, industry trends, and tech insights delivered straight to your inbox.
         </p>
 
-        <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
+        <form
+          onSubmit={handleSubscribe}
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8"
+        >
           <div className="relative w-full max-w-md">
             <input
               type="email"
@@ -91,7 +99,6 @@ const Newsletter = () => {
           </button>
         </form>
 
-        {/* Feedback Message */}
         {message.text && (
           <div
             className={`mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium animate-fadeIn ${
@@ -100,11 +107,15 @@ const Newsletter = () => {
                 : "bg-red-500/10 text-red-400 border border-red-500/20"
             }`}
           >
-            {message.type === "success" ? <CheckCircle size={16} /> : <AlertCircle size={16} />}
+            {message.type === "success" ? (
+              <CheckCircle size={16} />
+            ) : (
+              <AlertCircle size={16} />
+            )}
             {message.text}
           </div>
         )}
-        
+
         <p className="text-xs text-gray-500 mt-4">
           No spam, ever. Unsubscribe anytime.
         </p>
