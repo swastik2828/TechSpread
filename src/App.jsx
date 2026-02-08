@@ -14,6 +14,13 @@ import Tutorial from "./pages/Tutorial";          // main tutorials hub
 import Programming from "./Programming/Programming"; 
 import AIML from "./AIML/AIML";
 import AI from "./AIML/AI/AI";
+
+// Web Development
+import WebDevelopment from "./WebDev/WebDevelopment";
+import Frontend from "./WebDev/Frontend/Frontend"; // NEW IMPORT
+import HTML from "./WebDev/Frontend/HTML/HTML";
+import FundamentalsWeb from "./WebDev/Frontend/HTML/FundamentalsWeb";
+
 // subcategory page
 import Java from "./Programming/Java/Java";               // main java container
 import WhatisJava from "./Programming/Java/WhatisJava";   // java topic pages
@@ -41,6 +48,17 @@ function App() {
       <Route path="/tutorial" element={<Tutorial />} />
       <Route path="/programming" element={<Programming />} />
       <Route path="/aiml" element={<AIML />} />
+      
+      {/* Web Development Section */}
+      <Route path="/tutorials/webdevelopment" element={<WebDevelopment />} />
+      
+      {/* NEW: Intermediate Frontend Page */}
+      <Route path="/tutorials/webdevelopment/frontend" element={<Frontend />} />
+
+      {/* HTML Course */}
+      <Route path="/webdevelopment/html" element={<HTML />}>
+        <Route index element={<FundamentalsWeb />} />
+      </Route>
 
       {/* Java Course */}
       <Route path="/programming/java" element={<Java />}>

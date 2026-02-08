@@ -57,7 +57,7 @@ const Java = () => {
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ duration: 0.3 }}
-              className="fixed left-0 top-0 z-40 w-3/4 max-w-xs h-full bg-gray-950 p-6 flex flex-col gap-6"
+              className="fixed left-0 top-0 z-40 w-64 h-full bg-gray-950 p-6 flex flex-col gap-6"
             >
               <div className="flex justify-between items-center">
                 <h2 className="text-xl font-bold bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent">
@@ -89,31 +89,33 @@ const Java = () => {
         )}
       </AnimatePresence>
 
-      {/* 💻 Desktop Sidebar */}
-      <aside className="md:w-1/4 border-r border-gray-800 p-6 hidden md:block">
+      {/* 💻 Desktop Sidebar - Updated Width to w-64 */}
+      <aside className="w-64 shrink-0 border-r border-gray-800 p-6 hidden md:block sticky top-0 h-screen overflow-y-auto">
         <button
           onClick={() => navigate("/programming")}
-          className="mb-6 flex items-center gap-2"
+          className="mb-6 flex items-center gap-2 text-sm text-gray-400 hover:text-white"
         >
-          <ArrowLeft size={18} /> Back
+          <ArrowLeft size={16} /> Back
         </button>
 
-        <NavItem to="" end icon={BookOpen} label="What is Java" />
-        <NavItem to="history" icon={Clock} label="History of Java" />
-        <NavItem to="features" icon={Sparkles} label="Features of Java" />
-        <NavItem to="jdk-jre-jvm" icon={Layers} label="JDK, JRE & JVM" />
-        <NavItem to="installation" icon={Download} label="Installation Guide" />
-        <NavItem to="java-vs-cpp" icon={Scale} label="Java vs C++" />
+        <nav className="flex flex-col gap-2">
+          <NavItem to="" end icon={BookOpen} label="What is Java" />
+          <NavItem to="history" icon={Clock} label="History of Java" />
+          <NavItem to="features" icon={Sparkles} label="Features of Java" />
+          <NavItem to="jdk-jre-jvm" icon={Layers} label="JDK, JRE & JVM" />
+          <NavItem to="installation" icon={Download} label="Installation Guide" />
+          <NavItem to="java-vs-cpp" icon={Scale} label="Java vs C++" />
+        </nav>
       </aside>
 
       {/* 📄 Content */}
-      <main className="flex-1 p-6 overflow-y-auto">
+      <main className="flex-1 p-6 md:p-10 overflow-y-auto max-w-7xl mx-auto w-full">
         <AnimatePresence mode="wait">
           <motion.div
             key={location.pathname}
-            initial={{ opacity: 0, x: 40 }}
+            initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -40 }}
+            exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.3 }}
           >
             <Outlet />

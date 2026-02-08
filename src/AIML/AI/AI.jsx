@@ -70,7 +70,7 @@ const AI = () => {
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ duration: 0.3 }}
-              className="fixed left-0 top-0 z-40 w-3/4 max-w-xs h-full bg-gray-950 border-r border-gray-800 p-6 flex flex-col gap-6"
+              className="fixed left-0 top-0 z-40 w-64 h-full bg-gray-950 border-r border-gray-800 p-6 flex flex-col gap-6"
             >
               <div className="flex justify-between items-center">
                 <h2 className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
@@ -100,8 +100,8 @@ const AI = () => {
         )}
       </AnimatePresence>
 
-      {/* 💻 Desktop Sidebar */}
-      <aside className="md:w-1/4 max-w-[300px] border-r border-gray-800 p-6 hidden md:flex flex-col gap-4 bg-gray-900/30">
+      {/* 💻 Desktop Sidebar - Fixed Width */}
+      <aside className="w-64 shrink-0 border-r border-gray-800 p-6 hidden md:flex flex-col gap-4 bg-gray-900/30 sticky top-0 h-screen">
         <button
           onClick={() => navigate("/aiml")}
           className="mb-4 flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-colors"

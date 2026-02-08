@@ -6,6 +6,13 @@ import { Sparkles, Zap } from "lucide-react";
 export default function RecentlyReleased() {
   const RECENT_LESSONS = [
     {
+      title: "Fundamentals To Web",
+      path: "/webdevelopment/html",
+      desc: "Discover the basics of HTML, CSS, and JavaScript for web development.",
+      category: "Web Development",
+      isNew: true
+    },
+    {
       title: "Difference Between Java and C++",
       path: "/programming/java/java-vs-cpp",
       desc: "Understand the core difference between Java and C++",
@@ -19,13 +26,6 @@ export default function RecentlyReleased() {
       category: "Java",
       isNew: true
     },
-    {
-      title: "What is Artificial Intelligence?",
-      path: "/aiml/ai",
-      desc: "Discover the basics of AI, how it works, and its impact on the modern world.",
-      category: "AI & ML",
-      isNew: true
-    }
   ];
 
   return (
@@ -66,6 +66,8 @@ export default function RecentlyReleased() {
                     className={`text-xs font-semibold px-2 py-1 rounded ${
                       lesson.category.includes("AI")
                         ? "bg-blue-900/40 text-blue-300 border border-blue-800/50"
+                        : lesson.category.includes("Web Development")
+                        ? "bg-teal-900/40 text-teal-300 border border-teal-800/50"
                         : "bg-orange-900/40 text-orange-300 border border-orange-800/50"
                     }`}
                   >
