@@ -2,9 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { 
   Globe, Server, Smartphone, Network, Zap, 
-  Layers, Code, Database, ShieldCheck, Cpu, Cloud 
+  Layers, Code, Database, ShieldCheck, Cpu, Cloud , ArrowLeft
 } from 'lucide-react';
-
+import { Link } from 'react-router-dom';
 import SEO from "../../../components/SEO.jsx"; 
 import WebArchitectureSimulator from "../../../simulators/web/WebArchitectureSimulator.jsx";
 
@@ -130,7 +130,7 @@ const FundamentalsWeb = () => {
           transition={{ duration: 0.6 }}
         >
           <span className="px-3 py-1 rounded-full bg-orange-500/10 text-orange-400 text-xs font-bold uppercase tracking-wider border border-orange-500/20 mb-4 inline-block">
-            Module 1: The Basics
+            Module 0: The Foundations of the Web
           </span>
           <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-6">
             Fundamentals of <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-600">The Web</span>
@@ -405,7 +405,21 @@ const FundamentalsWeb = () => {
         </div>
       </Section>
 
-      <div className="h-24" /> {/* Footer Spacer */}
+     {/* Navigation Footer */}
+      <div className="mt-16 pt-8 border-t border-gray-800 flex justify-end">
+        <Link 
+          to="/webdevelopment/html/intro"
+          className="group flex items-center gap-4 px-6 py-4 bg-gray-900 rounded-xl border border-gray-800 hover:border-orange-500 transition-all"
+        >
+          <div className="text-right">
+            <span className="text-xs text-gray-500 uppercase font-bold tracking-wider">Next Module</span>
+            <div className="text-white font-bold group-hover:text-orange-400 transition-colors">Introduction to HTML</div>
+          </div>
+          <div className="p-2 bg-orange-500/10 rounded-full text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-all">
+            <ArrowLeft className="rotate-180" size={20} />
+          </div>
+        </Link>
+      </div>
     </article>
   );
 };

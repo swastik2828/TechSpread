@@ -55,8 +55,18 @@ const HTML = () => {
                 <span className="font-bold text-orange-500">HTML Modules</span>
                 <button onClick={() => setIsSidebarOpen(false)}><X size={20} /></button>
               </div>
+              <button
+                              onClick={() => {
+                                navigate("/tutorials/webdevelopment/frontend");
+                                setIsSidebarOpen(false);
+                              }}
+                              className="flex items-center gap-2"
+                            >
+                              <ArrowLeft size={18} /> Back
+                            </button>
               <nav className="flex flex-col gap-2">
                  <NavItem to="" end icon={Globe} label="Fundamentals of Web" />
+                 <NavItem to="intro" icon={FileCode} label="Introduction to HTML" />
                  {/* Future Modules */}
               </nav>
             </motion.aside>
@@ -80,6 +90,7 @@ const HTML = () => {
           
           <nav className="flex flex-col gap-2">
             <NavItem to="" end icon={Globe} label="Fundamentals of Web" />
+            <NavItem to="intro" icon={FileCode} label="Introduction to HTML" />
             <div className="p-3 text-sm text-gray-600 italic">More coming soon...</div>
           </nav>
         </div>

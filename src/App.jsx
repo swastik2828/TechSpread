@@ -17,9 +17,10 @@ import AI from "./AIML/AI/AI";
 
 // Web Development
 import WebDevelopment from "./WebDev/WebDevelopment";
-import Frontend from "./WebDev/Frontend/Frontend"; // NEW IMPORT
+import Frontend from "./WebDev/Frontend/Frontend"; 
 import HTML from "./WebDev/Frontend/HTML/HTML";
 import FundamentalsWeb from "./WebDev/Frontend/HTML/FundamentalsWeb";
+import IntroToHTML from "./WebDev/Frontend/HTML/IntroToHTML";
 
 // subcategory page
 import Java from "./Programming/Java/Java";               // main java container
@@ -58,6 +59,7 @@ function App() {
       {/* HTML Course */}
       <Route path="/webdevelopment/html" element={<HTML />}>
         <Route index element={<FundamentalsWeb />} />
+        <Route path="intro" element={<IntroToHTML />} />
       </Route>
 
       {/* Java Course */}

@@ -89,7 +89,7 @@ const Java = () => {
         )}
       </AnimatePresence>
 
-      {/* 💻 Desktop Sidebar - Updated Width to w-64 */}
+      {/* 💻 Desktop Sidebar */}
       <aside className="w-64 shrink-0 border-r border-gray-800 p-6 hidden md:block sticky top-0 h-screen overflow-y-auto">
         <button
           onClick={() => navigate("/programming")}
