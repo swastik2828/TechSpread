@@ -1,6 +1,6 @@
 import { Outlet, NavLink, useNavigate, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Globe, FileCode, Layers, ArrowLeft, Menu, X } from "lucide-react";
+import { Globe, FileCode, Layers, ArrowLeft, Menu, X, Layout } from "lucide-react";
 import { useState } from "react";
 
 const HTML = () => {
@@ -56,25 +56,25 @@ const HTML = () => {
                 <button onClick={() => setIsSidebarOpen(false)}><X size={20} /></button>
               </div>
               <button
-                              onClick={() => {
-                                navigate("/tutorials/webdevelopment/frontend");
-                                setIsSidebarOpen(false);
-                              }}
-                              className="flex items-center gap-2"
-                            >
-                              <ArrowLeft size={18} /> Back
-                            </button>
-              <nav className="flex flex-col gap-2">
+                onClick={() => {
+                  navigate("/tutorials/webdevelopment/frontend");
+                  setIsSidebarOpen(false);
+                }}
+                className="flex items-center gap-2 text-sm text-gray-400 hover:text-white"
+              >
+                <ArrowLeft size={18} /> Back to Frontend
+              </button>
+              <nav className="flex flex-col gap-2 mt-4">
                  <NavItem to="" end icon={Globe} label="Fundamentals of Web" />
                  <NavItem to="intro" icon={FileCode} label="Introduction to HTML" />
-                 {/* Future Modules */}
+                 <NavItem to="structure" icon={Layout} label="Document Structure" />
               </nav>
             </motion.aside>
           </>
         )}
       </AnimatePresence>
 
-      {/* 💻 Desktop Sidebar (Fixed Width - Smaller) */}
+      {/* 💻 Desktop Sidebar (Fixed Width) */}
       <aside className="hidden md:flex flex-col w-64 shrink-0 h-screen sticky top-0 border-r border-white/10 bg-[#0A0A0A] overflow-y-auto">
         <div className="p-6">
           <button
@@ -84,20 +84,24 @@ const HTML = () => {
             <ArrowLeft size={16} /> Back
           </button>
           
-          <h2 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4 pl-2">
-            Modules
+          <h2 className="text-xs font-bold text-orange-500 uppercase tracking-widest mb-4 pl-2">
+            HTML Course
           </h2>
           
           <nav className="flex flex-col gap-2">
             <NavItem to="" end icon={Globe} label="Fundamentals of Web" />
             <NavItem to="intro" icon={FileCode} label="Introduction to HTML" />
-            <div className="p-3 text-sm text-gray-600 italic">More coming soon...</div>
+            <NavItem to="structure" icon={Layout} label="Document Structure" />
+            
+            <div className="mt-4 p-3 text-xs text-gray-700 italic border-t border-gray-800">
+              More modules coming soon...
+            </div>
           </nav>
         </div>
       </aside>
 
-      {/* 📄 Main Content (Takes remaining space) */}
-      <main className="flex-1 w-full max-w-7xl mx-auto p-6 md:p-12 overflow-y-auto">
+      {/* 📄 Main Content */}
+      <main className="flex-1 w-full max-w-7xl mx-auto p-6 md:p-12 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-800 scrollbar-track-transparent">
         <AnimatePresence mode="wait">
           <motion.div
             key={location.pathname}

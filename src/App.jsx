@@ -21,6 +21,7 @@ import Frontend from "./WebDev/Frontend/Frontend";
 import HTML from "./WebDev/Frontend/HTML/HTML";
 import FundamentalsWeb from "./WebDev/Frontend/HTML/FundamentalsWeb";
 import IntroToHTML from "./WebDev/Frontend/HTML/IntroToHTML";
+import HTMLStructure from "./WebDev/Frontend/HTML/HTMLStructure";
 
 // subcategory page
 import Java from "./Programming/Java/Java";               // main java container
@@ -60,6 +61,7 @@ function App() {
       <Route path="/webdevelopment/html" element={<HTML />}>
         <Route index element={<FundamentalsWeb />} />
         <Route path="intro" element={<IntroToHTML />} />
+        <Route path="structure" element={<HTMLStructure />} />
       </Route>
 
       {/* Java Course */}

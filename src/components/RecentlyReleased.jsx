@@ -6,6 +6,13 @@ import { Sparkles, Zap } from "lucide-react";
 export default function RecentlyReleased() {
   const RECENT_LESSONS = [
     {
+      title: "Structure of an HTML Document",
+      path: "/webdevelopment/html/structure",
+      desc: "Learn the anatomy of a web page: DOCTYPE, Head, Body, and Semantic tags.",
+      category: "Web Development",
+      isNew: true
+    },
+    {
       title: "Introduction to HTML",
       path: "/webdevelopment/html/intro",
       desc: "Master the skeleton of the web: Tags, Elements, Attributes, and the history of HTML standards.",
@@ -18,13 +25,6 @@ export default function RecentlyReleased() {
       desc: "Discover the basics of HTML, CSS, and JavaScript for web development.",
       category: "Web Development",
       isNew: true
-    },
-    {
-      title: "Difference Between Java and C++",
-      path: "/programming/java/java-vs-cpp",
-      desc: "Understand the core difference between Java and C++",
-      category: "Java",
-      isNew: false
     },
   ];
 

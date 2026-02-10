@@ -4,7 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { 
   FileCode, Hash, Tag, Layout, Layers, Globe, 
   History, Settings, Play, Database, ShieldCheck, 
-  ArrowLeft, Terminal, Code, Cpu, Eye
+  ArrowLeft, Terminal, Code, Cpu, Eye,
+  ArrowRight
 } from 'lucide-react';
 
 import SEO from "../../../components/SEO";
@@ -462,7 +463,33 @@ const IntroToHTML = () => {
         </Section>
       </div>
 
-      
+      {/* Navigation Footer */}
+      <div className="mt-16 pt-8 border-t border-gray-800 flex flex-col-reverse md:flex-row md:justify-between items-center gap-4 md:gap-0">
+        <Link 
+          to="/webdevelopment/html"
+          className="group flex items-center gap-4 px-4 md:px-6 py-2 md:py-4 bg-gray-900 rounded-xl border border-gray-800 hover:border-orange-500 transition-all w-full md:w-auto"
+        >
+          <div className="p-2 bg-orange-500/10 rounded-full text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-all flex-shrink-0">
+            <ArrowLeft size={20} />
+          </div>
+          <div className="text-left">
+            <span className="text-xs text-gray-500 uppercase font-bold tracking-wider">Previous Module</span>
+            <div className="text-white font-bold group-hover:text-orange-400 transition-colors">Fundamentals Of Web</div>
+          </div>
+        </Link>
+        <Link 
+          to="/webdevelopment/html/structure"
+          className="group flex items-center justify-between gap-4 px-4 md:px-6 py-2 md:py-4 bg-gray-900 rounded-xl border border-gray-800 hover:border-orange-500 transition-all w-full md:w-auto"
+        >
+          <div className="text-right">
+            <span className="text-xs text-gray-500 uppercase font-bold tracking-wider">Next Module</span>
+            <div className="text-white font-bold group-hover:text-orange-400 transition-colors">HTML Structure</div>
+          </div>
+          <div className="p-2 bg-orange-500/10 rounded-full text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-all flex-shrink-0">
+            <ArrowRight size={20} />
+          </div>
+        </Link>
+      </div>
 
     </article>
   );
