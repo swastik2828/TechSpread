@@ -22,6 +22,13 @@ import HTML from "./WebDev/Frontend/HTML/HTML";
 import FundamentalsWeb from "./WebDev/Frontend/HTML/FundamentalsWeb";
 import IntroToHTML from "./WebDev/Frontend/HTML/IntroToHTML";
 import HTMLStructure from "./WebDev/Frontend/HTML/HTMLStructure";
+import HTMLElements from "./WebDev/Frontend/HTML/TextContent/HTMLElements";
+import HTMLAttributes from "./WebDev/Frontend/HTML/TextContent/HTMLAttributes";
+import HTMLHeadings from "./WebDev/Frontend/HTML/TextContent/HTMLHeadings";
+import HTMLParagraphs from "./WebDev/Frontend/HTML/TextContent/HTMLParagraphs";
+import HTMLFormatting from "./WebDev/Frontend/HTML/TextContent/HTMLFormatting";
+import HTMLBlockInline from "./WebDev/Frontend/HTML/TextContent/HTMLBlockInline";
+import HTMLCharsets from "./WebDev/Frontend/HTML/TextContent/HTMLCharsets";
 
 // subcategory page
 import Java from "./Programming/Java/Java";               // main java container
@@ -62,6 +69,15 @@ function App() {
         <Route index element={<FundamentalsWeb />} />
         <Route path="intro" element={<IntroToHTML />} />
         <Route path="structure" element={<HTMLStructure />} />
+        
+        {/* New Text & Content Module Routes */}
+        <Route path="elements" element={<HTMLElements />} />
+        <Route path="attributes" element={<HTMLAttributes />} />
+        <Route path="headings" element={<HTMLHeadings />} />
+        <Route path="paragraphs" element={<HTMLParagraphs />} />
+        <Route path="formatting" element={<HTMLFormatting />} />
+        <Route path="block-inline" element={<HTMLBlockInline />} />
+        <Route path="charsets" element={<HTMLCharsets />} />
       </Route>
 
       {/* Java Course */}

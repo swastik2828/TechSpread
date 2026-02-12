@@ -6,6 +6,13 @@ import { Sparkles, Zap } from "lucide-react";
 export default function RecentlyReleased() {
   const RECENT_LESSONS = [
     {
+      title: "HTML Text and Content Elements",
+      path: "/webdevelopment/html/elements",
+      desc: "Learn HTML text elements, headings, paragraphs, lists, and semantic tags.",
+      category: "Web Development",
+      isNew: true
+    },
+    {
       title: "Structure of an HTML Document",
       path: "/webdevelopment/html/structure",
       desc: "Learn the anatomy of a web page: DOCTYPE, Head, Body, and Semantic tags.",
@@ -16,13 +23,6 @@ export default function RecentlyReleased() {
       title: "Introduction to HTML",
       path: "/webdevelopment/html/intro",
       desc: "Master the skeleton of the web: Tags, Elements, Attributes, and the history of HTML standards.",
-      category: "Web Development",
-      isNew: true
-    },
-    {
-      title: "Fundamentals To Web",
-      path: "/webdevelopment/html",
-      desc: "Discover the basics of HTML, CSS, and JavaScript for web development.",
       category: "Web Development",
       isNew: true
     },

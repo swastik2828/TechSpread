@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { 
   Layout, FileText, Code, GitBranch, Layers, 
   Eye, Globe, Database, Box, Sidebar, 
-  CheckCircle, AlertTriangle, Terminal, ArrowLeft
+  CheckCircle, AlertTriangle, Terminal, ArrowLeft, ArrowRight
 } from 'lucide-react';
 
 import SEO from "../../../components/SEO";
@@ -469,18 +469,18 @@ const HTMLStructure = () => {
             <div className="text-white font-bold group-hover:text-orange-400 transition-colors">Introduction of HTML</div>
           </div>
         </Link>
-        {/* <Link 
-          to="/webdevelopment/html/structure"
+        <Link 
+          to="/webdevelopment/html/elements"
           className="group flex items-center justify-between gap-4 px-4 md:px-6 py-2 md:py-4 bg-gray-900 rounded-xl border border-gray-800 hover:border-orange-500 transition-all w-full md:w-auto"
         >
           <div className="text-right">
             <span className="text-xs text-gray-500 uppercase font-bold tracking-wider">Next Module</span>
-            <div className="text-white font-bold group-hover:text-orange-400 transition-colors">HTML Structure</div>
+            <div className="text-white font-bold group-hover:text-orange-400 transition-colors">Text and Content Elements</div>
           </div>
           <div className="p-2 bg-orange-500/10 rounded-full text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-all flex-shrink-0">
             <ArrowRight size={20} />
           </div>
-        </Link> */}
+        </Link>
       </div>
     </article>
   );
