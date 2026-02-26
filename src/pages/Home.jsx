@@ -52,7 +52,7 @@ const Home = () => {
       icon: <Globe size={50} />,
       title: "Web Development",
       desc: "Build websites from scratch using HTML, CSS, JavaScript, and React.",
-      path: "/tutorial",
+      path: "/tutorials/webdevelopment",
     },
     {
       icon: <Cpu size={50} />,

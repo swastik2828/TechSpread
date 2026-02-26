@@ -2,17 +2,18 @@ import { Outlet, NavLink, useNavigate, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   Globe, FileCode, Layers, ArrowLeft, Menu, X, Layout, Type, 
-  ChevronDown, ChevronRight, Hash, AlignLeft, Bold, Box, Key
+  ChevronDown, ChevronRight, Hash, AlignLeft, Bold, Box, Key,
+  Link as LinkIcon, Link2, FolderTree, Mail, ExternalLink, CheckCircle, Code // NEW ICONS
 } from "lucide-react";
 import { useState } from "react";
 
 const HTML = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [isTextMenuOpen, setIsTextMenuOpen] = useState(true);
+  const [isTextMenuOpen, setIsTextMenuOpen] = useState(false);
+  const [isLinksMenuOpen, setIsLinksMenuOpen] = useState(true); // NEW STATE
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Helper for main nav items
   const NavItem = ({ to, icon: Icon, label, end = false }) => (
     <NavLink
       to={to}
@@ -30,7 +31,6 @@ const HTML = () => {
     </NavLink>
   );
 
-  // Helper for the dropdown menu
   const DropdownNav = ({ label, icon: Icon, isOpen, onToggle, children }) => (
     <div className="flex flex-col gap-1">
       <button
@@ -44,7 +44,6 @@ const HTML = () => {
         </div>
         {isOpen ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
       </button>
-
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -60,7 +59,6 @@ const HTML = () => {
     </div>
   );
 
-  // Helper for sub-items (now real links)
   const SubNavItem = ({ to, label, icon: Icon }) => (
     <NavLink
       to={to}
@@ -81,7 +79,6 @@ const HTML = () => {
       <NavItem to="intro" icon={FileCode} label="Introduction to HTML" />
       <NavItem to="structure" icon={Layout} label="Document Structure" />
       
-      {/* Expanded Module Dropdown */}
       <DropdownNav 
         label="Text & Content" 
         icon={Type} 
@@ -96,18 +93,35 @@ const HTML = () => {
         <SubNavItem to="block-inline" label="6. Block vs Inline" icon={Box} />
         <SubNavItem to="charsets" label="7. Charsets" icon={Key} />
       </DropdownNav>
+
+      {/* NEW: Links & Navigation Module */}
+      <DropdownNav 
+        label="Links & Navigation" 
+        icon={LinkIcon} 
+        isOpen={isLinksMenuOpen} 
+        onToggle={() => setIsLinksMenuOpen(!isLinksMenuOpen)}
+      >
+        <SubNavItem to="links-intro" label="1. What Are Links" icon={Globe} />
+        <SubNavItem to="anchor-syntax" label="2. Anchor Syntax" icon={Code} />
+        <SubNavItem to="urls" label="3. URLs: Abs vs Rel" icon={Link2} />
+        <SubNavItem to="paths" label="4. Folder Structure" icon={FolderTree} />
+        <SubNavItem to="in-page" label="5. In-Page Linking" icon={Hash} />
+        <SubNavItem to="special-links" label="6. Email & Special" icon={Mail} />
+        <SubNavItem to="new-tabs" label="7. New Tabs & Windows" icon={ExternalLink} />
+        <SubNavItem to="nav-menus" label="8. Navigation Menus" icon={Menu} />
+        <SubNavItem to="links-best-practices" label="9. Best Practices" icon={CheckCircle} />
+      </DropdownNav>
+
     </nav>
   );
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row bg-[#0A0A0A] text-white font-sans">
-      {/* Mobile Header */}
       <header className="md:hidden sticky top-0 z-30 px-4 py-3 flex justify-between items-center bg-[#0A0A0A]/95 backdrop-blur border-b border-white/10">
         <h1 className="text-xl font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">HTML Course</h1>
         <button onClick={() => setIsSidebarOpen(true)} className="p-2 text-gray-300"><Menu size={24} /></button>
       </header>
 
-      {/* Mobile Sidebar */}
       <AnimatePresence>
         {isSidebarOpen && (
           <>
@@ -126,7 +140,6 @@ const HTML = () => {
         )}
       </AnimatePresence>
 
-      {/* Desktop Sidebar */}
       <aside className="hidden md:flex flex-col w-64 shrink-0 h-screen sticky top-0 border-r border-white/10 bg-[#0A0A0A] overflow-y-auto p-6">
         <button onClick={() => navigate("/tutorials/webdevelopment/frontend")} className="flex items-center gap-2 text-gray-500 hover:text-orange-400 transition-colors text-sm mb-8">
           <ArrowLeft size={16} /> Back
@@ -135,7 +148,6 @@ const HTML = () => {
         <SidebarContent />
       </aside>
 
-      {/* Main Content */}
       <main className="flex-1 w-full max-w-7xl mx-auto p-6 md:p-12 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-800 scrollbar-track-transparent">
         <AnimatePresence mode="wait">
           <motion.div key={location.pathname} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }} className="max-w-4xl">
