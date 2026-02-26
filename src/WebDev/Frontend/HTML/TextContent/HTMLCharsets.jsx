@@ -28,8 +28,8 @@ const LocalCodeBlock = ({ code, label = "HTML" }) => (
 const HTMLCharsets = () => {
   return (
     <article className="max-w-5xl mx-auto text-gray-300 leading-loose">
-      <SEO 
-        title="HTML Charsets & Encoding" 
+      <SEO
+        title="HTML Charsets & Encoding"
         description="Why do weird symbols appear on websites? Learn about Character Sets, ASCII, and why UTF-8 is the universal standard for the web."
         keywords="html charset, utf-8, character encoding, meta charset, mojibake"
       />
@@ -45,7 +45,7 @@ const HTMLCharsets = () => {
       </header>
 
       <div className="prose prose-invert prose-lg max-w-none">
-        
+
         <Section title="What is a Character Set?" icon={Database}>
           <p>
             A <strong>Character Set</strong> (or Encoding) is a table that matches numbers to characters.
@@ -113,8 +113,8 @@ const HTMLCharsets = () => {
       </div>
 
       <div className="flex justify-between mt-12 pt-8 border-t border-gray-800">
-        <Link to="../block-inline" className="flex items-center gap-2 text-gray-500 hover:text-white"><ArrowLeft size={16}/> Block vs Inline</Link>
-        <Link to="/webdevelopment/html" className="flex items-center gap-2 text-gray-500 hover:text-white pointer-events-none opacity-50">End of Module <ArrowRight size={16}/></Link>
+        <Link to="../block-inline" className="flex items-center gap-2 text-gray-500 hover:text-white"><ArrowLeft size={16} /> Block vs Inline</Link>
+        <Link to="/webdevelopment/html/links-intro" className="flex items-center gap-2 text-orange-400 font-bold hover:text-orange-300">Next: Links <ArrowRight size={16} /></Link>
       </div>
     </article>
   );

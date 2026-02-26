@@ -1,16 +1,19 @@
 import { Outlet, NavLink, useNavigate, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  Globe, FileCode, Layers, ArrowLeft, Menu, X, Layout, Type, 
+import {
+  Globe, FileCode, Layers, ArrowLeft, Menu, X, Layout, Type,
   ChevronDown, ChevronRight, Hash, AlignLeft, Bold, Box, Key,
-  Link as LinkIcon, Link2, FolderTree, Mail, ExternalLink, CheckCircle, Code // NEW ICONS
+  Link as LinkIcon, Link2, FolderTree, Mail, ExternalLink, CheckCircle, Code,
+  PanelLeftClose, PanelLeftOpen
 } from "lucide-react";
 import { useState } from "react";
 
 const HTML = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isTextMenuOpen, setIsTextMenuOpen] = useState(false);
-  const [isLinksMenuOpen, setIsLinksMenuOpen] = useState(true); // NEW STATE
+  const [isLinksMenuOpen, setIsLinksMenuOpen] = useState(true);
+  const [isDesktopCollapsed, setIsDesktopCollapsed] = useState(false);
+  const isExpanded = !isDesktopCollapsed;
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -19,38 +22,63 @@ const HTML = () => {
       to={to}
       end={end}
       className={({ isActive }) =>
-        `flex items-center gap-3 p-3 rounded-lg transition-all duration-300 text-sm font-medium ${
-          isActive
-            ? "bg-gradient-to-r from-orange-600/90 to-red-600/90 text-white shadow-lg shadow-orange-500/20 border border-orange-500/30"
-            : "text-gray-400 hover:text-white hover:bg-white/5"
-        }`
+        `flex items-center p-3 rounded-lg transition-all duration-200 ease-out text-sm font-medium ${isActive
+          ? "bg-gradient-to-r from-orange-600/90 to-red-600/90 text-white shadow-lg shadow-orange-500/20 border border-orange-500/30"
+          : "text-gray-400 hover:text-white hover:bg-white/5"
+        } ${!isExpanded ? "justify-center" : "gap-3"}`
       }
       onClick={() => setIsSidebarOpen(false)}
+      title={!isExpanded ? label : undefined}
     >
-      <Icon size={18} /> {label}
+      <Icon size={18} className="shrink-0" />
+      <AnimatePresence>
+        {isExpanded && (
+          <motion.span
+            initial={{ opacity: 0, width: 0 }}
+            animate={{ opacity: 1, width: "auto" }}
+            exit={{ opacity: 0, width: 0 }}
+            transition={{ duration: 0.15, ease: "easeOut" }}
+            className="whitespace-nowrap overflow-hidden"
+          >
+            {label}
+          </motion.span>
+        )}
+      </AnimatePresence>
     </NavLink>
   );
 
   const DropdownNav = ({ label, icon: Icon, isOpen, onToggle, children }) => (
-    <div className="flex flex-col gap-1">
+    <div className="flex flex-col gap-1 w-full">
       <button
         onClick={onToggle}
-        className={`flex items-center justify-between w-full p-3 rounded-lg transition-all duration-300 text-sm font-medium ${
-           isOpen ? "text-orange-400 bg-white/5" : "text-gray-400 hover:text-white hover:bg-white/5"
-        }`}
+        className={`flex items-center justify-between w-full p-3 rounded-lg transition-all duration-200 ease-out text-sm font-medium ${isOpen && isExpanded ? "text-orange-400 bg-white/5" : "text-gray-400 hover:text-white hover:bg-white/5"
+          } ${!isExpanded ? "justify-center" : ""}`}
+        title={!isExpanded ? label : undefined}
       >
-        <div className="flex items-center gap-3">
-          <Icon size={18} /> {label}
+        <div className={`flex items-center ${isExpanded ? "gap-3" : "justify-center w-full"}`}>
+          <Icon size={18} className="shrink-0" />
+          <AnimatePresence>
+            {isExpanded && (
+              <motion.span initial={{ opacity: 0, width: 0 }} animate={{ opacity: 1, width: "auto" }} exit={{ opacity: 0, width: 0 }} className="whitespace-nowrap overflow-hidden">
+                {label}
+              </motion.span>
+            )}
+          </AnimatePresence>
         </div>
-        {isOpen ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
+        {isExpanded && (
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.15 }}>
+            {isOpen ? <ChevronDown size={14} className="shrink-0" /> : <ChevronRight size={14} className="shrink-0" />}
+          </motion.div>
+        )}
       </button>
       <AnimatePresence>
-        {isOpen && (
+        {isOpen && isExpanded && (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="overflow-hidden flex flex-col gap-1 pl-4 border-l border-white/10 ml-4"
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className={`overflow-hidden flex flex-col gap-1 ${isExpanded ? "pl-4 border-l border-white/10 ml-4" : "items-center"}`}
           >
             {children}
           </motion.div>
@@ -63,13 +91,26 @@ const HTML = () => {
     <NavLink
       to={to}
       className={({ isActive }) =>
-        `flex items-center gap-2 py-2 px-3 rounded-md text-xs transition-colors ${
-          isActive ? "text-orange-400 bg-orange-500/10 border border-orange-500/20" : "text-gray-500 hover:text-gray-300"
-        }`
+        `flex items-center gap-2 py-2 px-3 rounded-md text-xs transition-colors ${isActive ? "text-orange-400 bg-orange-500/10 border border-orange-500/20" : "text-gray-500 hover:text-gray-300"
+        } ${!isExpanded ? "justify-center w-full px-0" : ""}`
       }
       onClick={() => setIsSidebarOpen(false)}
+      title={!isExpanded ? label : undefined}
     >
-      {Icon && <Icon size={14} />} {label}
+      {Icon && <Icon size={14} className="shrink-0" />}
+      <AnimatePresence>
+        {isExpanded && (
+          <motion.span
+            initial={{ opacity: 0, width: 0 }}
+            animate={{ opacity: 1, width: "auto" }}
+            exit={{ opacity: 0, width: 0 }}
+            transition={{ duration: 0.15, ease: "easeOut" }}
+            className="whitespace-nowrap overflow-hidden"
+          >
+            {label}
+          </motion.span>
+        )}
+      </AnimatePresence>
     </NavLink>
   );
 
@@ -78,11 +119,11 @@ const HTML = () => {
       <NavItem to="" end icon={Globe} label="Fundamentals of Web" />
       <NavItem to="intro" icon={FileCode} label="Introduction to HTML" />
       <NavItem to="structure" icon={Layout} label="Document Structure" />
-      
-      <DropdownNav 
-        label="Text & Content" 
-        icon={Type} 
-        isOpen={isTextMenuOpen} 
+
+      <DropdownNav
+        label="Text & Content"
+        icon={Type}
+        isOpen={isTextMenuOpen}
         onToggle={() => setIsTextMenuOpen(!isTextMenuOpen)}
       >
         <SubNavItem to="elements" label="1. HTML Elements" icon={Layout} />
@@ -95,10 +136,10 @@ const HTML = () => {
       </DropdownNav>
 
       {/* NEW: Links & Navigation Module */}
-      <DropdownNav 
-        label="Links & Navigation" 
-        icon={LinkIcon} 
-        isOpen={isLinksMenuOpen} 
+      <DropdownNav
+        label="Links & Navigation"
+        icon={LinkIcon}
+        isOpen={isLinksMenuOpen}
         onToggle={() => setIsLinksMenuOpen(!isLinksMenuOpen)}
       >
         <SubNavItem to="links-intro" label="1. What Are Links" icon={Globe} />
@@ -131,22 +172,68 @@ const HTML = () => {
                 <span className="font-bold text-orange-500">HTML Modules</span>
                 <button onClick={() => setIsSidebarOpen(false)}><X size={20} /></button>
               </div>
-                <button onClick={() => navigate("/tutorials/webdevelopment/frontend")} className="flex items-center gap-2 text-gray-500 hover:text-orange-400 transition-colors text-sm ">
-          <ArrowLeft size={16} /> Back
-        </button>
+              <button onClick={() => navigate("/tutorials/webdevelopment/frontend")} className="flex items-center gap-2 text-gray-500 hover:text-orange-400 transition-colors text-sm ">
+                <ArrowLeft size={16} /> Back
+              </button>
               <SidebarContent />
             </motion.aside>
           </>
         )}
       </AnimatePresence>
 
-      <aside className="hidden md:flex flex-col w-64 shrink-0 h-screen sticky top-0 border-r border-white/10 bg-[#0A0A0A] overflow-y-auto p-6">
-        <button onClick={() => navigate("/tutorials/webdevelopment/frontend")} className="flex items-center gap-2 text-gray-500 hover:text-orange-400 transition-colors text-sm mb-8">
-          <ArrowLeft size={16} /> Back
+      <motion.aside
+        initial={false}
+        animate={{ width: isExpanded ? 256 : 80 }}
+        transition={{ duration: 0.2, ease: "circOut" }}
+        className="hidden md:flex flex-col shrink-0 h-screen sticky top-0 border-r border-white/10 bg-[#0A0A0A] overflow-hidden overflow-y-auto z-40 relative scrollbar-none"
+        style={{ padding: "24px 16px" }}
+      >
+        <div className={`flex items-center ${isExpanded ? "justify-between" : "justify-center"} mb-6 mt-2 min-h-[32px] overflow-hidden`}>
+          <AnimatePresence>
+            {isExpanded && (
+              <motion.h2
+                initial={{ opacity: 0, width: 0 }}
+                animate={{ opacity: 1, width: "auto" }}
+                exit={{ opacity: 0, width: 0 }}
+                transition={{ duration: 0.15, ease: "easeOut" }}
+                className="text-xs font-bold text-orange-500 uppercase tracking-widest pl-2 whitespace-nowrap overflow-hidden m-0"
+              >
+                HTML Course
+              </motion.h2>
+            )}
+          </AnimatePresence>
+          <button
+            onClick={() => setIsDesktopCollapsed(!isDesktopCollapsed)}
+            className="p-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition-colors shrink-0"
+            title={isDesktopCollapsed ? "Expand Sidebar" : "Collapse Sidebar"}
+          >
+            {isDesktopCollapsed ? <PanelLeftOpen size={18} /> : <PanelLeftClose size={18} />}
+          </button>
+        </div>
+
+        <button
+          onClick={() => navigate("/tutorials/webdevelopment/frontend")}
+          className={`flex items-center ${isExpanded ? "gap-2 px-2" : "justify-center"} text-gray-500 hover:text-orange-400 transition-colors text-sm mb-6 w-full`}
+          title={!isExpanded ? "Back" : undefined}
+        >
+          <ArrowLeft size={16} className="shrink-0" />
+          <AnimatePresence>
+            {isExpanded && (
+              <motion.span
+                initial={{ opacity: 0, width: 0 }}
+                animate={{ opacity: 1, width: "auto" }}
+                exit={{ opacity: 0, width: 0 }}
+                transition={{ duration: 0.15, ease: "easeOut" }}
+                className="whitespace-nowrap overflow-hidden"
+              >
+                Back
+              </motion.span>
+            )}
+          </AnimatePresence>
         </button>
-        <h2 className="text-xs font-bold text-orange-500 uppercase tracking-widest mb-4 pl-2">HTML Course</h2>
+
         <SidebarContent />
-      </aside>
+      </motion.aside>
 
       <main className="flex-1 w-full max-w-7xl mx-auto p-6 md:p-12 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-800 scrollbar-track-transparent">
         <AnimatePresence mode="wait">
