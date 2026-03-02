@@ -41,6 +41,11 @@ import NewTabsWindows from "./WebDev/Frontend/HTML/LinksNav/NewTabsWindows";
 import NavigationMenus from "./WebDev/Frontend/HTML/LinksNav/NavigationMenus";
 import LinksBestPractices from "./WebDev/Frontend/HTML/LinksNav/LinksBestPractices";
 
+// Images Module
+import ImagesIntro from "./WebDev/Frontend/HTML/Images/ImagesIntro";
+import ImageMarkup from "./WebDev/Frontend/HTML/Images/ImageMarkup";
+import ImageFormats from "./WebDev/Frontend/HTML/Images/ImageFormats";
+
 // subcategory page
 import Java from "./Programming/Java/Java";               // main java container
 import WhatisJava from "./Programming/Java/WhatisJava";   // java topic pages
@@ -100,6 +105,11 @@ function App() {
         <Route path="new-tabs" element={<NewTabsWindows />} />
         <Route path="nav-menus" element={<NavigationMenus />} />
         <Route path="links-best-practices" element={<LinksBestPractices />} />
+
+        {/* NEW: Images Module Routes */}
+        <Route path="images-intro" element={<ImagesIntro />} />
+        <Route path="image-markup" element={<ImageMarkup />} />
+        <Route path="image-formats" element={<ImageFormats />} />
       </Route>
 
       {/* Java Course */}

@@ -104,7 +104,7 @@ const LinksBestPractices = () => {
 
             <div className="flex justify-between mt-12 pt-8 border-t border-gray-800">
                 <Link to="../nav-menus" className="flex items-center gap-2 text-gray-500 hover:text-white"><ArrowLeft size={16} /> Navigation Menus</Link>
-                <Link to="/webdevelopment/html" className="flex items-center gap-2 text-gray-500 hover:text-white pointer-events-none opacity-50">End of Module <ArrowRight size={16} /></Link>
+                <Link to="/webdevelopment/html/images-intro" className="flex items-center gap-2 text-orange-400 font-bold hover:text-orange-300">Next Module Images <ArrowRight size={16} /></Link>
             </div>
         </article>
     );

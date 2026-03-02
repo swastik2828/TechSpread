@@ -4,14 +4,15 @@ import {
   Globe, FileCode, Layers, ArrowLeft, Menu, X, Layout, Type,
   ChevronDown, ChevronRight, Hash, AlignLeft, Bold, Box, Key,
   Link as LinkIcon, Link2, FolderTree, Mail, ExternalLink, CheckCircle, Code,
-  PanelLeftClose, PanelLeftOpen
+  PanelLeftClose, PanelLeftOpen, Image as ImageIcon, ImagePlus, FileImage
 } from "lucide-react";
 import { useState } from "react";
 
 const HTML = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isTextMenuOpen, setIsTextMenuOpen] = useState(false);
-  const [isLinksMenuOpen, setIsLinksMenuOpen] = useState(true);
+  const [isLinksMenuOpen, setIsLinksMenuOpen] = useState(false);
+  const [isImagesMenuOpen, setIsImagesMenuOpen] = useState(true);
   const [isDesktopCollapsed, setIsDesktopCollapsed] = useState(false);
   const isExpanded = !isDesktopCollapsed;
   const navigate = useNavigate();
@@ -151,6 +152,18 @@ const HTML = () => {
         <SubNavItem to="new-tabs" label="7. New Tabs & Windows" icon={ExternalLink} />
         <SubNavItem to="nav-menus" label="8. Navigation Menus" icon={Menu} />
         <SubNavItem to="links-best-practices" label="9. Best Practices" icon={CheckCircle} />
+      </DropdownNav>
+
+      {/* NEW: Images & Media Module */}
+      <DropdownNav
+        label="Images & Media"
+        icon={ImageIcon}
+        isOpen={isImagesMenuOpen}
+        onToggle={() => setIsImagesMenuOpen(!isImagesMenuOpen)}
+      >
+        <SubNavItem to="images-intro" label="1. Intro to Images" icon={ImagePlus} />
+        <SubNavItem to="image-markup" label="2. Image Markup" icon={Code} />
+        <SubNavItem to="image-formats" label="3. Image Formats" icon={FileImage} />
       </DropdownNav>
 
     </nav>

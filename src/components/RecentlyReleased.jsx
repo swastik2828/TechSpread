@@ -6,6 +6,13 @@ import { Sparkles, Zap } from "lucide-react";
 export default function RecentlyReleased() {
   const RECENT_LESSONS = [
     {
+      title: "HTML Images & Media",
+      path: "/webdevelopment/html/images-intro",
+      desc: "Master the visual web: the psychology of images, HTML image elements, and file formats.",
+      category: "Web Development",
+      isNew: true
+    },
+    {
       title: "HTML Link and Navigation",
       path: "/webdevelopment/html/links-intro",
       desc: "Master the skeleton of the web: Tags, Elements, Attributes, and the history of HTML standards.",
@@ -16,13 +23,6 @@ export default function RecentlyReleased() {
       title: "HTML Text and Content Elements",
       path: "/webdevelopment/html/elements",
       desc: "Learn HTML text elements, headings, paragraphs, lists, and semantic tags.",
-      category: "Web Development",
-      isNew: true
-    },
-    {
-      title: "Structure of an HTML Document",
-      path: "/webdevelopment/html/structure",
-      desc: "Learn the anatomy of a web page: DOCTYPE, Head, Body, and Semantic tags.",
       category: "Web Development",
       isNew: true
     },
@@ -63,13 +63,12 @@ export default function RecentlyReleased() {
               <Link to={lesson.path} className="block h-full">
                 <div className="flex justify-between items-start mb-2">
                   <span
-                    className={`text-xs font-semibold px-2 py-1 rounded ${
-                      lesson.category.includes("AI")
+                    className={`text-xs font-semibold px-2 py-1 rounded ${lesson.category.includes("AI")
                         ? "bg-blue-900/40 text-blue-300 border border-blue-800/50"
                         : lesson.category.includes("Web Development")
-                        ? "bg-teal-900/40 text-teal-300 border border-teal-800/50"
-                        : "bg-orange-900/40 text-orange-300 border border-orange-800/50"
-                    }`}
+                          ? "bg-teal-900/40 text-teal-300 border border-teal-800/50"
+                          : "bg-orange-900/40 text-orange-300 border border-orange-800/50"
+                      }`}
                   >
                     {lesson.category}
                   </span>
