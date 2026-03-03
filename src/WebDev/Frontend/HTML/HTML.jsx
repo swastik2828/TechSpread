@@ -4,7 +4,7 @@ import {
   Globe, FileCode, Layers, ArrowLeft, Menu, X, Layout, Type,
   ChevronDown, ChevronRight, Hash, AlignLeft, Bold, Box, Key,
   Link as LinkIcon, Link2, FolderTree, Mail, ExternalLink, CheckCircle, Code,
-  PanelLeftClose, PanelLeftOpen, Image as ImageIcon, ImagePlus, FileImage
+  PanelLeftClose, PanelLeftOpen, Image as ImageIcon, ImagePlus, FileImage, Videotape, Clapperboard, MonitorPlay, FileAudio, ShieldAlert
 } from "lucide-react";
 import { useState } from "react";
 
@@ -13,6 +13,7 @@ const HTML = () => {
   const [isTextMenuOpen, setIsTextMenuOpen] = useState(false);
   const [isLinksMenuOpen, setIsLinksMenuOpen] = useState(false);
   const [isImagesMenuOpen, setIsImagesMenuOpen] = useState(true);
+  const [isVideoMenuOpen, setIsVideoMenuOpen] = useState(true);
   const [isDesktopCollapsed, setIsDesktopCollapsed] = useState(false);
   const isExpanded = !isDesktopCollapsed;
   const navigate = useNavigate();
@@ -164,6 +165,18 @@ const HTML = () => {
         <SubNavItem to="images-intro" label="1. Intro to Images" icon={ImagePlus} />
         <SubNavItem to="image-markup" label="2. Image Markup" icon={Code} />
         <SubNavItem to="image-formats" label="3. Image Formats" icon={FileImage} />
+      </DropdownNav>
+
+      {/* NEW: Video & Audio Module */}
+      <DropdownNav
+        label="Video & Audio"
+        icon={Clapperboard}
+        isOpen={isVideoMenuOpen}
+        onToggle={() => setIsVideoMenuOpen(!isVideoMenuOpen)}
+      >
+        <SubNavItem to="media-flash-video" label="1. Flash & Video" icon={MonitorPlay} />
+        <SubNavItem to="media-audio" label="2. Audio on Web" icon={FileAudio} />
+        <SubNavItem to="media-best-practices" label="3. Best Practices" icon={ShieldAlert} />
       </DropdownNav>
 
     </nav>

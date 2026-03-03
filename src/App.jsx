@@ -46,6 +46,11 @@ import ImagesIntro from "./WebDev/Frontend/HTML/Images/ImagesIntro";
 import ImageMarkup from "./WebDev/Frontend/HTML/Images/ImageMarkup";
 import ImageFormats from "./WebDev/Frontend/HTML/Images/ImageFormats";
 
+// Video & Audio Module
+import FlashVideo from "./WebDev/Frontend/HTML/Media/FlashVideo";
+import AudioWeb from "./WebDev/Frontend/HTML/Media/AudioWeb";
+import MediaBestPractices from "./WebDev/Frontend/HTML/Media/MediaBestPractices";
+
 // subcategory page
 import Java from "./Programming/Java/Java";               // main java container
 import WhatisJava from "./Programming/Java/WhatisJava";   // java topic pages
@@ -110,6 +115,11 @@ function App() {
         <Route path="images-intro" element={<ImagesIntro />} />
         <Route path="image-markup" element={<ImageMarkup />} />
         <Route path="image-formats" element={<ImageFormats />} />
+
+        {/* NEW: Video & Audio Module Routes */}
+        <Route path="media-flash-video" element={<FlashVideo />} />
+        <Route path="media-audio" element={<AudioWeb />} />
+        <Route path="media-best-practices" element={<MediaBestPractices />} />
       </Route>
 
       {/* Java Course */}

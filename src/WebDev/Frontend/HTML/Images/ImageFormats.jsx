@@ -189,7 +189,7 @@ const ImageFormats = () => {
 
             <div className="flex justify-between mt-12 pt-8 border-t border-gray-800">
                 <Link to="../image-markup" className="flex items-center gap-2 text-gray-500 hover:text-white"><ArrowLeft size={16} /> Image Markup</Link>
-                <Link to="/webdevelopment/html" className="flex items-center gap-2 text-gray-500 hover:text-white pointer-events-none opacity-50">End of Module <ArrowRight size={16} /></Link>
+                <Link to="../media-flash-video" className="flex items-center gap-2 text-gray-500 hover:text-white">Flash & Video <ArrowRight size={16} /></Link>
             </div>
         </article>
     );
