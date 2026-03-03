@@ -6,6 +6,13 @@ import { Sparkles, Zap } from "lucide-react";
 export default function RecentlyReleased() {
   const RECENT_LESSONS = [
     {
+      title: "HTML Video & Audio Media",
+      path: "/webdevelopment/html/media-flash-video",
+      desc: "Embed rich multimedia: HTML5 video and audio, legacy Flash fallbacks, and media accessibility.",
+      category: "Web Development",
+      isNew: true
+    },
+    {
       title: "HTML Images & Media",
       path: "/webdevelopment/html/images-intro",
       desc: "Master the visual web: the psychology of images, HTML image elements, and file formats.",
@@ -16,13 +23,6 @@ export default function RecentlyReleased() {
       title: "HTML Link and Navigation",
       path: "/webdevelopment/html/links-intro",
       desc: "Master the skeleton of the web: Tags, Elements, Attributes, and the history of HTML standards.",
-      category: "Web Development",
-      isNew: true
-    },
-    {
-      title: "HTML Text and Content Elements",
-      path: "/webdevelopment/html/elements",
-      desc: "Learn HTML text elements, headings, paragraphs, lists, and semantic tags.",
       category: "Web Development",
       isNew: true
     },
@@ -64,10 +64,10 @@ export default function RecentlyReleased() {
                 <div className="flex justify-between items-start mb-2">
                   <span
                     className={`text-xs font-semibold px-2 py-1 rounded ${lesson.category.includes("AI")
-                        ? "bg-blue-900/40 text-blue-300 border border-blue-800/50"
-                        : lesson.category.includes("Web Development")
-                          ? "bg-teal-900/40 text-teal-300 border border-teal-800/50"
-                          : "bg-orange-900/40 text-orange-300 border border-orange-800/50"
+                      ? "bg-blue-900/40 text-blue-300 border border-blue-800/50"
+                      : lesson.category.includes("Web Development")
+                        ? "bg-teal-900/40 text-teal-300 border border-teal-800/50"
+                        : "bg-orange-900/40 text-orange-300 border border-orange-800/50"
                       }`}
                   >
                     {lesson.category}
