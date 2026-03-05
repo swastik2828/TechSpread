@@ -40,7 +40,7 @@ const FlashVideo = () => {
             <motion.section variants={itemVariants} className="space-y-6">
                 <div className="flex items-center gap-3 border-b border-white/10 pb-4">
                     <Film className="text-orange-400 h-8 w-8" />
-                    <h2 className="text-2xl font-bold text-white">4.1 The History and Decline of Flash</h2>
+                    <h2 className="text-2xl font-bold text-white">6.1 The History and Decline of Flash</h2>
                 </div>
 
                 <div className="prose prose-invert max-w-none text-gray-300 space-y-4">
@@ -88,7 +88,7 @@ const FlashVideo = () => {
             <motion.section variants={itemVariants} className="space-y-6">
                 <div className="flex items-center gap-3 border-b border-white/10 pb-4">
                     <Code2 className="text-orange-400 h-8 w-8" />
-                    <h2 className="text-2xl font-bold text-white">4.2 Embedding Flash Content (SWFObject)</h2>
+                    <h2 className="text-2xl font-bold text-white">6.2 Embedding Flash Content (SWFObject)</h2>
                 </div>
 
                 <div className="prose prose-invert max-w-none text-gray-300">
@@ -135,7 +135,7 @@ const FlashVideo = () => {
             <motion.section variants={itemVariants} className="space-y-6">
                 <div className="flex items-center gap-3 border-b border-white/10 pb-4">
                     <Database className="text-orange-400 h-8 w-8" />
-                    <h2 className="text-2xl font-bold text-white">4.3 Video Formats & Browser Compatibility</h2>
+                    <h2 className="text-2xl font-bold text-white">6.3 Video Formats & Browser Compatibility</h2>
                 </div>
 
                 <div className="prose prose-invert max-w-none text-gray-300">
@@ -189,7 +189,7 @@ const FlashVideo = () => {
             <motion.section variants={itemVariants} className="space-y-6">
                 <div className="flex items-center gap-3 border-b border-white/10 pb-4">
                     <PlayCircle className="text-orange-400 h-8 w-8" />
-                    <h2 className="text-2xl font-bold text-white">4.4 The HTML5 &lt;video&gt; Element</h2>
+                    <h2 className="text-2xl font-bold text-white">6.4 The HTML5 &lt;video&gt; Element</h2>
                 </div>
 
                 <div className="prose prose-invert max-w-none text-gray-300">
@@ -232,7 +232,7 @@ const FlashVideo = () => {
             <motion.section variants={itemVariants} className="space-y-6">
                 <div className="flex items-center gap-3 border-b border-white/10 pb-4">
                     <Server className="text-orange-400 h-8 w-8" />
-                    <h2 className="text-2xl font-bold text-white">4.5 Hosted Services vs Self-Hosting</h2>
+                    <h2 className="text-2xl font-bold text-white">6.5 Hosted Services vs Self-Hosting</h2>
                 </div>
 
                 <div className="prose prose-invert max-w-none text-gray-300">
@@ -276,8 +276,8 @@ const FlashVideo = () => {
             </motion.section>
 
             <div className="flex justify-between mt-12 pt-8 border-t border-gray-800 pb-12">
-                <Link to="../image-formats" className="flex items-center gap-2 text-gray-500 hover:text-white"><ArrowLeft size={16} /> Image Formats</Link>
-                <Link to="../media-audio" className="flex items-center gap-2 text-gray-500 hover:text-white">Audio on Web <ArrowRight size={16} /></Link>
+                <Link to="/webdevelopment/html/image-formats" className="flex items-center gap-2 text-gray-500 hover:text-white"><ArrowLeft size={16} /> Image Formats</Link>
+                <Link to="/webdevelopment/html/media-audio" className="flex items-center gap-2 text-gray-500 hover:text-white">Audio on Web <ArrowRight size={16} /></Link>
             </div>
 
         </motion.div>

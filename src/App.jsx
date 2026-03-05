@@ -51,6 +51,19 @@ import FlashVideo from "./WebDev/Frontend/HTML/Media/FlashVideo";
 import AudioWeb from "./WebDev/Frontend/HTML/Media/AudioWeb";
 import MediaBestPractices from "./WebDev/Frontend/HTML/Media/MediaBestPractices";
 
+// Lists Module
+import OrderedLists from "./WebDev/Frontend/HTML/Lists/OrderedLists";
+import UnorderedLists from "./WebDev/Frontend/HTML/Lists/UnorderedLists";
+import DefinitionLists from "./WebDev/Frontend/HTML/Lists/DefinitionLists";
+import NestedLists from "./WebDev/Frontend/HTML/Lists/NestedLists";
+
+// Tables Module
+import BasicTables from "./WebDev/Frontend/HTML/Tables/BasicTables";
+import TableHeadings from "./WebDev/Frontend/HTML/Tables/TableHeadings";
+import Spanning from "./WebDev/Frontend/HTML/Tables/Spanning";
+import StructuringTables from "./WebDev/Frontend/HTML/Tables/StructuringTables";
+
+
 // subcategory page
 import Java from "./Programming/Java/Java";               // main java container
 import WhatisJava from "./Programming/Java/WhatisJava";   // java topic pages
@@ -120,6 +133,18 @@ function App() {
         <Route path="media-flash-video" element={<FlashVideo />} />
         <Route path="media-audio" element={<AudioWeb />} />
         <Route path="media-best-practices" element={<MediaBestPractices />} />
+
+        {/* NEW: Lists Module Routes */}
+        <Route path="lists/ordered-lists" element={<OrderedLists />} />
+        <Route path="lists/unordered-lists" element={<UnorderedLists />} />
+        <Route path="lists/definition-lists" element={<DefinitionLists />} />
+        <Route path="lists/nested-lists" element={<NestedLists />} />
+
+        {/* NEW: Tables Module Routes */}
+        <Route path="tables/basic-tables" element={<BasicTables />} />
+        <Route path="tables/table-headings" element={<TableHeadings />} />
+        <Route path="tables/spanning" element={<Spanning />} />
+        <Route path="tables/structuring" element={<StructuringTables />} />
       </Route>
 
       {/* Java Course */}

@@ -40,7 +40,7 @@ const AudioWeb = () => {
             <motion.section variants={itemVariants} className="space-y-6">
                 <div className="flex items-center gap-3 border-b border-white/10 pb-4">
                     <Disc3 className="text-orange-400 h-8 w-8" />
-                    <h2 className="text-2xl font-bold text-white">5.1 Audio Formats & Browser Support</h2>
+                    <h2 className="text-2xl font-bold text-white">6.6 Audio Formats & Browser Support</h2>
                 </div>
 
                 <div className="prose prose-invert max-w-none text-gray-300">
@@ -86,7 +86,7 @@ const AudioWeb = () => {
             <motion.section variants={itemVariants} className="space-y-6">
                 <div className="flex items-center gap-3 border-b border-white/10 pb-4">
                     <Wrench className="text-orange-400 h-8 w-8" />
-                    <h2 className="text-2xl font-bold text-white">5.2 Implementing Web Audio</h2>
+                    <h2 className="text-2xl font-bold text-white">6.7 Implementing Web Audio</h2>
                 </div>
 
                 <div className="prose prose-invert max-w-none text-gray-300">
@@ -147,7 +147,7 @@ const AudioWeb = () => {
             <motion.section variants={itemVariants} className="space-y-6 pb-20">
                 <div className="flex items-center gap-3 border-b border-white/10 pb-4">
                     <Music className="text-orange-400 h-8 w-8" />
-                    <h2 className="text-2xl font-bold text-white">5.3 Persistent Audio Across Navigation</h2>
+                    <h2 className="text-2xl font-bold text-white">6.8 Persistent Audio Across Navigation</h2>
                 </div>
 
                 <div className="prose prose-invert max-w-none text-gray-300">
@@ -174,8 +174,8 @@ const AudioWeb = () => {
             </motion.section>
 
             <div className="flex justify-between mt-12 pt-8 border-t border-gray-800 pb-12">
-                <Link to="../media-flash-video" className="flex items-center gap-2 text-gray-500 hover:text-white"><ArrowLeft size={16} /> Flash & Video</Link>
-                <Link to="../media-best-practices" className="flex items-center gap-2 text-gray-500 hover:text-white">Best Practices <ArrowRight size={16} /></Link>
+                <Link to="/webdevelopment/html/media-flash-video" className="flex items-center gap-2 text-gray-500 hover:text-white"><ArrowLeft size={16} /> Flash & Video</Link>
+                <Link to="/webdevelopment/html/media-best-practices" className="flex items-center gap-2 text-gray-500 hover:text-white">Best Practices <ArrowRight size={16} /></Link>
             </div>
 
         </motion.div>

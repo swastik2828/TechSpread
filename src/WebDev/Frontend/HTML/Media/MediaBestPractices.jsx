@@ -43,7 +43,7 @@ const MediaBestPractices = () => {
             <motion.section variants={itemVariants} className="space-y-6">
                 <div className="flex items-center gap-3 border-b border-white/10 pb-4">
                     <Gauge className="text-orange-400 h-8 w-8" />
-                    <h2 className="text-2xl font-bold text-white">6.1 Image Optimisation</h2>
+                    <h2 className="text-2xl font-bold text-white">6.9 Image Optimisation</h2>
                 </div>
 
                 <div className="prose prose-invert max-w-none text-gray-300">
@@ -79,7 +79,7 @@ const MediaBestPractices = () => {
             <motion.section variants={itemVariants} className="space-y-6">
                 <div className="flex items-center gap-3 border-b border-white/10 pb-4">
                     <Eye className="text-orange-400 h-8 w-8" />
-                    <h2 className="text-2xl font-bold text-white">6.2 Lazy Loading Data</h2>
+                    <h2 className="text-2xl font-bold text-white">6.10 Lazy Loading Data</h2>
                 </div>
 
                 <div className="prose prose-invert max-w-none text-gray-300">
@@ -101,7 +101,7 @@ const MediaBestPractices = () => {
             <motion.section variants={itemVariants} className="space-y-6">
                 <div className="flex items-center gap-3 border-b border-white/10 pb-4">
                     <ShieldAlert className="text-orange-400 h-8 w-8" />
-                    <h2 className="text-2xl font-bold text-white">6.3 Advanced Image Accessibility</h2>
+                    <h2 className="text-2xl font-bold text-white">6.11 Advanced Image Accessibility</h2>
                 </div>
 
                 <div className="prose prose-invert max-w-none text-gray-300">
@@ -122,7 +122,7 @@ const MediaBestPractices = () => {
             <motion.section variants={itemVariants} className="space-y-6">
                 <div className="flex items-center gap-3 border-b border-white/10 pb-4">
                     <PlaySquare className="text-orange-400 h-8 w-8" />
-                    <h2 className="text-2xl font-bold text-white">6.4 Media Accessibility (Captions/Tracks)</h2>
+                    <h2 className="text-2xl font-bold text-white">6.12 Media Accessibility (Captions/Tracks)</h2>
                 </div>
 
                 <div className="prose prose-invert max-w-none text-gray-300">
@@ -164,8 +164,8 @@ const MediaBestPractices = () => {
             </motion.section>
 
             <div className="flex justify-between mt-12 pt-8 border-t border-gray-800 pb-12">
-                <Link to="../media-audio" className="flex items-center gap-2 text-gray-500 hover:text-white"><ArrowLeft size={16} /> Audio on Web</Link>
-                <Link to="/webdevelopment/html" className="flex items-center gap-2 text-gray-500 hover:text-white pointer-events-none opacity-50">End of Module <ArrowRight size={16} /></Link>
+                <Link to="/webdevelopment/html/media-audio" className="flex items-center gap-2 text-gray-500 hover:text-white"><ArrowLeft size={16} /> Audio on Web</Link>
+                <Link to="/webdevelopment/html/lists/ordered-lists" className="flex items-center gap-2 text-orange-400 font-bold hover:text-orange-300">Next Module: Lists <ArrowRight size={16} /></Link>
             </div>
 
         </motion.div>

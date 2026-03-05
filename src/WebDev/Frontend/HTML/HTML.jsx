@@ -4,7 +4,8 @@ import {
   Globe, FileCode, Layers, ArrowLeft, Menu, X, Layout, Type,
   ChevronDown, ChevronRight, Hash, AlignLeft, Bold, Box, Key,
   Link as LinkIcon, Link2, FolderTree, Mail, ExternalLink, CheckCircle, Code,
-  PanelLeftClose, PanelLeftOpen, Image as ImageIcon, ImagePlus, FileImage, Videotape, Clapperboard, MonitorPlay, FileAudio, ShieldAlert
+  PanelLeftClose, PanelLeftOpen, Image as ImageIcon, ImagePlus, FileImage, Videotape, Clapperboard, MonitorPlay, FileAudio, ShieldAlert,
+  List, ListOrdered, Table, Maximize2, LayoutGrid, ListTree, BookA
 } from "lucide-react";
 import { useState } from "react";
 
@@ -12,8 +13,10 @@ const HTML = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isTextMenuOpen, setIsTextMenuOpen] = useState(false);
   const [isLinksMenuOpen, setIsLinksMenuOpen] = useState(false);
-  const [isImagesMenuOpen, setIsImagesMenuOpen] = useState(true);
-  const [isVideoMenuOpen, setIsVideoMenuOpen] = useState(true);
+  const [isImagesMenuOpen, setIsImagesMenuOpen] = useState(false);
+  const [isVideoMenuOpen, setIsVideoMenuOpen] = useState(false);
+  const [isListsMenuOpen, setIsListsMenuOpen] = useState(true);
+  const [isTablesMenuOpen, setIsTablesMenuOpen] = useState(true);
   const [isDesktopCollapsed, setIsDesktopCollapsed] = useState(false);
   const isExpanded = !isDesktopCollapsed;
   const navigate = useNavigate();
@@ -177,6 +180,32 @@ const HTML = () => {
         <SubNavItem to="media-flash-video" label="1. Flash & Video" icon={MonitorPlay} />
         <SubNavItem to="media-audio" label="2. Audio on Web" icon={FileAudio} />
         <SubNavItem to="media-best-practices" label="3. Best Practices" icon={ShieldAlert} />
+      </DropdownNav>
+
+      {/* NEW: Lists Module */}
+      <DropdownNav
+        label="Lists"
+        icon={ListOrdered}
+        isOpen={isListsMenuOpen}
+        onToggle={() => setIsListsMenuOpen(!isListsMenuOpen)}
+      >
+        <SubNavItem to="lists/ordered-lists" label="1. Ordered Lists" icon={ListOrdered} />
+        <SubNavItem to="lists/unordered-lists" label="2. Unordered Lists" icon={List} />
+        <SubNavItem to="lists/definition-lists" label="3. Definition Lists" icon={BookA} />
+        <SubNavItem to="lists/nested-lists" label="4. Nested Lists" icon={Layers} />
+      </DropdownNav>
+
+      {/* NEW: Tables Module */}
+      <DropdownNav
+        label="Tables"
+        icon={Table}
+        isOpen={isTablesMenuOpen}
+        onToggle={() => setIsTablesMenuOpen(!isTablesMenuOpen)}
+      >
+        <SubNavItem to="tables/basic-tables" label="1. Basic Tables" icon={LayoutGrid} />
+        <SubNavItem to="tables/table-headings" label="2. Table Headings" icon={Type} />
+        <SubNavItem to="tables/spanning" label="3. Spanning Cells" icon={Maximize2} />
+        <SubNavItem to="tables/structuring" label="4. Structuring Tables" icon={ListTree} />
       </DropdownNav>
 
     </nav>

@@ -6,9 +6,16 @@ import { Sparkles, Zap } from "lucide-react";
 export default function RecentlyReleased() {
   const RECENT_LESSONS = [
     {
-      title: "HTML Video & Audio Media",
-      path: "/webdevelopment/html/media-flash-video",
-      desc: "Embed rich multimedia: HTML5 video and audio, legacy Flash fallbacks, and media accessibility.",
+      title: "HTML Lists",
+      path: "/webdevelopment/html/lists/ordered-lists",
+      desc: "Organize your data logically using HTML ordered, unordered, definition, and nested list structures.",
+      category: "Web Development",
+      isNew: true
+    },
+    {
+      title: "HTML Tables",
+      path: "/webdevelopment/html/tables/basic-tables",
+      desc: "Build complex accessible data grids using HTML tables, headers, and cell spanning.",
       category: "Web Development",
       isNew: true
     },
@@ -16,13 +23,6 @@ export default function RecentlyReleased() {
       title: "HTML Images & Media",
       path: "/webdevelopment/html/images-intro",
       desc: "Master the visual web: the psychology of images, HTML image elements, and file formats.",
-      category: "Web Development",
-      isNew: true
-    },
-    {
-      title: "HTML Link and Navigation",
-      path: "/webdevelopment/html/links-intro",
-      desc: "Master the skeleton of the web: Tags, Elements, Attributes, and the history of HTML standards.",
       category: "Web Development",
       isNew: true
     },
