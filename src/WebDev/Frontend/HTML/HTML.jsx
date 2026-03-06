@@ -5,7 +5,8 @@ import {
   ChevronDown, ChevronRight, Hash, AlignLeft, Bold, Box, Key,
   Link as LinkIcon, Link2, FolderTree, Mail, ExternalLink, CheckCircle, Code,
   PanelLeftClose, PanelLeftOpen, Image as ImageIcon, ImagePlus, FileImage, Videotape, Clapperboard, MonitorPlay, FileAudio, ShieldAlert,
-  List, ListOrdered, Table, Maximize2, LayoutGrid, ListTree, BookA
+  List, ListOrdered, Table, Maximize2, LayoutGrid, ListTree, BookA,
+  FormInput, CheckSquare, MousePointerClick, Smartphone, Ear
 } from "lucide-react";
 import { useState } from "react";
 
@@ -17,6 +18,7 @@ const HTML = () => {
   const [isVideoMenuOpen, setIsVideoMenuOpen] = useState(false);
   const [isListsMenuOpen, setIsListsMenuOpen] = useState(true);
   const [isTablesMenuOpen, setIsTablesMenuOpen] = useState(true);
+  const [isFormsModuleOpen, setIsFormsModuleOpen] = useState(true);
   const [isDesktopCollapsed, setIsDesktopCollapsed] = useState(false);
   const isExpanded = !isDesktopCollapsed;
   const navigate = useNavigate();
@@ -206,6 +208,24 @@ const HTML = () => {
         <SubNavItem to="tables/table-headings" label="2. Table Headings" icon={Type} />
         <SubNavItem to="tables/spanning" label="3. Spanning Cells" icon={Maximize2} />
         <SubNavItem to="tables/structuring" label="4. Structuring Tables" icon={ListTree} />
+      </DropdownNav>
+
+      {/* NEW: Forms Module */}
+      <DropdownNav
+        label="Forms"
+        icon={FormInput}
+        isOpen={isFormsModuleOpen}
+        onToggle={() => setIsFormsModuleOpen(!isFormsModuleOpen)}
+      >
+        <SubNavItem to="forms/introduction" label="1. Intro to Forms" icon={Layout} />
+        <SubNavItem to="forms/form-element" label="2. The Form Element" icon={Box} />
+        <SubNavItem to="forms/text-inputs" label="3. Text Input Controls" icon={Type} />
+        <SubNavItem to="forms/choice-controls" label="4. Choice Controls" icon={CheckSquare} />
+        <SubNavItem to="forms/buttons-special" label="5. Buttons & Special" icon={MousePointerClick} />
+        <SubNavItem to="forms/html5-inputs" label="6. HTML5 Inputs" icon={Smartphone} />
+        <SubNavItem to="forms/labels-fieldsets" label="7. Labels & Fieldsets" icon={Layers} />
+        <SubNavItem to="forms/form-validation" label="8. Form Validation" icon={ShieldAlert} />
+        <SubNavItem to="forms/accessible-forms" label="9. Accessible Forms" icon={Ear} />
       </DropdownNav>
 
     </nav>

@@ -162,10 +162,9 @@ const StructuringTables = () => {
                 <Link to="/webdevelopment/html/tables/spanning" className="flex items-center gap-2 text-gray-500 hover:text-white">
                     <ArrowLeft size={16} /> Spanning Cells
                 </Link>
-                {/* We link directly back to the Frontend HTML dashboard or completion page here. */}
-                <span className="flex items-center gap-2 text-gray-400 font-bold cursor-not-allowed pointer-events-none">
-  End of Module <ArrowRight size={16} />
-</span>
+                <Link to="/webdevelopment/html/forms/introduction" className="flex items-center gap-2 text-orange-400 font-bold hover:text-orange-300 transition-colors">
+                    Next: Intro to Forms <ArrowRight size={16} />
+                </Link>
             </div>
         </article>
     );

@@ -63,6 +63,17 @@ import TableHeadings from "./WebDev/Frontend/HTML/Tables/TableHeadings";
 import Spanning from "./WebDev/Frontend/HTML/Tables/Spanning";
 import StructuringTables from "./WebDev/Frontend/HTML/Tables/StructuringTables";
 
+// Forms Module
+import IntroForms from "./WebDev/Frontend/HTML/Forms/IntroForms";
+import FormElement from "./WebDev/Frontend/HTML/Forms/FormElement";
+import TextInputControls from "./WebDev/Frontend/HTML/Forms/TextInputControls";
+import ChoiceControls from "./WebDev/Frontend/HTML/Forms/ChoiceControls";
+import ButtonsSpecial from "./WebDev/Frontend/HTML/Forms/ButtonsSpecial";
+import Html5Inputs from "./WebDev/Frontend/HTML/Forms/Html5Inputs";
+import LabelsFieldsets from "./WebDev/Frontend/HTML/Forms/LabelsFieldsets";
+import FormValidation from "./WebDev/Frontend/HTML/Forms/FormValidation";
+import AccessibleForms from "./WebDev/Frontend/HTML/Forms/AccessibleForms";
+
 
 // subcategory page
 import Java from "./Programming/Java/Java";               // main java container
@@ -145,6 +156,17 @@ function App() {
         <Route path="tables/table-headings" element={<TableHeadings />} />
         <Route path="tables/spanning" element={<Spanning />} />
         <Route path="tables/structuring" element={<StructuringTables />} />
+
+        {/* NEW: Forms Module Routes */}
+        <Route path="forms/introduction" element={<IntroForms />} />
+        <Route path="forms/form-element" element={<FormElement />} />
+        <Route path="forms/text-inputs" element={<TextInputControls />} />
+        <Route path="forms/choice-controls" element={<ChoiceControls />} />
+        <Route path="forms/buttons-special" element={<ButtonsSpecial />} />
+        <Route path="forms/html5-inputs" element={<Html5Inputs />} />
+        <Route path="forms/labels-fieldsets" element={<LabelsFieldsets />} />
+        <Route path="forms/form-validation" element={<FormValidation />} />
+        <Route path="forms/accessible-forms" element={<AccessibleForms />} />
       </Route>
 
       {/* Java Course */}
