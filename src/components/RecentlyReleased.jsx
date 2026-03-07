@@ -6,6 +6,13 @@ import { Sparkles, Zap } from "lucide-react";
 export default function RecentlyReleased() {
   const RECENT_LESSONS = [
     {
+      title: "Semantic HTML",
+      path: "/webdevelopment/html/semantic",
+      desc: "Learn to use HTML5 semantic tags to build accessible, SEO-friendly, and maintainable web pages.",
+      category: "Web Development",
+      isNew: true
+    },
+    {
       title: "HTML Forms",
       path: "/webdevelopment/html/forms/introduction",
       desc: "Learn to build interactive, accessible, and secure HTML5 web forms to collect user input effectively.",
@@ -18,14 +25,7 @@ export default function RecentlyReleased() {
       desc: "Organize your data logically using HTML ordered, unordered, definition, and nested list structures.",
       category: "Web Development",
       isNew: true
-    },
-    {
-      title: "HTML Tables",
-      path: "/webdevelopment/html/tables/basic-tables",
-      desc: "Build complex accessible data grids using HTML tables, headers, and cell spanning.",
-      category: "Web Development",
-      isNew: true
-    },
+    }
   ];
 
   return (

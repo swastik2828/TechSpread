@@ -190,9 +190,9 @@ button:focus-visible {
                 <Link to="/webdevelopment/html/forms/form-validation" className="flex items-center gap-2 text-gray-500 hover:text-white transition-colors">
                     <ArrowLeft size={16} /> Form Validation
                 </Link>
-                <span  className="flex items-center gap-2 text-grey-100 font-bold hover:text-grey-300 transition-colors">
-                    End of Module <CheckCircle size={16} />
-                </span>
+                <Link to="/webdevelopment/html/semantic" className="flex items-center gap-2 text-orange-400 font-bold hover:text-orange-300 transition-colors">
+                    Next: Semantic HTML <CheckCircle size={16} />
+                </Link>
             </div>
         </article>
     );

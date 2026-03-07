@@ -227,7 +227,7 @@ const HTML = () => {
         <SubNavItem to="forms/form-validation" label="8. Form Validation" icon={ShieldAlert} />
         <SubNavItem to="forms/accessible-forms" label="9. Accessible Forms" icon={Ear} />
       </DropdownNav>
-
+      <NavItem to="semantic" icon={Layers} label="Semantic HTML" />
     </nav>
   );
 

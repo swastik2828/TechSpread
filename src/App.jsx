@@ -74,6 +74,8 @@ import LabelsFieldsets from "./WebDev/Frontend/HTML/Forms/LabelsFieldsets";
 import FormValidation from "./WebDev/Frontend/HTML/Forms/FormValidation";
 import AccessibleForms from "./WebDev/Frontend/HTML/Forms/AccessibleForms";
 
+// Semantic HTML
+import SemanticHTML from "./WebDev/Frontend/HTML/SemanticHTML";
 
 // subcategory page
 import Java from "./Programming/Java/Java";               // main java container
@@ -167,6 +169,9 @@ function App() {
         <Route path="forms/labels-fieldsets" element={<LabelsFieldsets />} />
         <Route path="forms/form-validation" element={<FormValidation />} />
         <Route path="forms/accessible-forms" element={<AccessibleForms />} />
+
+        {/* Semantic HTML */}
+        <Route path="/webdevelopment/html/semantic" element={<SemanticHTML />} />
       </Route>
 
       {/* Java Course */}
