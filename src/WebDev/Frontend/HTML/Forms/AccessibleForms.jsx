@@ -191,7 +191,7 @@ button:focus-visible {
                     <ArrowLeft size={16} /> Form Validation
                 </Link>
                 <Link to="/webdevelopment/html/semantic" className="flex items-center gap-2 text-orange-400 font-bold hover:text-orange-300 transition-colors">
-                    Next: Semantic HTML <CheckCircle size={16} />
+                    Next: Semantic HTML <ArrowRight size={16} />
                 </Link>
             </div>
         </article>
