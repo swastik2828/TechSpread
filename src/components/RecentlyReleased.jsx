@@ -4,7 +4,14 @@ import { motion } from "framer-motion";
 import { Sparkles, Zap } from "lucide-react";
 
 export default function RecentlyReleased() {
-  const RECENT_LESSONS = [
+ const RECENT_LESSONS = [
+    {
+      title: "HTML Best Practices",
+      path: "/webdevelopment/html/best-practices",
+      desc: "Learn modern HTML best practices for semantics, accessibility, SEO, and maintainability.",
+      category: "Web Development",
+      isNew: true
+    },
     {
       title: "Semantic HTML",
       path: "/webdevelopment/html/semantic",
@@ -16,13 +23,6 @@ export default function RecentlyReleased() {
       title: "HTML Forms",
       path: "/webdevelopment/html/forms/introduction",
       desc: "Learn to build interactive, accessible, and secure HTML5 web forms to collect user input effectively.",
-      category: "Web Development",
-      isNew: true
-    },
-    {
-      title: "HTML Lists",
-      path: "/webdevelopment/html/lists/ordered-lists",
-      desc: "Organize your data logically using HTML ordered, unordered, definition, and nested list structures.",
       category: "Web Development",
       isNew: true
     }

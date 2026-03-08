@@ -6,7 +6,7 @@ import {
   Link as LinkIcon, Link2, FolderTree, Mail, ExternalLink, CheckCircle, Code,
   PanelLeftClose, PanelLeftOpen, Image as ImageIcon, ImagePlus, FileImage, Videotape, Clapperboard, MonitorPlay, FileAudio, ShieldAlert,
   List, ListOrdered, Table, Maximize2, LayoutGrid, ListTree, BookA,
-  FormInput, CheckSquare, MousePointerClick, Smartphone, Ear
+  FormInput, CheckSquare, MousePointerClick, Smartphone, Ear, ShieldCheck
 } from "lucide-react";
 import { useState } from "react";
 
@@ -228,6 +228,7 @@ const HTML = () => {
         <SubNavItem to="forms/accessible-forms" label="9. Accessible Forms" icon={Ear} />
       </DropdownNav>
       <NavItem to="semantic" icon={Layers} label="Semantic HTML" />
+      <NavItem to="best-practices" icon={ShieldCheck} label="HTML Best Practices" />
     </nav>
   );
 

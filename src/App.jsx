@@ -76,6 +76,8 @@ import AccessibleForms from "./WebDev/Frontend/HTML/Forms/AccessibleForms";
 
 // Semantic HTML
 import SemanticHTML from "./WebDev/Frontend/HTML/SemanticHTML";
+// Best Practices
+import HTMLBestPractices from "./WebDev/Frontend/HTML/HTMLBestPractices";
 
 // subcategory page
 import Java from "./Programming/Java/Java";               // main java container
@@ -172,6 +174,9 @@ function App() {
 
         {/* Semantic HTML */}
         <Route path="/webdevelopment/html/semantic" element={<SemanticHTML />} />
+
+        {/* Best Practices */}
+        <Route path="/webdevelopment/html/best-practices" element={<HTMLBestPractices />} />
       </Route>
 
       {/* Java Course */}
