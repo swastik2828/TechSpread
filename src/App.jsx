@@ -78,6 +78,8 @@ import AccessibleForms from "./WebDev/Frontend/HTML/Forms/AccessibleForms";
 import SemanticHTML from "./WebDev/Frontend/HTML/SemanticHTML";
 // Best Practices
 import HTMLBestPractices from "./WebDev/Frontend/HTML/HTMLBestPractices";
+// Integration of HTML with CSS & JS
+import HTMLCSSJSConnection from "./WebDev/Frontend/HTML/HtmlCssJsConnection";
 
 // subcategory page
 import Java from "./Programming/Java/Java";               // main java container
@@ -177,6 +179,10 @@ function App() {
 
         {/* Best Practices */}
         <Route path="/webdevelopment/html/best-practices" element={<HTMLBestPractices />} />
+
+        {/* Integration of HTML with CSS & JS */}
+        <Route path="/webdevelopment/html/integration" element={<HTMLCSSJSConnection />} />
+      
       </Route>
 
       {/* Java Course */}

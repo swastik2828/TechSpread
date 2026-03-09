@@ -4,6 +4,7 @@ import Footer from '../layout/Footer';
 import Newsletter from '../components/Newsletter';
 import SEO from '../components/SEO';
 import RecentlyReleased from "../components/RecentlyReleased";
+import CourseLivePopup from '../components/CourseLivePopup';
 import { motion } from "framer-motion"; 
 import { Link } from 'react-router-dom'
 import {
@@ -111,7 +112,7 @@ const Home = () => {
         keywords="learn programming, java tutorial, web development course, dsa for beginners, computer science basics, techspread"
         url="/"
       />
-
+  <CourseLivePopup />
       <div className='bg-gradient-to-b from-[#0f172a] to-[#111827]'>
         <Header />
         

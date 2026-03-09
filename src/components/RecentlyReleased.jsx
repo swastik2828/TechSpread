@@ -6,16 +6,16 @@ import { Sparkles, Zap } from "lucide-react";
 export default function RecentlyReleased() {
  const RECENT_LESSONS = [
     {
-      title: "HTML Best Practices",
-      path: "/webdevelopment/html/best-practices",
-      desc: "Learn modern HTML best practices for semantics, accessibility, SEO, and maintainability.",
+      title: "HTML + CSS + JS Connection",
+      path: "/webdevelopment/html/integration",
+      desc: "Understand how the holy trinity of web development works together to build modern pages.",
       category: "Web Development",
       isNew: true
     },
     {
-      title: "Semantic HTML",
-      path: "/webdevelopment/html/semantic",
-      desc: "Learn to use HTML5 semantic tags to build accessible, SEO-friendly, and maintainable web pages.",
+      title: "HTML Best Practices",
+      path: "/webdevelopment/html/best-practices",
+      desc: "Learn modern HTML best practices for semantics, accessibility, SEO, and maintainability.",
       category: "Web Development",
       isNew: true
     },
@@ -24,7 +24,7 @@ export default function RecentlyReleased() {
       path: "/webdevelopment/html/forms/introduction",
       desc: "Learn to build interactive, accessible, and secure HTML5 web forms to collect user input effectively.",
       category: "Web Development",
-      isNew: true
+      isNew: false // Adjusted to false to highlight the newer ones
     }
   ];
 

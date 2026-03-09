@@ -326,17 +326,18 @@ const HTMLBestPractices = () => {
             <div className="text-white font-bold group-hover:text-orange-400 transition-colors">Semantic HTML</div>
           </div>
         </Link>
-        <span
-          className="group flex items-center justify-between gap-4 px-4 md:px-6 py-2 md:py-4 bg-gray-900 rounded-xl border border-gray-800 hover:border-grey-500 transition-all w-full md:w-auto opacity-60 cursor-not-allowed"
-        >
-          <div className="text-right">
-            <span className="text-xs text-grey-500 uppercase font-bold tracking-wider">Next Module</span>
-            <div className="text-white font-bold transition-colors">End of HTML Course</div>
-          </div>
-          <div className="p-2 bg-grey-500/10 rounded-full text-grey-500 transition-all flex-shrink-0">
-            <ArrowRight size={20} />
-          </div>
-        </span>
+        <Link 
+                  to="/webdevelopment/html/integration"
+                  className="group flex items-center justify-between gap-4 px-4 md:px-6 py-2 md:py-4 bg-gray-900 rounded-xl border border-gray-800 hover:border-orange-500 transition-all w-full md:w-auto"
+                >
+                  <div className="text-right">
+                    <span className="text-xs text-gray-500 uppercase font-bold tracking-wider">Next Module</span>
+                    <div className="text-white font-bold group-hover:text-orange-400 transition-colors">HTML + CSS + JS Connection</div>
+                  </div>
+                  <div className="p-2 bg-orange-500/10 rounded-full text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-all flex-shrink-0">
+                    <ArrowRight size={20} />
+                  </div>
+                </Link>
       </div>
     </article>
   );
