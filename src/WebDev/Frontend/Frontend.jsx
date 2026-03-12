@@ -21,8 +21,8 @@ const Frontend = () => {
       desc: "Style sheet language used for describing the presentation of a document written in HTML.",
       icon: <Palette size={32} />,
       color: "from-blue-500 to-cyan-500",
-      route: "#",
-      active: false
+      route: "/webdevelopment/css",
+      active: true
     },
     {
       name: "JavaScript",
@@ -44,7 +44,7 @@ const Frontend = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-black text-white py-16 px-6 md:px-20">
-      <SEO 
+      <SEO
         title="Frontend Development Technologies | HTML, CSS, JS, React"
         description="Explore the essential technologies for frontend development. Start with HTML and master the web."
         keywords="frontend development, html course, css tutorial, javascript, react js, web design"
@@ -77,8 +77,8 @@ const Frontend = () => {
             onClick={() => tech.active && navigate(tech.route)}
             className={`
               relative overflow-hidden rounded-2xl p-6 border transition-all duration-300
-              ${tech.active 
-                ? "bg-gray-900/60 border-gray-700 hover:border-orange-500/50 cursor-pointer hover:shadow-2xl hover:shadow-orange-500/10" 
+              ${tech.active
+                ? "bg-gray-900/60 border-gray-700 hover:border-orange-500/50 cursor-pointer hover:shadow-2xl hover:shadow-orange-500/10"
                 : "bg-gray-900/30 border-gray-800 opacity-60 cursor-not-allowed grayscale-[0.5]"}
             `}
           >

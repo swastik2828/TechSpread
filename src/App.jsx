@@ -81,6 +81,10 @@ import HTMLBestPractices from "./WebDev/Frontend/HTML/HTMLBestPractices";
 // Integration of HTML with CSS & JS
 import HTMLCSSJSConnection from "./WebDev/Frontend/HTML/HtmlCssJsConnection";
 
+// CSS Course
+import CSS from "./WebDev/Frontend/CSS/CSS";
+import IntroToCSS from "./WebDev/Frontend/CSS/IntroToCSS";
+
 // subcategory page
 import Java from "./Programming/Java/Java";               // main java container
 import WhatisJava from "./Programming/Java/WhatisJava";   // java topic pages
@@ -182,7 +186,12 @@ function App() {
 
         {/* Integration of HTML with CSS & JS */}
         <Route path="/webdevelopment/html/integration" element={<HTMLCSSJSConnection />} />
-      
+
+      </Route>
+
+      {/* CSS Course */}
+      <Route path="/webdevelopment/css" element={<CSS />}>
+        <Route index element={<IntroToCSS />} />
       </Route>
 
       {/* Java Course */}
