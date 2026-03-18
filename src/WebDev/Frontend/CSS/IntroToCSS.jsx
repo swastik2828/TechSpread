@@ -428,6 +428,21 @@ h1, h2, h3 {
                     Web Development Series  •   CSS Foundations
                 </p>
 
+                <div className="flex justify-end mt-10 pb-4">
+                    <Link
+                        to="/webdevelopment/css/selectors/intro"
+                        className="group flex items-center gap-3 px-6 py-4 rounded-2xl bg-gradient-to-r from-sky-500/10 to-cyan-500/10 border border-sky-500/30 hover:border-sky-400/60 hover:from-sky-500/20 hover:to-cyan-500/20 transition-all duration-300"
+                    >
+                        <div className="text-right">
+                            <p className="text-xs text-gray-500 font-medium">Up Next</p>
+                            <p className="text-white font-bold text-sm">CSS Selectors →</p>
+                        </div>
+                        <div className="p-2 rounded-xl bg-sky-500/20 text-sky-400 group-hover:bg-sky-500/30 transition-colors">
+                            <ArrowRight size={20} />
+                        </div>
+                    </Link>
+                </div>
+
             </div>
         </article>
     );

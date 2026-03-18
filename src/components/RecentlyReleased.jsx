@@ -6,6 +6,13 @@ import { Sparkles, Zap } from "lucide-react";
 export default function RecentlyReleased() {
   const RECENT_LESSONS = [
     {
+      title: "CSS Selectors",
+      path: "/webdevelopment/css/selectors/intro",
+      desc: "A comprehensive guide to every CSS selector — from basics to advanced :has() and specificity.",
+      category: "Web Development",
+      isNew: true
+    },
+    {
       title: "Introduction to CSS",
       path: "/webdevelopment/css",
       desc: "A Complete Beginner's Guide to Cascading Style Sheets. Learn how to style the web.",
@@ -16,13 +23,6 @@ export default function RecentlyReleased() {
       title: "HTML + CSS + JS Connection",
       path: "/webdevelopment/html/integration",
       desc: "Understand how the holy trinity of web development works together to build modern pages.",
-      category: "Web Development",
-      isNew: true
-    },
-    {
-      title: "HTML Best Practices",
-      path: "/webdevelopment/html/best-practices",
-      desc: "Learn modern HTML best practices for semantics, accessibility, SEO, and maintainability.",
       category: "Web Development",
       isNew: false
     }

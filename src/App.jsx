@@ -84,6 +84,15 @@ import HTMLCSSJSConnection from "./WebDev/Frontend/HTML/HtmlCssJsConnection";
 // CSS Course
 import CSS from "./WebDev/Frontend/CSS/CSS";
 import IntroToCSS from "./WebDev/Frontend/CSS/IntroToCSS";
+// CSS Selectors module
+import CssSelectorIntro from "./WebDev/Frontend/CSS/CssSelectors/Intro";
+import CssBasicSelectors from "./WebDev/Frontend/CSS/CssSelectors/BasicSelectors";
+import CssAttributeSelectors from "./WebDev/Frontend/CSS/CssSelectors/AttributeSelectors";
+import CssCombinatorsPage from "./WebDev/Frontend/CSS/CssSelectors/Combinators";
+import CssPseudoClass from "./WebDev/Frontend/CSS/CssSelectors/PseudoClass";
+import CssPseudoElement from "./WebDev/Frontend/CSS/CssSelectors/PseudoElement";
+import CssSpecificityPage from "./WebDev/Frontend/CSS/CssSelectors/Specificity";
+import CssAdvancedSelectors from "./WebDev/Frontend/CSS/CssSelectors/AdvancedSelectors";
 
 // subcategory page
 import Java from "./Programming/Java/Java";               // main java container
@@ -192,6 +201,14 @@ function App() {
       {/* CSS Course */}
       <Route path="/webdevelopment/css" element={<CSS />}>
         <Route index element={<IntroToCSS />} />
+        <Route path="selectors/intro" element={<CssSelectorIntro />} />
+        <Route path="selectors/basic" element={<CssBasicSelectors />} />
+        <Route path="selectors/attribute" element={<CssAttributeSelectors />} />
+        <Route path="selectors/combinators" element={<CssCombinatorsPage />} />
+        <Route path="selectors/pseudo-class" element={<CssPseudoClass />} />
+        <Route path="selectors/pseudo-element" element={<CssPseudoElement />} />
+        <Route path="selectors/specificity" element={<CssSpecificityPage />} />
+        <Route path="selectors/advanced" element={<CssAdvancedSelectors />} />
       </Route>
 
       {/* Java Course */}
