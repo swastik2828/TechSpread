@@ -20,11 +20,11 @@ export default function RecentlyReleased() {
       isNew: true
     },
     {
-      title: "HTML + CSS + JS Connection",
-      path: "/webdevelopment/html/integration",
-      desc: "Understand how the holy trinity of web development works together to build modern pages.",
+      title: "Introduction to JavaScript",
+      path: "/webdevelopment/javascript",
+      desc: "Master the fundamentals of JavaScript. Learn what JS is and how engines execute code.",
       category: "Web Development",
-      isNew: false
+      isNew: true
     }
   ];
 

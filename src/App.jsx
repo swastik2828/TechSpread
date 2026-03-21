@@ -94,6 +94,10 @@ import CssPseudoElement from "./WebDev/Frontend/CSS/CssSelectors/PseudoElement";
 import CssSpecificityPage from "./WebDev/Frontend/CSS/CssSelectors/Specificity";
 import CssAdvancedSelectors from "./WebDev/Frontend/CSS/CssSelectors/AdvancedSelectors";
 
+// JavaScript Course
+import Javascript from "./WebDev/Frontend/Javascript/Javascript";
+import IntroToJS from "./WebDev/Frontend/Javascript/IntroToJS";
+
 // subcategory page
 import Java from "./Programming/Java/Java";               // main java container
 import WhatisJava from "./Programming/Java/WhatisJava";   // java topic pages
@@ -209,6 +213,11 @@ function App() {
         <Route path="selectors/pseudo-element" element={<CssPseudoElement />} />
         <Route path="selectors/specificity" element={<CssSpecificityPage />} />
         <Route path="selectors/advanced" element={<CssAdvancedSelectors />} />
+      </Route>
+
+      {/* JavaScript Course */}
+      <Route path="/webdevelopment/javascript" element={<Javascript />}>
+        <Route index element={<IntroToJS />} />
       </Route>
 
       {/* Java Course */}

@@ -29,8 +29,8 @@ const Frontend = () => {
       desc: "Programming language that enables interactive web pages and is an essential part of web applications.",
       icon: <FileJson size={32} />,
       color: "from-yellow-400 to-orange-400",
-      route: "#",
-      active: false
+      route: "/webdevelopment/javascript",
+      active: true
     },
     {
       name: "React",
