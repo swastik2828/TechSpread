@@ -10,6 +10,7 @@ const Javascript = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [isDesktopCollapsed, setIsDesktopCollapsed] = useState(false);
     const [isIntroMenuOpen, setIsIntroMenuOpen] = useState(true);
+    const [isModule2Open, setIsModule2Open] = useState(true);
     const isExpanded = !isDesktopCollapsed;
     const navigate = useNavigate();
     const location = useLocation();
@@ -114,6 +115,15 @@ const Javascript = () => {
     const SidebarContent = () => (
         <nav className="flex flex-col gap-2">
             <NavItem to="" end icon={BookOpen} label="Introduction to JavaScript" />
+            <DropdownNav label="Module 2: Variables & Types" icon={Code2} isOpen={isModule2Open} onToggle={() => setIsModule2Open(!isModule2Open)}>
+                <SubNavItem to="variables" label="2.1 Variables" />
+                <SubNavItem to="primitives" label="2.2 Primitive Types" />
+                <SubNavItem to="reference-types" label="2.3 Reference Types" />
+                <SubNavItem to="dynamic-typing" label="2.4 Dynamic Typing" />
+                <SubNavItem to="type-conversion" label="2.5 Type Conversion" />
+                <SubNavItem to="operators" label="2.6 Operators" />
+                <SubNavItem to="expressions" label="2.7 Expressions" />
+            </DropdownNav>
         </nav>
     );
 

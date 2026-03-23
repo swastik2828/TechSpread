@@ -503,14 +503,16 @@ console.assert(userStripeBalance >= 0, "CRITICAL ALERT: User has negative money!
                         Module 1 Complete • TechSpread Curriculum
                     </p>
 
-                    <div className="flex flex-col sm:flex-row justify-center sm:justify-end gap-6 max-w-2xl mx-auto sm:mr-0">
-                        <div className="text-center sm:text-right flex flex-col justify-center">
-                            <span className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-1 block">Course Complete (For Now)</span>
-                            <span className="text-gray-300 font-bold text-sm">More modules coming soon...</span>
-                        </div>
-                        <div className="w-14 h-14 mx-auto sm:mx-0 rounded-2xl bg-gray-800/40 text-gray-600 flex items-center justify-center border border-gray-800">
-                            <ArrowRight size={24} />
-                        </div>
+                    <div className="flex flex-col sm:flex-row justify-center sm:justify-end gap-6 max-w-2xl mx-auto sm:mr-0 mt-8">
+                        <Link to="/webdevelopment/javascript/variables" className="group flex items-center justify-between gap-4 p-4 sm:p-6 rounded-2xl bg-[#0a0c10] border border-gray-800 hover:border-amber-500/50 hover:shadow-[0_0_30px_rgba(251,191,36,0.1)] transition-all duration-300 w-full sm:w-auto">
+                            <div className="text-left flex flex-col justify-center">
+                                <span className="text-[10px] sm:text-xs text-gray-500 font-bold uppercase tracking-widest mb-1 block group-hover:text-amber-500/80 transition-colors">Up Next</span>
+                                <span className="text-gray-200 font-bold text-sm sm:text-base group-hover:text-white transition-colors">Module 2: Variables & Types</span>
+                            </div>
+                            <div className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 rounded-xl bg-gray-800/40 text-gray-400 group-hover:text-amber-400 group-hover:bg-amber-500/10 flex items-center justify-center border border-gray-800 group-hover:border-amber-500/30 transition-all duration-300">
+                                <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-1 transition-transform" />
+                            </div>
+                        </Link>
                     </div>
                 </div>
 

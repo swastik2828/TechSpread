@@ -97,6 +97,13 @@ import CssAdvancedSelectors from "./WebDev/Frontend/CSS/CssSelectors/AdvancedSel
 // JavaScript Course
 import Javascript from "./WebDev/Frontend/Javascript/Javascript";
 import IntroToJS from "./WebDev/Frontend/Javascript/IntroToJS";
+import Variables from "./WebDev/Frontend/Javascript/Module2/Variables";
+import Primitives from "./WebDev/Frontend/Javascript/Module2/Primitives";
+import ReferenceTypes from "./WebDev/Frontend/Javascript/Module2/ReferenceTypes";
+import DynamicTyping from "./WebDev/Frontend/Javascript/Module2/DynamicTyping";
+import TypeConversion from "./WebDev/Frontend/Javascript/Module2/TypeConversion";
+import Operators from "./WebDev/Frontend/Javascript/Module2/Operators";
+import Expressions from "./WebDev/Frontend/Javascript/Module2/Expressions";
 
 // subcategory page
 import Java from "./Programming/Java/Java";               // main java container
@@ -218,6 +225,13 @@ function App() {
       {/* JavaScript Course */}
       <Route path="/webdevelopment/javascript" element={<Javascript />}>
         <Route index element={<IntroToJS />} />
+        <Route path="variables" element={<Variables />} />
+        <Route path="primitives" element={<Primitives />} />
+        <Route path="reference-types" element={<ReferenceTypes />} />
+        <Route path="dynamic-typing" element={<DynamicTyping />} />
+        <Route path="type-conversion" element={<TypeConversion />} />
+        <Route path="operators" element={<Operators />} />
+        <Route path="expressions" element={<Expressions />} />
       </Route>
 
       {/* Java Course */}

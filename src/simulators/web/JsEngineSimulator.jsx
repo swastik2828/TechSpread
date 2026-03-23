@@ -148,7 +148,7 @@ greet("World");`;
                                 </div>
 
                                 {isActive && (
-                                    <motion.div layoutId="pipeline-active" className="absolute right-4 hidden md:block" transition={{type:"spring", stiffness: 300, damping: 30}}>
+                                    <motion.div initial={{ scale: 0.8 }} animate={{ scale: 1 }} className="absolute right-4 hidden md:block" transition={{type:"spring", stiffness: 300, damping: 30}}>
                                         <ArrowRight className={s.color} size={20} />
                                     </motion.div>
                                 )}
