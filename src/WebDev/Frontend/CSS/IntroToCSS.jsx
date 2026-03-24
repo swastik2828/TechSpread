@@ -6,7 +6,7 @@ import {
 } from 'lucide-react';
 
 import SEO from "../../../components/SEO";
-import CssBoxModelSimulator from "../../../simulators/web/CssBoxModelSimulator";
+import CssBoxModelSimulator from "../../../simulators/web/css/CssBoxModelSimulator";
 
 // Local Components
 const Section = ({ title, icon: Icon, children, id }) => (

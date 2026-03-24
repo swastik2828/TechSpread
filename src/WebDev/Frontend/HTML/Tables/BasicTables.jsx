@@ -2,7 +2,7 @@ import React from 'react';
 import { Table, LayoutGrid, ArrowRight, ArrowLeft, ShieldAlert, FileText, Code } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from "../../../../components/SEO";
-import TablesSimulator from "../../../../simulators/web/TablesSimulator";
+import TablesSimulator from "../../../../simulators/web/html/TablesSimulator";
 
 const Section = ({ title, icon: Icon, children }) => (
     <section className="mb-20">

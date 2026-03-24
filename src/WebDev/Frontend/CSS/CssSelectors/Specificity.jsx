@@ -2,7 +2,7 @@ import React from 'react';
 import { Shield, ArrowRight, ArrowLeft, Award, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from "../../../../components/SEO";
-import CssSpecificitySimulator from "../../../../simulators/web/CssSpecificitySimulator";
+import CssSpecificitySimulator from "../../../../simulators/web/css/CssSpecificitySimulator";
 
 const Section = ({ title, icon: Icon, children }) => (
     <section className="mb-20">

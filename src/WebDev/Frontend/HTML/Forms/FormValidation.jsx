@@ -2,7 +2,7 @@ import React from 'react';
 import { ShieldAlert, ArrowRight, ArrowLeft, CheckCircle, AlertOctagon, Terminal, ServerOff, CheckSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from "../../../../components/SEO";
-import ValidationSimulator from "../../../../simulators/web/ValidationSimulator";
+import ValidationSimulator from "../../../../simulators/web/html/ValidationSimulator";
 
 const Section = ({ title, icon: Icon, children }) => (
     <section className="mb-20">

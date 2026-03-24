@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Volume2, Music, ServerCog, Wrench, VolumeX, Mic2, AlertTriangle, Disc3, ArrowLeft, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import AudioSimulator from '../../../../simulators/web/AudioSimulator';
+import AudioSimulator from "../../../../simulators/web/html/AudioSimulator";
 
 const AudioWeb = () => {
     const containerVariants = {

@@ -2,7 +2,7 @@ import React from 'react';
 import { Code, ArrowRight, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from "../../../../components/SEO";
-import LinksSimulator from "../../../../simulators/web/LinksSimulator";
+import LinksSimulator from "../../../../simulators/web/html/LinksSimulator";
 
 const Section = ({ title, icon: Icon, children }) => (
   <section className="mb-20">

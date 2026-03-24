@@ -2,7 +2,7 @@ import React from 'react';
 import { BookA, ArrowRight, ArrowLeft, BookOpen, Fingerprint, TextQuote, Hash } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from "../../../../components/SEO";
-import ListsSimulator from "../../../../simulators/web/ListsSimulator";
+import ListsSimulator from "../../../../simulators/web/html/ListsSimulator";
 
 const Section = ({ title, icon: Icon, children }) => (
     <section className="mb-20">

@@ -2,7 +2,7 @@ import React from 'react';
 import { Sparkles, ArrowRight, ArrowLeft, Smartphone, CalendarDays, KeyRound, Hash, Palette } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from "../../../../components/SEO";
-import InputTypesSimulator from "../../../../simulators/web/InputTypesSimulator";
+import InputTypesSimulator from "../../../../simulators/web/html/InputTypesSimulator";
 
 const Section = ({ title, icon: Icon, children }) => (
     <section className="mb-20">

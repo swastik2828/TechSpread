@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, ArrowRight, ArrowLeft, Link as LinkIcon, RadioReceiver, ShieldAlert } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from "../../../../components/SEO";
-import FormsSimulator from "../../../../simulators/web/FormsSimulator";
+import FormsSimulator from "../../../../simulators/web/html/FormsSimulator";
 
 const Section = ({ title, icon: Icon, children }) => (
     <section className="mb-20">

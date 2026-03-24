@@ -94,6 +94,11 @@ import CssPseudoElement from "./WebDev/Frontend/CSS/CssSelectors/PseudoElement";
 import CssSpecificityPage from "./WebDev/Frontend/CSS/CssSelectors/Specificity";
 import CssAdvancedSelectors from "./WebDev/Frontend/CSS/CssSelectors/AdvancedSelectors";
 
+// CSS Colors & Units module
+import CssColors from "./WebDev/Frontend/CSS/CssColorsUnits/Colors";
+import CssUnits from "./WebDev/Frontend/CSS/CssColorsUnits/Units";
+import CssExercises from "./WebDev/Frontend/CSS/CssColorsUnits/Exercises";
+
 // JavaScript Course
 import Javascript from "./WebDev/Frontend/Javascript/Javascript";
 import IntroToJS from "./WebDev/Frontend/Javascript/IntroToJS";
@@ -220,6 +225,9 @@ function App() {
         <Route path="selectors/pseudo-element" element={<CssPseudoElement />} />
         <Route path="selectors/specificity" element={<CssSpecificityPage />} />
         <Route path="selectors/advanced" element={<CssAdvancedSelectors />} />
+        <Route path="colors-units/colors" element={<CssColors />} />
+        <Route path="colors-units/units" element={<CssUnits />} />
+        <Route path="colors-units/exercises" element={<CssExercises />} />
       </Route>
 
       {/* JavaScript Course */}

@@ -2,7 +2,7 @@ import React from 'react';
 import { Zap, ArrowRight, ArrowLeft, Heart, Shield, AlignJustify } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from "../../../../components/SEO";
-import CssPseudoClassSimulator from "../../../../simulators/web/CssPseudoClassSimulator";
+import CssPseudoClassSimulator from "../../../../simulators/web/css/CssPseudoClassSimulator";
 
 const Section = ({ title, icon: Icon, children }) => (
     <section className="mb-20">

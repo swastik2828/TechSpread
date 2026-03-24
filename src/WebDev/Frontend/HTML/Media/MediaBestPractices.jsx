@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Zap, Image as ImageIcon, CheckCircle, Gauge, Activity, Eye, PlaySquare, Volume2, ShieldAlert, ArrowLeft, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import MediaOptimizationSimulator from '../../../../simulators/web/MediaOptimizationSimulator';
+import MediaOptimizationSimulator from "../../../../simulators/web/html/MediaOptimizationSimulator";
 
 const MediaBestPractices = () => {
     const containerVariants = {

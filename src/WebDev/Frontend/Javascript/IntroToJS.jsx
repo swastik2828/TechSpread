@@ -7,8 +7,8 @@ import {
 import { Link } from 'react-router-dom';
 
 import SEO from "../../../components/SEO";
-import JsEngineSimulator from "../../../simulators/web/JsEngineSimulator";
-import JsConsoleSimulator from "../../../simulators/web/JsConsoleSimulator";
+import JsEngineSimulator from "../../../simulators/web/js/JsEngineSimulator";
+import JsConsoleSimulator from "../../../simulators/web/js/JsConsoleSimulator";
 
 const Section = ({ title, icon: Icon, children, id }) => (
     <section id={id} className="relative mb-24 scroll-mt-28">

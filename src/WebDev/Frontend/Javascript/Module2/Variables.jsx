@@ -4,7 +4,7 @@ import { BookOpen, Key, Lightbulb, AlertTriangle, ArrowRight, Code2, Database } 
 import { Link } from 'react-router-dom';
 import SEO from "../../../../components/SEO";
 import CodeBlock from "../../../../components/CodeBlock";
-import JsVariablesSimulator from "../../../../simulators/web/JsVariablesSimulator";
+import JsVariablesSimulator from "../../../../simulators/web/js/JsVariablesSimulator";
 
 const Section = ({ title, icon: Icon, children, id }) => (
     <section id={id} className="relative mb-16 sm:mb-24 scroll-mt-28">

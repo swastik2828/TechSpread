@@ -6,7 +6,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from "../../../components/SEO.jsx"; 
-import WebArchitectureSimulator from "../../../simulators/web/WebArchitectureSimulator.jsx";
+import WebArchitectureSimulator from "../../../simulators/web/html/WebArchitectureSimulator.jsx";
 
 // Image Imports (Ensure these exist in your assets folder)
 import ClientServerImg from "../../../assets/WebDev/client_server_architecture.jpeg";

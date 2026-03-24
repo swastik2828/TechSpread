@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { BookOpen, Key, Lightbulb, AlertTriangle, ArrowRight, Code2, Box } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from "../../../../components/SEO";
-import JsPrimitivesSimulator from "../../../../simulators/web/JsPrimitivesSimulator";
+import JsPrimitivesSimulator from "../../../../simulators/web/js/JsPrimitivesSimulator";
 
 const Section = ({ title, icon: Icon, children, id }) => (
     <section id={id} className="relative mb-16 sm:mb-24 scroll-mt-28">

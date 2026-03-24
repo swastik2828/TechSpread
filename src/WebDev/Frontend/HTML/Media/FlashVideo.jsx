@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { PlayCircle, ShieldAlert, MonitorUp, Code2, Film, Server, Database, AlertCircle, Info, ArrowLeft, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import VideoSimulator from '../../../../simulators/web/VideoSimulator';
+import VideoSimulator from "../../../../simulators/web/html/VideoSimulator";
 
 const FlashVideo = () => {
     const containerVariants = {

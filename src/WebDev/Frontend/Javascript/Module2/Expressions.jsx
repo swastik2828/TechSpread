@@ -4,7 +4,7 @@ import { BookOpen, Key, Lightbulb, AlertTriangle, ArrowRight, Code2, Network } f
 import { Link } from 'react-router-dom';
 import SEO from "../../../../components/SEO";
 import CodeBlock from "../../../../components/CodeBlock";
-import JsExpressionsSimulator from "../../../../simulators/web/JsExpressionsSimulator";
+import JsExpressionsSimulator from "../../../../simulators/web/js/JsExpressionsSimulator";
 
 const Section = ({ title, icon: Icon, children, id }) => (
     <section id={id} className="relative mb-16 sm:mb-24 scroll-mt-28">

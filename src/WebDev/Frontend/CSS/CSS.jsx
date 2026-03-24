@@ -7,7 +7,7 @@ import {
     PanelLeftClose, PanelLeftOpen, Image as ImageIcon, ImagePlus, FileImage, Videotape, Clapperboard, MonitorPlay, FileAudio, ShieldAlert,
     List, ListOrdered, Table, Maximize2, LayoutGrid, ListTree, BookA,
     FormInput, CheckSquare, MousePointerClick, Smartphone, Ear, ShieldCheck, Zap,
-    Target, Shield, GitBranch, Star, Telescope, BookOpen, Code2
+    Target, Shield, GitBranch, Star, Telescope, BookOpen, Code2, Palette, Ruler
 } from "lucide-react";
 import { useState } from "react";
 
@@ -15,6 +15,7 @@ const CSS = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [isDesktopCollapsed, setIsDesktopCollapsed] = useState(false);
     const [isSelectorsMenuOpen, setIsSelectorsMenuOpen] = useState(true);
+    const [isColorsMenuOpen, setIsColorsMenuOpen] = useState(false);
     const isExpanded = !isDesktopCollapsed;
     const navigate = useNavigate();
     const location = useLocation();
@@ -133,6 +134,17 @@ const CSS = () => {
                 <SubNavItem to="selectors/pseudo-element" label="Pseudo-Elements" icon={Star} />
                 <SubNavItem to="selectors/specificity" label="Specificity & Cascade" icon={Shield} />
                 <SubNavItem to="selectors/advanced" label="Advanced & Best Practices" icon={Telescope} />
+            </DropdownNav>
+
+            <DropdownNav
+                label="CSS Colors & Units"
+                icon={Palette}
+                isOpen={isColorsMenuOpen}
+                onToggle={() => setIsColorsMenuOpen(!isColorsMenuOpen)}
+            >
+                <SubNavItem to="colors-units/colors" label="CSS Colors" icon={Palette} />
+                <SubNavItem to="colors-units/units" label="CSS Units" icon={Ruler} />
+                <SubNavItem to="colors-units/exercises" label="Mistakes & Exercises" icon={CheckCircle} />
             </DropdownNav>
         </nav>
     );
