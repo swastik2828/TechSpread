@@ -6,6 +6,13 @@ import { Sparkles, Zap } from "lucide-react";
 export default function RecentlyReleased() {
   const RECENT_LESSONS = [
     {
+      title: "Control Flow & Logic Building",
+      path: "/webdevelopment/javascript/conditional-statements",
+      desc: "Master if/else, switch, truthy & falsy values, all loop types, and clean logical conditions.",
+      category: "Web Development",
+      isNew: true
+    },
+    {
       title: "CSS Colors & Units",
       path: "/webdevelopment/css/colors-units/colors",
       desc: "Master CSS colors (Hex, RGB, HSL) and understand relative vs absolute units for responsive design.",
@@ -17,14 +24,7 @@ export default function RecentlyReleased() {
       path: "/webdevelopment/javascript/variables",
       desc: "Master how JavaScript stores data, handles types at runtime, and uses operators.",
       category: "Web Development",
-      isNew: false
-    },
-    {
-      title: "Introduction to JavaScript",
-      path: "/webdevelopment/javascript",
-      desc: "Master the fundamentals of JavaScript. Learn what JS is and how engines execute code.",
-      category: "Web Development",
-      isNew: false
+      isNew: true
     }
   ];
 

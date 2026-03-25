@@ -11,6 +11,7 @@ const Javascript = () => {
     const [isDesktopCollapsed, setIsDesktopCollapsed] = useState(false);
     const [isIntroMenuOpen, setIsIntroMenuOpen] = useState(true);
     const [isModule2Open, setIsModule2Open] = useState(true);
+    const [isModule3Open, setIsModule3Open] = useState(true);
     const isExpanded = !isDesktopCollapsed;
     const navigate = useNavigate();
     const location = useLocation();
@@ -123,6 +124,13 @@ const Javascript = () => {
                 <SubNavItem to="type-conversion" label="2.5 Type Conversion" />
                 <SubNavItem to="operators" label="2.6 Operators" />
                 <SubNavItem to="expressions" label="2.7 Expressions" />
+            </DropdownNav>
+            <DropdownNav label="Module 3: Control Flow" icon={PlaySquare} isOpen={isModule3Open} onToggle={() => setIsModule3Open(!isModule3Open)}>
+                <SubNavItem to="conditional-statements" label="3.1 Conditional Statements" />
+                <SubNavItem to="truthy-falsy" label="3.2 Truthy & Falsy Values" />
+                <SubNavItem to="loops" label="3.3 Loops" />
+                <SubNavItem to="break-continue" label="3.4 break & continue" />
+                <SubNavItem to="clean-conditions" label="3.5 Clean Conditions" />
             </DropdownNav>
         </nav>
     );

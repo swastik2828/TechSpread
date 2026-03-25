@@ -110,6 +110,13 @@ import TypeConversion from "./WebDev/Frontend/Javascript/Module2/TypeConversion"
 import Operators from "./WebDev/Frontend/Javascript/Module2/Operators";
 import Expressions from "./WebDev/Frontend/Javascript/Module2/Expressions";
 
+// JavaScript Module 3: Control Flow & Logic Building
+import ConditionalStatements from "./WebDev/Frontend/Javascript/Module3/ConditionalStatements";
+import TruthyFalsy from "./WebDev/Frontend/Javascript/Module3/TruthyFalsy";
+import Loops from "./WebDev/Frontend/Javascript/Module3/Loops";
+import BreakContinue from "./WebDev/Frontend/Javascript/Module3/BreakContinue";
+import CleanConditions from "./WebDev/Frontend/Javascript/Module3/CleanConditions";
+
 // subcategory page
 import Java from "./Programming/Java/Java";               // main java container
 import WhatisJava from "./Programming/Java/WhatisJava";   // java topic pages
@@ -240,6 +247,11 @@ function App() {
         <Route path="type-conversion" element={<TypeConversion />} />
         <Route path="operators" element={<Operators />} />
         <Route path="expressions" element={<Expressions />} />
+        <Route path="conditional-statements" element={<ConditionalStatements />} />
+        <Route path="truthy-falsy" element={<TruthyFalsy />} />
+        <Route path="loops" element={<Loops />} />
+        <Route path="break-continue" element={<BreakContinue />} />
+        <Route path="clean-conditions" element={<CleanConditions />} />
       </Route>
 
       {/* Java Course */}
