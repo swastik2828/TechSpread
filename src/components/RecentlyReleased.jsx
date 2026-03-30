@@ -6,25 +6,25 @@ import { Sparkles, Zap } from "lucide-react";
 export default function RecentlyReleased() {
   const RECENT_LESSONS = [
     {
+      title: "CSS Box Model",
+      path: "/webdevelopment/css/box-model/intro",
+      desc: "Learn about the four layers of the box model, margin collapse, and box-sizing.",
+      category: "Web Development",
+      isNew: true
+    },
+    {
       title: "Control Flow & Logic Building",
       path: "/webdevelopment/javascript/conditional-statements",
       desc: "Master if/else, switch, truthy & falsy values, all loop types, and clean logical conditions.",
       category: "Web Development",
-      isNew: true
+      isNew: false
     },
     {
       title: "CSS Colors & Units",
       path: "/webdevelopment/css/colors-units/colors",
       desc: "Master CSS colors (Hex, RGB, HSL) and understand relative vs absolute units for responsive design.",
       category: "Web Development",
-      isNew: true
-    },
-    {
-      title: "Variables, Data Types & Operators",
-      path: "/webdevelopment/javascript/variables",
-      desc: "Master how JavaScript stores data, handles types at runtime, and uses operators.",
-      category: "Web Development",
-      isNew: true
+      isNew: false
     }
   ];
 

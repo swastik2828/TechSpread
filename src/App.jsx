@@ -99,6 +99,15 @@ import CssColors from "./WebDev/Frontend/CSS/CssColorsUnits/Colors";
 import CssUnits from "./WebDev/Frontend/CSS/CssColorsUnits/Units";
 import CssExercises from "./WebDev/Frontend/CSS/CssColorsUnits/Exercises";
 
+// CSS Box Model module
+import IntroBoxModel from "./WebDev/Frontend/CSS/CssBoxModel/IntroBoxModel";
+import BoxModelLayers from "./WebDev/Frontend/CSS/CssBoxModel/BoxModelLayers";
+import MarginPaddingShorthand from "./WebDev/Frontend/CSS/CssBoxModel/MarginPaddingShorthand";
+import MarginCollapse from "./WebDev/Frontend/CSS/CssBoxModel/MarginCollapse";
+import BoxSizing from "./WebDev/Frontend/CSS/CssBoxModel/BoxSizing";
+import WidthHeight from "./WebDev/Frontend/CSS/CssBoxModel/WidthHeight";
+import MistakesExercises from "./WebDev/Frontend/CSS/CssBoxModel/MistakesExercises";
+
 // JavaScript Course
 import Javascript from "./WebDev/Frontend/Javascript/Javascript";
 import IntroToJS from "./WebDev/Frontend/Javascript/IntroToJS";
@@ -235,6 +244,13 @@ function App() {
         <Route path="colors-units/colors" element={<CssColors />} />
         <Route path="colors-units/units" element={<CssUnits />} />
         <Route path="colors-units/exercises" element={<CssExercises />} />
+        <Route path="box-model/intro" element={<IntroBoxModel />} />
+        <Route path="box-model/layers" element={<BoxModelLayers />} />
+        <Route path="box-model/shorthand" element={<MarginPaddingShorthand />} />
+        <Route path="box-model/collapse" element={<MarginCollapse />} />
+        <Route path="box-model/box-sizing" element={<BoxSizing />} />
+        <Route path="box-model/width-height" element={<WidthHeight />} />
+        <Route path="box-model/mistakes-exercises" element={<MistakesExercises />} />
       </Route>
 
       {/* JavaScript Course */}

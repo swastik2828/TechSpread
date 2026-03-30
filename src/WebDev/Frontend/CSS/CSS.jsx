@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
     Globe, FileCode, Layers, ArrowLeft, Menu, X, Layout, Type,
     ChevronDown, ChevronRight, Hash, AlignLeft, Bold, Box, Key,
-    Link as LinkIcon, Link2, FolderTree, Mail, ExternalLink, CheckCircle, Code,
+    Link as LinkIcon, Link2, FolderTree, Mail, ExternalLink, CheckCircle, Code, ArrowDownUp, BoxSelect,
     PanelLeftClose, PanelLeftOpen, Image as ImageIcon, ImagePlus, FileImage, Videotape, Clapperboard, MonitorPlay, FileAudio, ShieldAlert,
     List, ListOrdered, Table, Maximize2, LayoutGrid, ListTree, BookA,
     FormInput, CheckSquare, MousePointerClick, Smartphone, Ear, ShieldCheck, Zap,
@@ -16,6 +16,7 @@ const CSS = () => {
     const [isDesktopCollapsed, setIsDesktopCollapsed] = useState(false);
     const [isSelectorsMenuOpen, setIsSelectorsMenuOpen] = useState(true);
     const [isColorsMenuOpen, setIsColorsMenuOpen] = useState(false);
+    const [isBoxModelMenuOpen, setIsBoxModelMenuOpen] = useState(false);
     const isExpanded = !isDesktopCollapsed;
     const navigate = useNavigate();
     const location = useLocation();
@@ -145,6 +146,21 @@ const CSS = () => {
                 <SubNavItem to="colors-units/colors" label="CSS Colors" icon={Palette} />
                 <SubNavItem to="colors-units/units" label="CSS Units" icon={Ruler} />
                 <SubNavItem to="colors-units/exercises" label="Mistakes & Exercises" icon={CheckCircle} />
+            </DropdownNav>
+
+            <DropdownNav
+                label="CSS Box Model"
+                icon={Box}
+                isOpen={isBoxModelMenuOpen}
+                onToggle={() => setIsBoxModelMenuOpen(!isBoxModelMenuOpen)}
+            >
+                <SubNavItem to="box-model/intro" label="Introduction" icon={BookOpen} />
+                <SubNavItem to="box-model/layers" label="Four Layers" icon={Layers} />
+                <SubNavItem to="box-model/shorthand" label="Padding & Margin" icon={Maximize2} />
+                <SubNavItem to="box-model/collapse" label="Margin Collapse" icon={ArrowDownUp} />
+                <SubNavItem to="box-model/box-sizing" label="box-sizing" icon={BoxSelect} />
+                <SubNavItem to="box-model/width-height" label="Width & Height" icon={Ruler} />
+                <SubNavItem to="box-model/mistakes-exercises" label="Mistakes & Exercises" icon={CheckCircle} />
             </DropdownNav>
         </nav>
     );

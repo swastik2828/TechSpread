@@ -157,9 +157,9 @@ const Exercises = () => {
                 <Link to="/webdevelopment/css/colors-units/units" className="flex items-center gap-2 text-gray-500 hover:text-white transition-colors">
                     <ArrowLeft size={16} /> CSS Units
                 </Link>
-                {/* At the end of the module, point back to course home or next module */}
-                <Link to="/webdevelopment/css" className="flex items-center gap-2 text-sky-400 font-bold hover:text-sky-300 transition-colors">
-                    Back to CSS Course <ArrowRight size={16} />
+                {/* At the end of the module, point to the next module */}
+                <Link to="/webdevelopment/css/box-model/intro" className="flex items-center gap-2 text-sky-400 font-bold hover:text-sky-300 transition-colors">
+                    Next: CSS Box Model <ArrowRight size={16} />
                 </Link>
             </div>
         </article>
