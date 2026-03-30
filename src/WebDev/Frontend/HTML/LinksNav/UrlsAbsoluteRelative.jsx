@@ -2,6 +2,7 @@ import React from 'react';
 import { Link2, ArrowRight, ArrowLeft, Globe, MapPin, FileQuestion, Server } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from "../../../../components/SEO";
+import URLDecoderSimulator from '../../../../simulators/web/html/URLDecoderSimulator';
 
 const Section = ({ title, icon: Icon, children }) => (
   <section className="mb-20">
@@ -64,7 +65,7 @@ const UrlsAbsoluteRelative = () => {
             </ul>
           </div>
         </Section>
-
+        <URLDecoderSimulator/>
         <Section title="Absolute URLs" icon={Server}>
           <p>
             An <strong>absolute URL</strong> includes the full address of the resource, starting from the scheme (<code>http://</code> or <code>https://</code>), followed by the domain name, and optionally a path, query string, and fragment. For example:

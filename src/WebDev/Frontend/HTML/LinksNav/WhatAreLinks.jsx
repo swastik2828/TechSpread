@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import SEO from "../../../../components/SEO";
 import introImg from '../../../../assets/WebDev/html_browser_flow.jpeg';
 
+
 const Section = ({ title, icon: Icon, children }) => (
   <section className="mb-20">
     <div className="flex items-center gap-3 mb-8">

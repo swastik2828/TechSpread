@@ -1,234 +1,252 @@
-import React, { useState, useEffect } from 'react';
-import { Play, Pause, RotateCcw, SkipForward, Globe, Search, Send, Server, FileText, LayoutTemplate, Activity } from 'lucide-react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 
-// Steps definition with specific icon, label, description, and "target actor" for diagram highlighting
 const STEPS = [
-  {
-    id: 1,
-    title: 'URL Entry',
-    icon: Globe,
-    desc: 'You enter a domain name (like techspread.co.in) into the address bar.',
-    actor: 'client',
-  },
-  {
-    id: 2,
-    title: 'DNS Lookup',
-    icon: Search,
-    desc: 'Browser asks a DNS server for the IP address corresponding to the domain.',
-    actor: 'dns',
-  },
-  {
-    id: 3,
-    title: 'HTTP Request',
-    icon: Send,
-    desc: 'Browser opens a TCP connection and sends an HTTP request to the server IP.',
-    actor: 'client', // Originator of the request
-  },
-  {
-    id: 4,
-    title: 'Server Processing',
-    icon: Server,
-    desc: 'The server handles the request, interacting with database or logic if needed.',
-    actor: 'server',
-  },
-  {
-    id: 5,
-    title: 'HTTP Response',
-    icon: FileText,
-    desc: 'The server sends back an HTTP response with the webpage content (HTML/CSS/JS).',
-    actor: 'server', // Originator of the response
-  },
-  {
-    id: 6,
-    title: 'Render Page',
-    icon: LayoutTemplate,
-    desc: 'The browser parses the files and constructs the visible webpage on screen.',
-    actor: 'client',
-  },
+  { id: 'idle', title: 'Ready', desc: 'Enter a web address and choose your simulation mode.' },
+  { id: 'parse', title: '1. Parse URL', desc: 'The browser breaks the link into protocol, domain, and path.' },
+  { id: 'dns', title: '2. DNS Lookup', desc: 'Translating the domain name into a machine IP address.' },
+  { id: 'tcp', title: '3. Connect', desc: 'Establishing a reliable TCP connection with the server.' },
+  { id: 'tls', title: '4. Secure', desc: 'Creating a secure, encrypted tunnel (HTTPS/TLS) for data.' },
+  { id: 'req', title: '5. Request', desc: 'Sending the HTTP GET request to ask for the webpage.' },
+  { id: 'process', title: '6. Process', desc: 'The server reads the request and prepares the HTML response.' },
+  { id: 'res', title: '7. Response', desc: 'The server sends the webpage data back to your browser.' },
+  { id: 'render', title: '8. Render', desc: 'The browser paints the code onto your screen!' }
 ];
 
-const Node = ({ icon: Icon, label, ip, isActive, isProcessing }) => (
-  <div className={`relative p-4 md:p-6 rounded-2xl border-2 transition-all duration-500 bg-slate-900 flex flex-col items-center text-center shadow-lg w-[140px] md:w-[160px]
-    ${isActive ? 'border-cyan-500 shadow-[0_0_20px_rgba(34,211,238,0.4)] scale-105' : 'border-slate-800 scale-100'}`}>
-    {isProcessing && (
-      <span className="absolute -top-2 -right-2 flex h-5 w-5">
-        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-        <span className="relative inline-flex rounded-full h-5 w-5 bg-cyan-500 flex items-center justify-center">
-            <Activity className="w-3 h-3 text-slate-950" />
-        </span>
-      </span>
-    )}
-    <Icon className={`w-10 h-10 mb-3 transition-colors duration-300 ${isActive ? 'text-cyan-400' : 'text-slate-600'}`} strokeWidth={1.5} />
-    <h3 className={`font-bold text-sm md:text-base ${isActive ? 'text-slate-50' : 'text-slate-400'}`}>{label}</h3>
-    {ip && <p className="text-[10px] md:text-xs font-mono text-slate-500 bg-slate-950 mt-2 px-1.5 py-0.5 rounded border border-slate-800">{ip}</p>}
-  </div>
-);
-
-// Small packet/dot element moving along the path
-const Packet = ({ show, start, end, duration }) => {
-  const transitionClass = `transition-transform duration-[${duration}ms] ease-in-out`;
-  const style = show ? { transform: `translateX(${end - start}px)` } : { transform: `translateX(0px)` };
-
-  return (
-    <div className={`absolute top-1/2 -translate-y-1/2 h-3 w-3 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.7)] ${transitionClass}`} style={style} />
-  );
+const Icons = {
+  Play: () => <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>,
+  StepForward: () => <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 5l7 7-7 7M5 5l7 7-7 7" /></svg>,
+  Refresh: () => <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>,
+  Globe: () => <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg>,
+  Server: () => <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" /></svg>,
+  Lock: () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
 };
 
-export default function WebArchitectureSimulator() {
-  const [currentStepIndex, setCurrentStepIndex] = useState(-1); // -1 = idle/start
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [speed, setSpeed] = useState(1500); // ms per step
+export default function UniqueNetworkSimulator() {
+  // Pre-configured for TechSpread
+  const [url, setUrl] = useState('https://techspread.co.in'); 
+  const [parsedUrl, setParsedUrl] = useState(null);
+  const [error, setError] = useState('');
+  
+  const [stepIndex, setStepIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(false);
+  const [serverIp, setServerIp] = useState('');
+  const [iframeLoading, setIframeLoading] = useState(true);
+
+  const timerRef = useRef(null);
+
+  const parseTargetUrl = useCallback((inputUrl) => {
+    try {
+      const u = new URL(inputUrl);
+      setParsedUrl({ protocol: u.protocol.replace(':', ''), domain: u.hostname, path: u.pathname });
+      setError('');
+      return true;
+    } catch (err) {
+      setError('Please include https:// (e.g., https://techspread.co.in)');
+      return false;
+    }
+  }, []);
 
   useEffect(() => {
-    let timer;
-    if (isPlaying && currentStepIndex < STEPS.length - 1) {
-      timer = setTimeout(() => {
-        setCurrentStepIndex((prev) => prev + 1);
-      }, speed);
-    } else if (currentStepIndex === STEPS.length - 1) {
-      setIsPlaying(false); // Stop when end is reached
+    if (isAutoPlaying && stepIndex > 0 && stepIndex < STEPS.length - 1) {
+      timerRef.current = setTimeout(() => {
+        setStepIndex(prev => prev + 1);
+      }, 2000);
+    } else if (stepIndex === STEPS.length - 1) {
+      setIsAutoPlaying(false);
     }
-    return () => clearTimeout(timer);
-  }, [isPlaying, currentStepIndex, speed]);
+    return () => clearTimeout(timerRef.current);
+  }, [isAutoPlaying, stepIndex]);
 
-  const handleStartPlay = () => {
-    if (currentStepIndex === STEPS.length - 1) {
-      setCurrentStepIndex(0); // Reset to start if already at end
-    } else if (currentStepIndex === -1) {
-        setCurrentStepIndex(0); // Go to first step
+  const initSimulation = () => {
+    if (parseTargetUrl(url)) {
+      setServerIp(`104.21.${Math.floor(Math.random() * 100)}.${Math.floor(Math.random() * 255)}`); // Cloudflare style IP
+      setStepIndex(1);
+      setIframeLoading(true);
+      return true;
     }
-    setIsPlaying(true);
+    return false;
   };
 
-  const handlePause = () => setIsPlaying(false);
+  const handleAutoPlay = () => {
+    if (stepIndex === 0 && initSimulation()) setIsAutoPlaying(true);
+    else setIsAutoPlaying(true);
+  };
 
-  const handleNext = () => {
-    handlePause();
-    if (currentStepIndex < STEPS.length - 1) setCurrentStepIndex((prev) => prev + 1);
+  const handleManualStep = () => {
+    setIsAutoPlaying(false);
+    if (stepIndex === 0) initSimulation();
+    else if (stepIndex < STEPS.length - 1) setStepIndex(prev => prev + 1);
   };
 
   const handleReset = () => {
-    handlePause();
-    setCurrentStepIndex(-1);
+    setIsAutoPlaying(false);
+    setStepIndex(0);
+    setParsedUrl(null);
+    clearTimeout(timerRef.current);
   };
 
-  const toggleSpeed = () => {
-    setSpeed((prev) => (prev === 1500 ? 750 : 1500));
-  };
-
-  const currentStep = STEPS[currentStepIndex];
-  const progress = ((currentStepIndex + 1) / STEPS.length) * 100;
-
-  // Determine which diagram actors are active or processing based on current conceptual step
-  const isActive = (actor) => currentStepIndex >= 0 && currentStep?.actor === actor;
-  const isProcessing = (actor) => isActive(actor) && (currentStepIndex === 1 || currentStepIndex === 3 || currentStepIndex === 5); // Lookup, Server Proc, Rendering
-
-  // Packet animation logic (requires fixed layout width for simplicity)
-  const SHOW_PACKET = isPlaying && (currentStepIndex === 1 || currentStepIndex === 2 || currentStepIndex === 4);
-  const PACKET_START = 160; // Client node end position roughly
-  const PACKET_END = currentStepIndex === 1 ? 260 : 420; // DNS or Server position roughly
-  const REVERSE_PACKET = currentStepIndex === 4; // Server -> Client for Step 5 Response
+  const currentStep = STEPS[stepIndex];
+  const isHttps = parsedUrl?.protocol === 'https';
 
   return (
-    <div className="max-w-[720px] mx-auto p-4 md:p-6 bg-slate-950 rounded-2xl border border-slate-800 shadow-2xl font-sans text-slate-200">
+    <div className="w-full bg-[#0a0f1c] text-slate-200 font-sans p-4 rounded-2xl shadow-2xl border border-slate-800 max-w-5xl mx-auto flex flex-col gap-4">
       
-      {/* Header & Controls */}
-      <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-3 pb-4 border-b border-slate-800">
-        <div className="flex items-center gap-3">
-            <div className='p-2 bg-slate-900 border border-slate-800 rounded-xl'>
-                <Activity className='w-6 h-6 text-cyan-400' />
-            </div>
-          <div>
-            <h2 className="text-xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-300">
-              Web Requests
-            </h2>
-            <p className="text-xs text-slate-500 font-medium">TechSpread Interactive Guide</p>
-          </div>
+      {/* Controls Header */}
+      <div className="flex flex-col md:flex-row gap-4 items-center bg-slate-900/50 p-4 rounded-xl border border-slate-700/50">
+        <div className="flex-1 w-full relative">
+          <input 
+            type="text" 
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
+            disabled={stepIndex > 0}
+            className="w-full bg-slate-950 border border-slate-700 rounded-lg pl-4 pr-4 py-3 font-mono text-sm text-cyan-100 focus:outline-none focus:border-cyan-500 transition-all disabled:opacity-60"
+          />
+          {error && <p className="absolute -bottom-5 left-0 text-red-400 text-xs">{error}</p>}
+        </div>
+
+        <div className="flex gap-2 w-full md:w-auto">
+          {stepIndex === 0 ? (
+            <>
+              <button onClick={handleManualStep} className="flex-1 md:flex-none bg-cyan-600 hover:bg-cyan-500 text-white px-5 py-3 rounded-lg text-sm font-semibold flex items-center justify-center gap-2 transition-all">
+                <Icons.StepForward /> Step-by-Step
+              </button>
+              <button onClick={handleAutoPlay} className="flex-1 md:flex-none bg-slate-800 hover:bg-slate-700 text-white px-5 py-3 rounded-lg text-sm font-semibold flex items-center justify-center gap-2 transition-all border border-slate-700">
+                <Icons.Play /> Auto
+              </button>
+            </>
+          ) : (
+            <>
+              <button 
+                onClick={handleManualStep} 
+                disabled={stepIndex === STEPS.length - 1 || isAutoPlaying}
+                className="flex-1 md:flex-none bg-cyan-600 hover:bg-cyan-500 text-white px-5 py-3 rounded-lg text-sm font-semibold flex items-center justify-center gap-2 transition-all disabled:opacity-50 disabled:bg-slate-800"
+              >
+                {stepIndex === STEPS.length - 1 ? 'Done' : 'Next Step ➔'}
+              </button>
+              <button onClick={handleReset} className="p-3 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-lg transition-colors">
+                <Icons.Refresh />
+              </button>
+            </>
+          )}
+        </div>
+      </div>
+
+      {/* Info Banner & URL Breakdown */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="col-span-1 md:col-span-2 bg-cyan-900/20 border border-cyan-500/20 rounded-xl p-4 flex flex-col justify-center">
+          <h2 className="text-cyan-400 font-bold tracking-wide text-sm uppercase mb-1">{currentStep.title}</h2>
+          <p className="text-slate-300 text-sm">{currentStep.desc}</p>
         </div>
         
-        <div className="flex items-center gap-2">
-            <button onClick={toggleSpeed} className="px-3 py-1.5 text-xs font-mono rounded-lg bg-slate-900 text-slate-400 hover:text-cyan-300 transition-colors border border-slate-800">
-                {speed === 1500 ? '1x' : '2x'} Speed
-            </button>
-            <div className="flex items-center gap-1 bg-slate-900 border border-slate-800 rounded-lg p-0.5">
-                {isPlaying ? (
-                    <button onClick={handlePause} className="p-2 rounded-md bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors">
-                        <Pause className="w-4 h-4" />
-                    </button>
-                ) : (
-                    <button onClick={handleStartPlay} className={`p-2 rounded-md ${currentStepIndex === STEPS.length - 1 ? 'bg-orange-600 hover:bg-orange-500' : 'bg-cyan-600 hover:bg-cyan-500'} text-white transition-colors`}>
-                        {currentStepIndex === STEPS.length - 1 ? <RotateCcw className="w-4 h-4" /> : <Play className="w-4 h-4" />}
-                    </button>
+        <div className={`col-span-1 flex gap-2 transition-all duration-500 ${stepIndex >= 1 ? 'opacity-100' : 'opacity-20 grayscale'}`}>
+          <div className="flex-1 bg-slate-900/50 rounded-lg border border-slate-700 p-2 flex flex-col justify-center items-center">
+            <span className="text-[10px] text-slate-500 uppercase">Protocol</span>
+            <span className="text-xs font-mono text-pink-400 truncate max-w-[80px]">{parsedUrl?.protocol || '-'}</span>
+          </div>
+          <div className="flex-[2] bg-slate-900/50 rounded-lg border border-slate-700 p-2 flex flex-col justify-center items-center overflow-hidden">
+            <span className="text-[10px] text-slate-500 uppercase">Domain</span>
+            <span className="text-xs font-mono text-cyan-400 truncate max-w-full">{parsedUrl?.domain || '-'}</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Visualizer Stage */}
+      <div className="relative bg-slate-950 border border-slate-800 rounded-xl h-[320px] overflow-hidden flex items-center justify-between px-6 md:px-16 shadow-inner">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:16px_16px]"></div>
+
+        {/* Client / Browser Node */}
+        <div className={`relative z-20 flex flex-col items-center transition-all duration-1000 ease-[cubic-bezier(0.23,1,0.32,1)]
+          ${stepIndex === 8 ? 'absolute inset-0 w-full h-full justify-start' : 'w-24'}`}>
+          
+          <div className={`flex items-center justify-center transition-all duration-1000 overflow-hidden relative
+            ${stepIndex === 8 
+              ? 'w-full h-full bg-slate-900 rounded-none border-0' 
+              : 'w-16 h-16 rounded-2xl bg-slate-800 border-2 border-slate-600 shadow-lg'}`}>
+            
+            {stepIndex === 8 ? (
+              <div className="w-full h-full flex flex-col">
+                {/* Browser Header Bar */}
+                <div className="bg-[#1e293b] h-10 flex items-center px-4 gap-3 border-b border-slate-700">
+                  <div className="flex gap-2">
+                    <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+                    <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                    <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+                  </div>
+                  <div className="flex-1 max-w-md mx-auto bg-slate-800/80 px-3 py-1 rounded-md flex items-center gap-2 border border-slate-700">
+                    <Icons.Lock />
+                    <span className="text-xs text-slate-300 font-mono truncate">{url}</span>
+                  </div>
+                </div>
+                
+                {/* Loading Skeleton before Iframe loads */}
+                {iframeLoading && (
+                  <div className="absolute inset-0 top-10 bg-slate-900 flex flex-col p-8 gap-4 animate-pulse z-0">
+                    <div className="h-8 w-1/3 bg-slate-800 rounded"></div>
+                    <div className="h-4 w-2/3 bg-slate-800 rounded"></div>
+                    <div className="h-4 w-1/2 bg-slate-800 rounded"></div>
+                    <div className="h-32 w-full bg-slate-800 rounded mt-4"></div>
+                  </div>
                 )}
-                <button onClick={handleNext} disabled={currentStepIndex === STEPS.length - 1} className="p-2 rounded-md hover:bg-slate-800 text-slate-500 hover:text-slate-300 disabled:opacity-40 transition-colors">
-                    <SkipForward className="w-4 h-4" />
-                </button>
-                <button onClick={handleReset} className="p-2 rounded-md hover:bg-slate-800 text-slate-500 hover:text-red-400 transition-colors">
-                    <RotateCcw className="w-4 h-4" />
-                </button>
+
+                {/* The Actual Website Iframe */}
+                <iframe 
+                  src={url} 
+                  className="w-full flex-1 bg-white relative z-10 transition-opacity duration-500"
+                  style={{ opacity: iframeLoading ? 0 : 1 }}
+                  title="Rendered Page" 
+                  onLoad={() => setIframeLoading(false)}
+                  sandbox="allow-scripts allow-same-origin allow-popups" 
+                />
+              </div>
+            ) : (
+              <Icons.Globe />
+            )}
+          </div>
+          
+          {stepIndex < 8 && (
+             <span className="mt-3 font-mono text-[10px] text-slate-300 bg-slate-800 px-2 py-1 rounded border border-slate-700">Browser</span>
+          )}
+
+          {/* DNS Tooltip */}
+          <div className={`absolute -top-12 bg-indigo-900/90 border border-indigo-500 text-indigo-100 px-3 py-1.5 rounded font-mono text-[10px] transition-all duration-500 whitespace-nowrap z-30
+            ${stepIndex === 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'}`}>
+            Translating...<br/>{serverIp}
+          </div>
+        </div>
+
+        {/* Network Middle Section */}
+        <div className={`flex-1 relative mx-4 transition-opacity duration-300 ${stepIndex === 8 ? 'opacity-0' : 'opacity-100'}`}>
+          <div className={`absolute top-1/2 left-0 w-full h-[2px] -translate-y-1/2 transition-all duration-1000 bg-slate-800 ${stepIndex >= 3 ? 'bg-cyan-500 shadow-[0_0_10px_#06b6d4]' : ''}`}></div>
+
+          {isHttps && (
+            <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-slate-900 p-1.5 rounded-full border border-emerald-500 transition-all duration-500 z-10
+              ${stepIndex >= 4 ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`}>
+              <Icons.Lock />
             </div>
+          )}
+
+          {stepIndex === 5 && <div className="absolute top-1/2 -translate-y-1/2 w-3 h-3 bg-pink-500 rounded-full shadow-[0_0_10px_#ec4899] sim-slide-right"></div>}
+          {stepIndex === 7 && <div className="absolute top-1/2 -translate-y-1/2 w-3 h-3 bg-emerald-500 rounded-full shadow-[0_0_10px_#10b981] sim-slide-left right-0"></div>}
+        </div>
+
+        {/* Server Node */}
+        <div className={`relative z-10 flex flex-col items-center w-24 transition-opacity duration-300 ${stepIndex === 8 ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+          <div className={`w-16 h-16 rounded-2xl flex items-center justify-center border-2 transition-all duration-300
+            ${stepIndex === 6 ? 'bg-purple-900/60 border-purple-400 shadow-[0_0_30px_rgba(168,85,247,0.5)] scale-110' : 'bg-slate-800 border-slate-600'}`}>
+            <Icons.Server />
+          </div>
+          <span className="mt-3 font-mono text-[10px] text-slate-300 bg-slate-800 px-2 py-1 rounded border border-slate-700 text-center leading-tight">
+            Server<br/>({serverIp || '---'})
+          </span>
         </div>
       </div>
 
-      {/* Progress Bar */}
-      <div className="w-full bg-slate-800 h-1.5 rounded-full mb-8 overflow-hidden">
-        <div 
-          className="bg-gradient-to-r from-cyan-500 to-blue-400 h-full transition-all duration-300 ease-out"
-          style={{ width: `${currentStepIndex >= 0 ? progress : 0}%` }}
-        />
-      </div>
-
-      {/* Vis Area - Desktop Row, Mobile wrapped */}
-      <div className="relative flex items-start justify-center min-h-[160px] mb-8 gap-x-2 md:gap-x-4 max-w-[600px] mx-auto overflow-hidden">
-        
-        {/* Connection Lines (Desktop only for packet animation) */}
-        <div className="absolute top-[55px] left-[140px] right-[140px] h-0.5 bg-slate-800 rounded-full hidden md:block">
-            {/* Moving packet dot along the line */}
-            <div className={`absolute -top-1.5 h-3 w-3 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.7)] transition-all ease-linear
-                ${currentStepIndex === 1 && isPlaying ? 'left-0 translate-x-[110px] duration-1000' : ''} /* Client -> DNS */
-                ${currentStepIndex === 2 && isPlaying ? 'left-0 translate-x-[300px] duration-1000' : ''} /* Client -> Server */
-                ${currentStepIndex === 4 && isPlaying ? 'right-0 -translate-x-[300px] duration-1000 bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.7)]' : ''} /* Server -> Client */
-                ${!SHOW_PACKET || !isPlaying ? 'opacity-0 scale-50' : 'opacity-100 scale-100'}`} />
-        </div>
-
-        <Node icon={Globe} label="Browser" ip="Client Machine" isActive={isActive('client')} isProcessing={isProcessing('client')} />
-        <Node icon={Search} label="DNS Server" ip="1.1.1.1" isActive={isActive('dns')} isProcessing={isProcessing('dns')} />
-        <Node icon={Server} label="Web Server" ip="techspread.co.in (104.18.2.10)" isActive={isActive('server')} isProcessing={isProcessing('server')} />
-      </div>
-
-      {/* Current Step Info Panel */}
-      <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-inner">
-        {currentStepIndex === -1 ? (
-          <div className="text-center py-6 text-slate-500 italic flex flex-col items-center gap-4">
-            <LayoutTemplate className='w-12 h-12 text-slate-700' strokeWidth={1}/>
-            <div>
-              <p className='font-semibold text-slate-400 text-lg'>Simulation Ready</p>
-              <p className='text-sm'>Press Play or Next to see how content flows across the internet.</p>
-            </div>
-          </div>
-        ) : (
-          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 animate-fade-in transition-opacity duration-300">
-            <div className={`p-4 rounded-xl border border-slate-800 bg-slate-950 flex-shrink-0
-                ${currentStep?.actor === 'dns' ? 'text-purple-400' : currentStep?.actor === 'server' ? 'text-emerald-400' : 'text-cyan-400'}`}>
-              {currentStep && <currentStep.icon className="w-8 h-8" strokeWidth={1.5} />}
-            </div>
-            <div className="flex-grow text-center sm:text-left">
-              <p className="text-xs font-mono text-slate-600 mb-1 tracking-widest">STEP {currentStepIndex + 1} OF 6</p>
-              <h4 className="text-xl font-bold text-slate-50 mb-2">{currentStep?.title}</h4>
-              <p className="text-sm text-slate-400 leading-relaxed font-normal">
-                {currentStep?.desc}
-              </p>
-            </div>
-          </div>
-        )}
-      </div>
-
-      {/* Inline animation keyframe definition (clean, self-contained) */}
-      <style>{`
-        @keyframes fade-in { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
-        .animate-fade-in { animation: fade-in 0.3s ease-out forwards; }
-      `}</style>
-
+      <style dangerouslySetInnerHTML={{__html: `
+        .sim-slide-right { animation: simRight 1.5s ease-in-out infinite; }
+        .sim-slide-left { animation: simLeft 1.5s ease-in-out infinite; }
+        @keyframes simRight { 0% { left: 0; opacity: 0; } 20% { opacity: 1; } 80% { opacity: 1; } 100% { left: 100%; opacity: 0; } }
+        @keyframes simLeft { 0% { right: 0; opacity: 0; } 20% { opacity: 1; } 80% { opacity: 1; } 100% { right: 100%; opacity: 0; } }
+      `}} />
     </div>
   );
 }
