@@ -126,6 +126,14 @@ import Loops from "./WebDev/Frontend/Javascript/Module3/Loops";
 import BreakContinue from "./WebDev/Frontend/Javascript/Module3/BreakContinue";
 import CleanConditions from "./WebDev/Frontend/Javascript/Module3/CleanConditions";
 
+// JavaScript Module 4: Functions & Execution
+import FunctionDeclarations from "./WebDev/Frontend/Javascript/Module4/FunctionDeclarations";
+import ParametersArguments from "./WebDev/Frontend/Javascript/Module4/ParametersArguments";
+import ReturnValues from "./WebDev/Frontend/Javascript/Module4/ReturnValues";
+import ArrowFunctions from "./WebDev/Frontend/Javascript/Module4/ArrowFunctions";
+import ExecutionContext from "./WebDev/Frontend/Javascript/Module4/ExecutionContext";
+import CallStack from "./WebDev/Frontend/Javascript/Module4/CallStack";
+
 // subcategory page
 import Java from "./Programming/Java/Java";               // main java container
 import WhatisJava from "./Programming/Java/WhatisJava";   // java topic pages
@@ -268,6 +276,12 @@ function App() {
         <Route path="loops" element={<Loops />} />
         <Route path="break-continue" element={<BreakContinue />} />
         <Route path="clean-conditions" element={<CleanConditions />} />
+        <Route path="functions" element={<FunctionDeclarations />} />
+        <Route path="parameters" element={<ParametersArguments />} />
+        <Route path="return-values" element={<ReturnValues />} />
+        <Route path="arrow-functions" element={<ArrowFunctions />} />
+        <Route path="execution-context" element={<ExecutionContext />} />
+        <Route path="call-stack" element={<CallStack />} />
       </Route>
 
       {/* Java Course */}

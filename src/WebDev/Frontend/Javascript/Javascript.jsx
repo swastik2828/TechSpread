@@ -2,16 +2,17 @@ import { Outlet, NavLink, useNavigate, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
     Menu, X, ArrowLeft, ChevronDown, ChevronRight, FileCode,
-    PanelLeftClose, PanelLeftOpen, TerminalSquare, BookOpen, Code2, PlaySquare, Globe2
+    PanelLeftClose, PanelLeftOpen, TerminalSquare, BookOpen, Code2, PlaySquare, Globe2, GitBranch
 } from "lucide-react";
 import { useState } from "react";
 
 const Javascript = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [isDesktopCollapsed, setIsDesktopCollapsed] = useState(false);
-    const [isIntroMenuOpen, setIsIntroMenuOpen] = useState(true);
-    const [isModule2Open, setIsModule2Open] = useState(true);
-    const [isModule3Open, setIsModule3Open] = useState(true);
+    const [isIntroMenuOpen, setIsIntroMenuOpen] = useState(false);
+    const [isModule2Open, setIsModule2Open] = useState(false);
+    const [isModule3Open, setIsModule3Open] = useState(false);
+    const [isModule4Open, setIsModule4Open] = useState(false);
     const isExpanded = !isDesktopCollapsed;
     const navigate = useNavigate();
     const location = useLocation();
@@ -131,6 +132,14 @@ const Javascript = () => {
                 <SubNavItem to="loops" label="3.3 Loops" />
                 <SubNavItem to="break-continue" label="3.4 break & continue" />
                 <SubNavItem to="clean-conditions" label="3.5 Clean Conditions" />
+            </DropdownNav>
+            <DropdownNav label="Functions & Execution" icon={GitBranch} isOpen={isModule4Open} onToggle={() => setIsModule4Open(!isModule4Open)}>
+                <SubNavItem to="functions" label="4.1 Function Basics" />
+                <SubNavItem to="parameters" label="4.2 Parameters & Args" />
+                <SubNavItem to="return-values" label="4.3 Return Values" />
+                <SubNavItem to="arrow-functions" label="4.4 Arrow Functions" />
+                <SubNavItem to="execution-context" label="4.5 Context & Scope" />
+                <SubNavItem to="call-stack" label="4.6 The Call Stack" />
             </DropdownNav>
         </nav>
     );

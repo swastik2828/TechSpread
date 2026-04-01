@@ -27,7 +27,7 @@ const CourseLivePopup = () => {
   // Show the popup automatically when the component mounts
   useEffect(() => {
     // Small delay so it pops up beautifully after page load
-    const timer = setTimeout(() => setShowPopup(true), 1500);
+    const timer = setTimeout(() => setShowPopup(true), 1200);
     return () => clearTimeout(timer);
   }, []);
 
