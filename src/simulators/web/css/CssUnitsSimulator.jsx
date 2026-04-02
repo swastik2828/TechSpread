@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import { Ruler, Maximize2, Settings, Box } from 'lucide-react';
 
 export default function CssUnitsSimulator() {
@@ -121,10 +120,9 @@ export default function CssUnitsSimulator() {
                     <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '1rem 1rem' }}></div>
                     
                     {/* Parent Container (simulating the viewport/wrapper constraint) */}
-                    <motion.div 
-                        animate={{ width: `${parentWidth}%` }}
-                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                        className="h-full border border-indigo-500/50 rounded-xl bg-indigo-900/10 flex items-center justify-center relative p-4 backdrop-blur-sm"
+                    <div 
+                        style={{ width: `${parentWidth}%` }}
+                        className="transition-all duration-300 h-full border border-indigo-500/50 rounded-xl bg-indigo-900/10 flex items-center justify-center relative p-4 backdrop-blur-sm"
                     >
                         {/* Parent Label indicator */}
                         <div className="absolute top-2 left-2 text-[10px] font-mono text-indigo-400 tracking-widest font-bold bg-indigo-950 px-2 py-1 rounded">
@@ -132,11 +130,10 @@ export default function CssUnitsSimulator() {
                         </div>
 
                         {/* The Target Element */}
-                        <motion.div 
-                            animate={{ width: getBoxWidthString() }}
-                            transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                            className="bg-sky-500/20 border-2 border-sky-400 flex flex-col items-center justify-center rounded-lg shadow-xl overflow-hidden relative"
+                        <div 
+                            className="bg-sky-500/20 border-2 border-sky-400 flex flex-col items-center justify-center rounded-lg shadow-xl overflow-hidden relative transition-all duration-300"
                             style={{ 
+                                width: getBoxWidthString(),
                                 height: "200px",
                                 fontSize: getBoxFontString()
                             }}
@@ -147,9 +144,9 @@ export default function CssUnitsSimulator() {
                             <div className="absolute bottom-2 left-0 right-0 text-center font-mono opacity-60 text-sky-200" style={{ fontSize: '10px' }}>
                                 W: {getBoxWidthString()}
                             </div>
-                        </motion.div>
+                        </div>
 
-                    </motion.div>
+                    </div>
                 </div>
             </div>
             

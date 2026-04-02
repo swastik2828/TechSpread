@@ -108,6 +108,11 @@ import BoxSizing from "./WebDev/Frontend/CSS/CssBoxModel/BoxSizing";
 import WidthHeight from "./WebDev/Frontend/CSS/CssBoxModel/WidthHeight";
 import MistakesExercises from "./WebDev/Frontend/CSS/CssBoxModel/MistakesExercises";
 
+// CSS Typography module
+import IntroTypography from "./WebDev/Frontend/CSS/CssTypography/IntroTypography";
+import TextFormatting from "./WebDev/Frontend/CSS/CssTypography/TextFormatting";
+import ResponsiveTypography from "./WebDev/Frontend/CSS/CssTypography/ResponsiveTypography";
+
 // JavaScript Course
 import Javascript from "./WebDev/Frontend/Javascript/Javascript";
 import IntroToJS from "./WebDev/Frontend/Javascript/IntroToJS";
@@ -259,6 +264,9 @@ function App() {
         <Route path="box-model/box-sizing" element={<BoxSizing />} />
         <Route path="box-model/width-height" element={<WidthHeight />} />
         <Route path="box-model/mistakes-exercises" element={<MistakesExercises />} />
+        <Route path="typography/intro" element={<IntroTypography />} />
+        <Route path="typography/formatting" element={<TextFormatting />} />
+        <Route path="typography/responsive" element={<ResponsiveTypography />} />
       </Route>
 
       {/* JavaScript Course */}

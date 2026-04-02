@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, CheckCircle, AlertTriangle } from 'lucide-react';
+import { ArrowLeft, CheckCircle, AlertTriangle, ArrowRight } from 'lucide-react';
 import SEO from "../../../../components/SEO";
 
 const MistakesExercises = () => {
@@ -128,7 +128,12 @@ const MistakesExercises = () => {
                     <ArrowLeft size={16} /> Width & Height
                 </Link>
                 {/* Notice there is no Next link, module is finished! Let the user navigate via sidebar */}
+                <Link to="/webdevelopment/css/typography/intro" className="flex items-center gap-2 text-sky-400 font-bold hover:text-sky-300 transition-colors">
+                    Next: Typography <ArrowRight size={16} />
+                </Link>
             </div>
+            
+            
         </article>
     );
 };

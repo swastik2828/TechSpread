@@ -14,9 +14,10 @@ import { useState } from "react";
 const CSS = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [isDesktopCollapsed, setIsDesktopCollapsed] = useState(false);
-    const [isSelectorsMenuOpen, setIsSelectorsMenuOpen] = useState(true);
+    const [isSelectorsMenuOpen, setIsSelectorsMenuOpen] = useState(false);
     const [isColorsMenuOpen, setIsColorsMenuOpen] = useState(false);
     const [isBoxModelMenuOpen, setIsBoxModelMenuOpen] = useState(false);
+    const [isTypographyMenuOpen, setIsTypographyMenuOpen] = useState(false);
     const isExpanded = !isDesktopCollapsed;
     const navigate = useNavigate();
     const location = useLocation();
@@ -55,9 +56,8 @@ const CSS = () => {
         <div className="flex flex-col gap-1 w-full">
             <button
                 onClick={onToggle}
-                className={`flex items-center justify-between w-full p-3 rounded-lg transition-all duration-200 ease-out text-sm font-medium ${
-                    isOpen && isExpanded ? "text-sky-400 bg-white/5" : "text-gray-400 hover:text-white hover:bg-white/5"
-                } ${!isExpanded ? "justify-center" : ""}`}
+                className={`flex items-center justify-between w-full p-3 rounded-lg transition-all duration-200 ease-out text-sm font-medium ${isOpen && isExpanded ? "text-sky-400 bg-white/5" : "text-gray-400 hover:text-white hover:bg-white/5"
+                    } ${!isExpanded ? "justify-center" : ""}`}
                 title={!isExpanded ? label : undefined}
             >
                 <div className={`flex items-center ${isExpanded ? "gap-3" : "justify-center w-full"}`}>
@@ -161,6 +161,17 @@ const CSS = () => {
                 <SubNavItem to="box-model/box-sizing" label="box-sizing" icon={BoxSelect} />
                 <SubNavItem to="box-model/width-height" label="Width & Height" icon={Ruler} />
                 <SubNavItem to="box-model/mistakes-exercises" label="Mistakes & Exercises" icon={CheckCircle} />
+            </DropdownNav>
+
+            <DropdownNav
+                label="CSS Typography"
+                icon={Type}
+                isOpen={isTypographyMenuOpen}
+                onToggle={() => setIsTypographyMenuOpen(!isTypographyMenuOpen)}
+            >
+                <SubNavItem to="typography/intro" label="Introduction" icon={BookOpen} />
+                <SubNavItem to="typography/formatting" label="Text Formatting" icon={AlignLeft} />
+                <SubNavItem to="typography/responsive" label="Responsive Text" icon={Smartphone} />
             </DropdownNav>
         </nav>
     );

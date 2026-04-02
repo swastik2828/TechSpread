@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { motion } from 'framer-motion';
 import { PaintBucket, Sliders, Hexagon, Hash } from 'lucide-react';
 
 export default function CssColorsSimulator() {
@@ -200,16 +199,14 @@ export default function CssColorsSimulator() {
                     {/* CSS checkered background simulation for transparency */}
                     <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ backgroundImage: 'linear-gradient(45deg, #111 25%, transparent 25%), linear-gradient(-45deg, #111 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #111 75%), linear-gradient(-45deg, transparent 75%, #111 75%)', backgroundSize: '20px 20px', backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px' }}></div>
                     
-                    <motion.div 
-                        initial={false}
-                        animate={{ backgroundColor: colorFormat === 'hex' ? hexString : activeColor }}
-                        transition={{ duration: 0.1 }}
-                        className="w-48 h-48 md:w-64 md:h-64 rounded-2xl shadow-2xl border-4 border-white/10 flex items-center justify-center backdrop-blur-sm z-10 p-6 text-center"
+                    <div 
+                        style={{ backgroundColor: colorFormat === 'hex' ? hexString : activeColor }}
+                        className="transition-colors duration-200 w-48 h-48 md:w-64 md:h-64 rounded-2xl shadow-2xl border-4 border-white/10 flex items-center justify-center backdrop-blur-sm z-10 p-6 text-center"
                     >
                         <span className="font-bold text-white drop-shadow-lg text-lg mix-blend-difference">
                             Preview
                         </span>
-                    </motion.div>
+                    </div>
                 </div>
             </div>
         </div>

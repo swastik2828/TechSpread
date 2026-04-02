@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 
 const CssBoxModelSimulator = () => {
     const [padding, setPadding] = useState(20);
@@ -87,17 +86,15 @@ const CssBoxModelSimulator = () => {
                 <div className="flex items-center justify-center bg-gray-900 rounded-xl border border-gray-800 p-4 overflow-hidden relative min-h-[300px]">
 
                     {/* Margin Base */}
-                    <motion.div
-                        layout
-                        className="border border-orange-500/30 bg-orange-500/10 flex items-center justify-center relative"
+                    <div
+                        className="border border-orange-500/30 bg-orange-500/10 flex items-center justify-center relative transition-all duration-200"
                         style={{ padding: `${margin}px` }}
                     >
                         <span className="absolute top-1 left-2 text-[10px] text-orange-400 font-mono font-bold">margin</span>
 
                         {/* Border Base */}
-                        <motion.div
-                            layout
-                            className="bg-yellow-500/20 flex items-center justify-center relative"
+                        <div
+                            className="bg-yellow-500/20 flex items-center justify-center relative transition-all duration-200"
                             style={{
                                 borderWidth: `${border}px`,
                                 borderStyle: 'solid',
@@ -107,9 +104,8 @@ const CssBoxModelSimulator = () => {
                             {(border > 5) && <span className="absolute top-0 left-1 text-[10px] text-yellow-500 font-mono font-bold leading-none translate-y-[-100%] pt-0.5">border</span>}
 
                             {/* Padding Base */}
-                            <motion.div
-                                layout
-                                className="border border-green-500/30 bg-green-500/20 flex items-center justify-center relative"
+                            <div
+                                className="border border-green-500/30 bg-green-500/20 flex items-center justify-center relative transition-all duration-200"
                                 style={{ padding: `${padding}px` }}
                             >
                                 <span className="absolute top-1 left-2 text-[10px] text-green-400 font-mono font-bold">padding</span>
@@ -120,9 +116,9 @@ const CssBoxModelSimulator = () => {
                                     <p className="text-white text-sm font-medium mt-3">Hello, CSS Box!</p>
                                 </div>
 
-                            </motion.div>
-                        </motion.div>
-                    </motion.div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div >
             </div >

@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 import {
     Palette, Layers, Box, Code, Hash, Smartphone, Globe, ArrowRight, Eye, Monitor, CheckCircle
@@ -90,11 +89,7 @@ const IntroToCSS = () => {
                     <Palette size={400} className="text-sky-900" />
                 </div>
 
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                >
+                <div>
                     <span className="px-3 py-1 rounded-full bg-sky-500/10 text-sky-400 text-xs font-bold uppercase tracking-wider border border-sky-500/20 mb-4 inline-block">
                         Introduction to CSS
                     </span>
@@ -104,7 +99,7 @@ const IntroToCSS = () => {
                     <p className="text-xl text-gray-400 max-w-3xl leading-relaxed">
                         A Complete Beginner's Guide to Cascading Style Sheets
                     </p>
-                </motion.div>
+                </div>
             </header>
 
             <div className="prose prose-invert prose-lg max-w-none">
