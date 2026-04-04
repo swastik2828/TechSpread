@@ -139,6 +139,13 @@ import ArrowFunctions from "./WebDev/Frontend/Javascript/Module4/ArrowFunctions"
 import ExecutionContext from "./WebDev/Frontend/Javascript/Module4/ExecutionContext";
 import CallStack from "./WebDev/Frontend/Javascript/Module4/CallStack";
 
+// JavaScript Module 5: Arrays & Objects
+import ArraysFoundations from "./WebDev/Frontend/Javascript/Module5/ArraysFoundations";
+import ArrayMethods from "./WebDev/Frontend/Javascript/Module5/ArrayMethods";
+import ObjectsFoundations from "./WebDev/Frontend/Javascript/Module5/ObjectsFoundations";
+import Destructuring from "./WebDev/Frontend/Javascript/Module5/Destructuring";
+import SpreadRest from "./WebDev/Frontend/Javascript/Module5/SpreadRest";
+
 // subcategory page
 import Java from "./Programming/Java/Java";               // main java container
 import WhatisJava from "./Programming/Java/WhatisJava";   // java topic pages
@@ -290,6 +297,11 @@ function App() {
         <Route path="arrow-functions" element={<ArrowFunctions />} />
         <Route path="execution-context" element={<ExecutionContext />} />
         <Route path="call-stack" element={<CallStack />} />
+        <Route path="arrays-foundations" element={<ArraysFoundations />} />
+        <Route path="array-methods" element={<ArrayMethods />} />
+        <Route path="objects-foundations" element={<ObjectsFoundations />} />
+        <Route path="destructuring" element={<Destructuring />} />
+        <Route path="spread-rest" element={<SpreadRest />} />
       </Route>
 
       {/* Java Course */}

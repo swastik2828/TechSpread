@@ -4,29 +4,29 @@ import { motion } from "framer-motion";
 import { Sparkles, Zap } from "lucide-react";
 
 export default function RecentlyReleased() {
-  const RECENT_LESSONS = [
-    {
-      title: "CSS Typography",
-      path: "/webdevelopment/css/typography/intro",
-      desc: "Master CSS typography features, fluid typography with clamp(), and text formatting.",
-      category: "Web Development",
-      isNew: true
-    },
-    {
-      title: "Functions & Execution",
-      path: "/webdevelopment/javascript/functions",
-      desc: "Master function scopes, arguments, arrow functions, and the visual Call Stack execution.",
-      category: "Web Development",
-      isNew: false
-    },
-    {
-      title: "CSS Box Model",
-      path: "/webdevelopment/css/box-model/intro",
-      desc: "Learn about the four layers of the box model, margin collapse, and box-sizing.",
-      category: "Web Development",
-      isNew: false
-    }
-  ];
+    const RECENT_LESSONS = [
+        {
+            title: "Arrays & Objects",
+            path: "/webdevelopment/javascript/arrays-foundations",
+            desc: "Master JavaScript arrays, array methods, object fundamentals, and destructuring in depth.",
+            category: "Web Development",
+            isNew: true
+        },
+        {
+            title: "CSS Typography",
+            path: "/webdevelopment/css/typography/intro",
+            desc: "Master CSS typography features, fluid typography with clamp(), and text formatting.",
+            category: "Web Development",
+            isNew: false
+        },
+        {
+            title: "Functions & Execution",
+            path: "/webdevelopment/javascript/functions",
+            desc: "Master function scopes, arguments, arrow functions, and the visual Call Stack execution.",
+            category: "Web Development",
+            isNew: false
+        }
+    ];
 
   return (
     <section className="relative bg-[#0f172a] border-b border-gray-800/50 py-12 px-6">

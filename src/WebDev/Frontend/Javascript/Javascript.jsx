@@ -2,7 +2,7 @@ import { Outlet, NavLink, useNavigate, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
     Menu, X, ArrowLeft, ChevronDown, ChevronRight, FileCode,
-    PanelLeftClose, PanelLeftOpen, TerminalSquare, BookOpen, Code2, PlaySquare, Globe2, GitBranch
+    PanelLeftClose, PanelLeftOpen, TerminalSquare, BookOpen, Code2, PlaySquare, Globe2, GitBranch, Database
 } from "lucide-react";
 import { useState } from "react";
 
@@ -13,6 +13,7 @@ const Javascript = () => {
     const [isModule2Open, setIsModule2Open] = useState(false);
     const [isModule3Open, setIsModule3Open] = useState(false);
     const [isModule4Open, setIsModule4Open] = useState(false);
+    const [isModule5Open, setIsModule5Open] = useState(false);
     const isExpanded = !isDesktopCollapsed;
     const navigate = useNavigate();
     const location = useLocation();
@@ -140,6 +141,13 @@ const Javascript = () => {
                 <SubNavItem to="arrow-functions" label="4.4 Arrow Functions" />
                 <SubNavItem to="execution-context" label="4.5 Context & Scope" />
                 <SubNavItem to="call-stack" label="4.6 The Call Stack" />
+            </DropdownNav>
+            <DropdownNav label="Arrays & Objects" icon={Database} isOpen={isModule5Open} onToggle={() => setIsModule5Open(!isModule5Open)}>
+                <SubNavItem to="arrays-foundations" label="5.1 Arrays Foundations" />
+                <SubNavItem to="array-methods" label="5.2 Array Methods" />
+                <SubNavItem to="objects-foundations" label="5.3 Objects Foundations" />
+                <SubNavItem to="destructuring" label="5.4 Destructuring" />
+                <SubNavItem to="spread-rest" label="5.5 Spread & Rest" />
             </DropdownNav>
         </nav>
     );
