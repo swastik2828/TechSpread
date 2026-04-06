@@ -113,6 +113,14 @@ import IntroTypography from "./WebDev/Frontend/CSS/CssTypography/IntroTypography
 import TextFormatting from "./WebDev/Frontend/CSS/CssTypography/TextFormatting";
 import ResponsiveTypography from "./WebDev/Frontend/CSS/CssTypography/ResponsiveTypography";
 
+// CSS Backgrounds module
+import IntroBackgrounds from "./WebDev/Frontend/CSS/CssBackgrounds/IntroBackgrounds";
+import BackgroundColor from "./WebDev/Frontend/CSS/CssBackgrounds/BackgroundColor";
+import BackgroundImage from "./WebDev/Frontend/CSS/CssBackgrounds/BackgroundImage";
+import BackgroundGradients from "./WebDev/Frontend/CSS/CssBackgrounds/BackgroundGradients";
+import BackgroundLayering from "./WebDev/Frontend/CSS/CssBackgrounds/BackgroundLayering";
+import BackgroundSummary from "./WebDev/Frontend/CSS/CssBackgrounds/SummaryExercises";
+
 // JavaScript Course
 import Javascript from "./WebDev/Frontend/Javascript/Javascript";
 import IntroToJS from "./WebDev/Frontend/Javascript/IntroToJS";
@@ -274,6 +282,12 @@ function App() {
         <Route path="typography/intro" element={<IntroTypography />} />
         <Route path="typography/formatting" element={<TextFormatting />} />
         <Route path="typography/responsive" element={<ResponsiveTypography />} />
+        <Route path="backgrounds/intro" element={<IntroBackgrounds />} />
+        <Route path="backgrounds/color" element={<BackgroundColor />} />
+        <Route path="backgrounds/image" element={<BackgroundImage />} />
+        <Route path="backgrounds/gradients" element={<BackgroundGradients />} />
+        <Route path="backgrounds/layering" element={<BackgroundLayering />} />
+        <Route path="backgrounds/summary" element={<BackgroundSummary />} />
       </Route>
 
       {/* JavaScript Course */}

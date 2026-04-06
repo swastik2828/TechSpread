@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Smartphone, CheckSquare, ListOrdered, CheckCircle } from 'lucide-react';
+import { ArrowLeft, Smartphone, CheckSquare, ListOrdered, CheckCircle, ArrowRight } from 'lucide-react';
 import SEO from "../../../../components/SEO";
 import CssClampSimulator from "../../../../simulators/web/css/CssClampSimulator";
 
@@ -115,6 +115,9 @@ h1 { font-size: clamp(1.75rem, 4vw, 3rem); }
                 <Link to="/webdevelopment/css/typography/formatting" className="flex items-center gap-2 text-gray-500 hover:text-white transition-colors">
                     <ArrowLeft size={16} /> Text Formatting
                 </Link>
+                <Link to="/webdevelopment/css/backgrounds/intro" className="flex items-center gap-2 text-sky-400 font-bold hover:text-sky-300 transition-colors">
+                                    Next: Backgrounds <ArrowRight size={16} />
+                                </Link>
             </div>
         </article>
     );

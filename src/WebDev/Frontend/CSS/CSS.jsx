@@ -7,7 +7,7 @@ import {
     PanelLeftClose, PanelLeftOpen, Image as ImageIcon, ImagePlus, FileImage, Videotape, Clapperboard, MonitorPlay, FileAudio, ShieldAlert,
     List, ListOrdered, Table, Maximize2, LayoutGrid, ListTree, BookA,
     FormInput, CheckSquare, MousePointerClick, Smartphone, Ear, ShieldCheck, Zap,
-    Target, Shield, GitBranch, Star, Telescope, BookOpen, Code2, Palette, Ruler
+    Target, Shield, GitBranch, Star, Telescope, BookOpen, Code2, Palette, Ruler, Paintbrush
 } from "lucide-react";
 import { useState } from "react";
 
@@ -18,6 +18,7 @@ const CSS = () => {
     const [isColorsMenuOpen, setIsColorsMenuOpen] = useState(false);
     const [isBoxModelMenuOpen, setIsBoxModelMenuOpen] = useState(false);
     const [isTypographyMenuOpen, setIsTypographyMenuOpen] = useState(false);
+    const [isBackgroundsMenuOpen, setIsBackgroundsMenuOpen] = useState(false);
     const isExpanded = !isDesktopCollapsed;
     const navigate = useNavigate();
     const location = useLocation();
@@ -172,6 +173,20 @@ const CSS = () => {
                 <SubNavItem to="typography/intro" label="Introduction" icon={BookOpen} />
                 <SubNavItem to="typography/formatting" label="Text Formatting" icon={AlignLeft} />
                 <SubNavItem to="typography/responsive" label="Responsive Text" icon={Smartphone} />
+            </DropdownNav>
+
+            <DropdownNav
+                label="CSS Backgrounds"
+                icon={Paintbrush}
+                isOpen={isBackgroundsMenuOpen}
+                onToggle={() => setIsBackgroundsMenuOpen(!isBackgroundsMenuOpen)}
+            >
+                <SubNavItem to="backgrounds/intro" label="Module Overview" icon={BookOpen} />
+                <SubNavItem to="backgrounds/color" label="Background Color" icon={Palette} />
+                <SubNavItem to="backgrounds/image" label="Images & Shorthand" icon={ImageIcon} />
+                <SubNavItem to="backgrounds/gradients" label="CSS Gradients" icon={Zap} />
+                <SubNavItem to="backgrounds/layering" label="Layering Backgrounds" icon={Layers} />
+                <SubNavItem to="backgrounds/summary" label="Summary & Exercises" icon={CheckCircle} />
             </DropdownNav>
         </nav>
     );
