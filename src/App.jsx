@@ -154,6 +154,14 @@ import ObjectsFoundations from "./WebDev/Frontend/Javascript/Module5/ObjectsFoun
 import Destructuring from "./WebDev/Frontend/Javascript/Module5/Destructuring";
 import SpreadRest from "./WebDev/Frontend/Javascript/Module5/SpreadRest";
 
+// JavaScript Module 6: Scope, Closures & Hoisting
+import LexicalScope from "./WebDev/Frontend/Javascript/Module6/LexicalScope";
+import BlockScope from "./WebDev/Frontend/Javascript/Module6/BlockScope";
+import Hoisting from "./WebDev/Frontend/Javascript/Module6/Hoisting";
+import Tdz from "./WebDev/Frontend/Javascript/Module6/Tdz";
+import Closures from "./WebDev/Frontend/Javascript/Module6/Closures";
+import ScopeChain from "./WebDev/Frontend/Javascript/Module6/ScopeChain";
+
 // subcategory page
 import Java from "./Programming/Java/Java";               // main java container
 import WhatisJava from "./Programming/Java/WhatisJava";   // java topic pages
@@ -316,6 +324,12 @@ function App() {
         <Route path="objects-foundations" element={<ObjectsFoundations />} />
         <Route path="destructuring" element={<Destructuring />} />
         <Route path="spread-rest" element={<SpreadRest />} />
+        <Route path="lexical-scope" element={<LexicalScope />} />
+        <Route path="block-scope" element={<BlockScope />} />
+        <Route path="hoisting" element={<Hoisting />} />
+        <Route path="tdz" element={<Tdz />} />
+        <Route path="closures" element={<Closures />} />
+        <Route path="scope-chain" element={<ScopeChain />} />
       </Route>
 
       {/* Java Course */}

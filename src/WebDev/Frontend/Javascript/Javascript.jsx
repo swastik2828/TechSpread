@@ -2,7 +2,7 @@ import { Outlet, NavLink, useNavigate, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
     Menu, X, ArrowLeft, ChevronDown, ChevronRight, FileCode,
-    PanelLeftClose, PanelLeftOpen, TerminalSquare, BookOpen, Code2, PlaySquare, Globe2, GitBranch, Database
+    PanelLeftClose, PanelLeftOpen, TerminalSquare, BookOpen, Code2, PlaySquare, Globe2, GitBranch, Database, Layers
 } from "lucide-react";
 import { useState } from "react";
 
@@ -14,6 +14,7 @@ const Javascript = () => {
     const [isModule3Open, setIsModule3Open] = useState(false);
     const [isModule4Open, setIsModule4Open] = useState(false);
     const [isModule5Open, setIsModule5Open] = useState(false);
+    const [isModule6Open, setIsModule6Open] = useState(false);
     const isExpanded = !isDesktopCollapsed;
     const navigate = useNavigate();
     const location = useLocation();
@@ -148,6 +149,14 @@ const Javascript = () => {
                 <SubNavItem to="objects-foundations" label="5.3 Objects Foundations" />
                 <SubNavItem to="destructuring" label="5.4 Destructuring" />
                 <SubNavItem to="spread-rest" label="5.5 Spread & Rest" />
+            </DropdownNav>
+            <DropdownNav label="Scope & Closures" icon={Layers} isOpen={isModule6Open} onToggle={() => setIsModule6Open(!isModule6Open)}>
+                <SubNavItem to="lexical-scope" label="6.1 Lexical Scope" />
+                <SubNavItem to="block-scope" label="6.2 Block vs Function Scope" />
+                <SubNavItem to="hoisting" label="6.3 Hoisting" />
+                <SubNavItem to="tdz" label="6.4 Temporal Dead Zone" />
+                <SubNavItem to="closures" label="6.5 Closures" />
+                <SubNavItem to="scope-chain" label="6.6 The Scope Chain" />
             </DropdownNav>
         </nav>
     );

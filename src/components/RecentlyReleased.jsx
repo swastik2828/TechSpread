@@ -6,23 +6,23 @@ import { Sparkles, Zap } from "lucide-react";
 export default function RecentlyReleased() {
     const RECENT_LESSONS = [
         {
-            title: "Mastering CSS Backgrounds",
-            path: "/webdevelopment/css/backgrounds/intro",
-            desc: "Master CSS backgrounds: solid colors, images, gradients, layering, and the gradient text trick. Build stunning hero sections from scratch.",
+            title: "Scope and Closures",
+            path: "/webdevelopment/javascript/lexical-scope",
+            desc: "Scope, Closures & Hoisting. Understand how the JavaScript engine reads, stores, and executes your code.",
             category: "Web Development",
             isNew: true
+        },
+        {
+            title: "Mastering CSS Backgrounds",
+            path: "/webdevelopment/css/backgrounds/intro",
+            desc: "Master CSS backgrounds: solid colors, images, gradients, layering, and the gradient text trick.",
+            category: "Web Development",
+            isNew: false
         },
         {
             title: "Arrays & Objects",
             path: "/webdevelopment/javascript/arrays-foundations",
             desc: "Master JavaScript arrays, array methods, object fundamentals, and destructuring in depth.",
-            category: "Web Development",
-            isNew: false
-        },
-        {
-            title: "CSS Typography",
-            path: "/webdevelopment/css/typography/intro",
-            desc: "Master CSS typography features, fluid typography with clamp(), and text formatting.",
             category: "Web Development",
             isNew: false
         }
