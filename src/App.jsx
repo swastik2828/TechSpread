@@ -121,6 +121,12 @@ import BackgroundGradients from "./WebDev/Frontend/CSS/CssBackgrounds/Background
 import BackgroundLayering from "./WebDev/Frontend/CSS/CssBackgrounds/BackgroundLayering";
 import BackgroundSummary from "./WebDev/Frontend/CSS/CssBackgrounds/SummaryExercises";
 
+// CSS Borders & Shadows module
+import AnatomyBoxModel from "./WebDev/Frontend/CSS/CssBordersShadows/AnatomyBoxModel";
+import AccessibilityFocus from "./WebDev/Frontend/CSS/CssBordersShadows/AccessibilityFocus";
+import DimensionalityShadows from "./WebDev/Frontend/CSS/CssBordersShadows/DimensionalityShadows";
+import AlphaMaskRealWorld from "./WebDev/Frontend/CSS/CssBordersShadows/AlphaMaskRealWorld";
+
 // JavaScript Course
 import Javascript from "./WebDev/Frontend/Javascript/Javascript";
 import IntroToJS from "./WebDev/Frontend/Javascript/IntroToJS";
@@ -296,6 +302,10 @@ function App() {
         <Route path="backgrounds/gradients" element={<BackgroundGradients />} />
         <Route path="backgrounds/layering" element={<BackgroundLayering />} />
         <Route path="backgrounds/summary" element={<BackgroundSummary />} />
+        <Route path="borders-shadows/anatomy" element={<AnatomyBoxModel />} />
+        <Route path="borders-shadows/accessibility" element={<AccessibilityFocus />} />
+        <Route path="borders-shadows/dimensionality" element={<DimensionalityShadows />} />
+        <Route path="borders-shadows/alpha-mask" element={<AlphaMaskRealWorld />} />
       </Route>
 
       {/* JavaScript Course */}

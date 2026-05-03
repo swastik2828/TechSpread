@@ -7,7 +7,7 @@ import {
     PanelLeftClose, PanelLeftOpen, Image as ImageIcon, ImagePlus, FileImage, Videotape, Clapperboard, MonitorPlay, FileAudio, ShieldAlert,
     List, ListOrdered, Table, Maximize2, LayoutGrid, ListTree, BookA,
     FormInput, CheckSquare, MousePointerClick, Smartphone, Ear, ShieldCheck, Zap,
-    Target, Shield, GitBranch, Star, Telescope, BookOpen, Code2, Palette, Ruler, Paintbrush
+    Target, Shield, GitBranch, Star, Telescope, BookOpen, Code2, Palette, Ruler, Paintbrush, Eye, Sparkles
 } from "lucide-react";
 import { useState } from "react";
 
@@ -19,6 +19,7 @@ const CSS = () => {
     const [isBoxModelMenuOpen, setIsBoxModelMenuOpen] = useState(false);
     const [isTypographyMenuOpen, setIsTypographyMenuOpen] = useState(false);
     const [isBackgroundsMenuOpen, setIsBackgroundsMenuOpen] = useState(false);
+    const [isBordersShadowsMenuOpen, setIsBordersShadowsMenuOpen] = useState(false);
     const isExpanded = !isDesktopCollapsed;
     const navigate = useNavigate();
     const location = useLocation();
@@ -187,6 +188,18 @@ const CSS = () => {
                 <SubNavItem to="backgrounds/gradients" label="CSS Gradients" icon={Zap} />
                 <SubNavItem to="backgrounds/layering" label="Layering Backgrounds" icon={Layers} />
                 <SubNavItem to="backgrounds/summary" label="Summary & Exercises" icon={CheckCircle} />
+            </DropdownNav>
+
+            <DropdownNav
+                label="CSS Borders & Shadows"
+                icon={BoxSelect}
+                isOpen={isBordersShadowsMenuOpen}
+                onToggle={() => setIsBordersShadowsMenuOpen(!isBordersShadowsMenuOpen)}
+            >
+                <SubNavItem to="borders-shadows/anatomy" label="Borders Anatomy" icon={Box} />
+                <SubNavItem to="borders-shadows/accessibility" label="Accessibility Focus" icon={Eye} />
+                <SubNavItem to="borders-shadows/dimensionality" label="Box & Text Shadows" icon={Layers} />
+                <SubNavItem to="borders-shadows/alpha-mask" label="Alpha-Mask Shadows" icon={Sparkles} />
             </DropdownNav>
         </nav>
     );
