@@ -2,7 +2,7 @@ import { Outlet, NavLink, useNavigate, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
     Menu, X, ArrowLeft, ChevronDown, ChevronRight, FileCode,
-    PanelLeftClose, PanelLeftOpen, TerminalSquare, BookOpen, Code2, PlaySquare, Globe2, GitBranch, Database, Layers
+    PanelLeftClose, PanelLeftOpen, TerminalSquare, BookOpen, Code2, PlaySquare, Globe2, GitBranch, Database, Layers, Target
 } from "lucide-react";
 import { useState } from "react";
 
@@ -15,6 +15,7 @@ const Javascript = () => {
     const [isModule4Open, setIsModule4Open] = useState(false);
     const [isModule5Open, setIsModule5Open] = useState(false);
     const [isModule6Open, setIsModule6Open] = useState(false);
+    const [isModule7Open, setIsModule7Open] = useState(false);
     const isExpanded = !isDesktopCollapsed;
     const navigate = useNavigate();
     const location = useLocation();
@@ -157,6 +158,13 @@ const Javascript = () => {
                 <SubNavItem to="tdz" label="6.4 Temporal Dead Zone" />
                 <SubNavItem to="closures" label="6.5 Closures" />
                 <SubNavItem to="scope-chain" label="6.6 The Scope Chain" />
+            </DropdownNav>
+            <DropdownNav label="The 'this' Keyword" icon={Target} isOpen={isModule7Open} onToggle={() => setIsModule7Open(!isModule7Open)}>
+                <SubNavItem to="the-golden-rule" label="7.1 The Golden Rule" />
+                <SubNavItem to="new-binding" label="7.2 new Binding" />
+                <SubNavItem to="explicit-binding" label="7.3 Explicit Binding" />
+                <SubNavItem to="implicit-default-binding" label="7.4 Implicit & Default" />
+                <SubNavItem to="arrow-functions-this" label="7.5 Arrow Functions" />
             </DropdownNav>
         </nav>
     );

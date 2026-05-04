@@ -168,6 +168,13 @@ import Tdz from "./WebDev/Frontend/Javascript/Module6/Tdz";
 import Closures from "./WebDev/Frontend/Javascript/Module6/Closures";
 import ScopeChain from "./WebDev/Frontend/Javascript/Module6/ScopeChain";
 
+// JavaScript Module 7: The 'this' Keyword
+import TheGoldenRule from "./WebDev/Frontend/Javascript/Module7/TheGoldenRule";
+import NewBinding from "./WebDev/Frontend/Javascript/Module7/NewBinding";
+import ExplicitBinding from "./WebDev/Frontend/Javascript/Module7/ExplicitBinding";
+import ImplicitDefaultBinding from "./WebDev/Frontend/Javascript/Module7/ImplicitDefaultBinding";
+import ArrowFunctionsThis from "./WebDev/Frontend/Javascript/Module7/ArrowFunctionsThis";
+
 // subcategory page
 import Java from "./Programming/Java/Java";               // main java container
 import WhatisJava from "./Programming/Java/WhatisJava";   // java topic pages
@@ -340,6 +347,11 @@ function App() {
         <Route path="tdz" element={<Tdz />} />
         <Route path="closures" element={<Closures />} />
         <Route path="scope-chain" element={<ScopeChain />} />
+        <Route path="the-golden-rule" element={<TheGoldenRule />} />
+        <Route path="new-binding" element={<NewBinding />} />
+        <Route path="explicit-binding" element={<ExplicitBinding />} />
+        <Route path="implicit-default-binding" element={<ImplicitDefaultBinding />} />
+        <Route path="arrow-functions-this" element={<ArrowFunctionsThis />} />
       </Route>
 
       {/* Java Course */}

@@ -6,16 +6,16 @@ import { Sparkles, Zap } from "lucide-react";
 export default function RecentlyReleased() {
     const RECENT_LESSONS = [
         {
-            title: "CSS Borders & Shadows",
-            path: "/webdevelopment/css/borders-shadows/anatomy",
-            desc: "Master the CSS Box Model, accessibility with outlines, and photorealistic depth using box-shadow and filter: drop-shadow().",
+            title: "Mastering the 'this' Keyword",
+            path: "/webdevelopment/javascript/the-golden-rule",
+            desc: "Understand the 'this' keyword in JavaScript. Stop asking where the function was written, and start asking how it was called.",
             category: "Web Development",
             isNew: true
         },
         {
-            title: "Scope and Closures",
-            path: "/webdevelopment/javascript/lexical-scope",
-            desc: "Scope, Closures & Hoisting. Understand how the JavaScript engine reads, stores, and executes your code.",
+            title: "CSS Borders & Shadows",
+            path: "/webdevelopment/css/borders-shadows/anatomy",
+            desc: "Master the CSS Box Model, accessibility with outlines, and photorealistic depth using box-shadow and filter: drop-shadow().",
             category: "Web Development",
             isNew: false
         },
