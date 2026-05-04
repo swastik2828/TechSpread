@@ -17,14 +17,14 @@ export default function RecentlyReleased() {
             path: "/webdevelopment/css/borders-shadows/anatomy",
             desc: "Master the CSS Box Model, accessibility with outlines, and photorealistic depth using box-shadow and filter: drop-shadow().",
             category: "Web Development",
-            isNew: false
+            isNew: true
         },
         {
-            title: "Mastering CSS Backgrounds",
-            path: "/webdevelopment/css/backgrounds/intro",
-            desc: "Master CSS backgrounds: solid colors, images, gradients, layering, and the gradient text trick.",
+            title: "Scope and Closures",
+            path: "/webdevelopment/javascript/lexical-scope",
+            desc: "Scope, Closures & Hoisting. Understand how the JavaScript engine reads, stores, and executes your code.",
             category: "Web Development",
-            isNew: false
+            isNew: true
         }
     ];
 
