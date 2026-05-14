@@ -127,6 +127,12 @@ import AccessibilityFocus from "./WebDev/Frontend/CSS/CssBordersShadows/Accessib
 import DimensionalityShadows from "./WebDev/Frontend/CSS/CssBordersShadows/DimensionalityShadows";
 import AlphaMaskRealWorld from "./WebDev/Frontend/CSS/CssBordersShadows/AlphaMaskRealWorld";
 
+// CSS Display & Visibility module
+import IntroDisplay from "./WebDev/Frontend/CSS/CssDisplayVisibility/IntroDisplay";
+import VisibilityOpacity from "./WebDev/Frontend/CSS/CssDisplayVisibility/VisibilityOpacity";
+import OverflowSpillage from "./WebDev/Frontend/CSS/CssDisplayVisibility/OverflowSpillage";
+import ExercisesSummary from "./WebDev/Frontend/CSS/CssDisplayVisibility/ExercisesSummary";
+
 // JavaScript Course
 import Javascript from "./WebDev/Frontend/Javascript/Javascript";
 import IntroToJS from "./WebDev/Frontend/Javascript/IntroToJS";
@@ -174,6 +180,12 @@ import NewBinding from "./WebDev/Frontend/Javascript/Module7/NewBinding";
 import ExplicitBinding from "./WebDev/Frontend/Javascript/Module7/ExplicitBinding";
 import ImplicitDefaultBinding from "./WebDev/Frontend/Javascript/Module7/ImplicitDefaultBinding";
 import ArrowFunctionsThis from "./WebDev/Frontend/Javascript/Module7/ArrowFunctionsThis";
+
+// JavaScript Module 8: Prototypes & OOP
+import PrototypeChain from "./WebDev/Frontend/Javascript/Module8/PrototypeChain";
+import ConstructorFunctions from "./WebDev/Frontend/Javascript/Module8/ConstructorFunctions";
+import ES6Classes from "./WebDev/Frontend/Javascript/Module8/ES6Classes";
+import InheritanceVsComposition from "./WebDev/Frontend/Javascript/Module8/InheritanceVsComposition";
 
 // subcategory page
 import Java from "./Programming/Java/Java";               // main java container
@@ -313,6 +325,10 @@ function App() {
         <Route path="borders-shadows/accessibility" element={<AccessibilityFocus />} />
         <Route path="borders-shadows/dimensionality" element={<DimensionalityShadows />} />
         <Route path="borders-shadows/alpha-mask" element={<AlphaMaskRealWorld />} />
+        <Route path="display-visibility/intro" element={<IntroDisplay />} />
+        <Route path="display-visibility/visibility-opacity" element={<VisibilityOpacity />} />
+        <Route path="display-visibility/overflow-spillage" element={<OverflowSpillage />} />
+        <Route path="display-visibility/exercises" element={<ExercisesSummary />} />
       </Route>
 
       {/* JavaScript Course */}
@@ -352,6 +368,10 @@ function App() {
         <Route path="explicit-binding" element={<ExplicitBinding />} />
         <Route path="implicit-default-binding" element={<ImplicitDefaultBinding />} />
         <Route path="arrow-functions-this" element={<ArrowFunctionsThis />} />
+        <Route path="prototype-chain" element={<PrototypeChain />} />
+        <Route path="constructor-functions" element={<ConstructorFunctions />} />
+        <Route path="es6-classes" element={<ES6Classes />} />
+        <Route path="inheritance-vs-composition" element={<InheritanceVsComposition />} />
       </Route>
 
       {/* Java Course */}

@@ -20,6 +20,7 @@ const CSS = () => {
     const [isTypographyMenuOpen, setIsTypographyMenuOpen] = useState(false);
     const [isBackgroundsMenuOpen, setIsBackgroundsMenuOpen] = useState(false);
     const [isBordersShadowsMenuOpen, setIsBordersShadowsMenuOpen] = useState(false);
+    const [isDisplayVisibilityMenuOpen, setIsDisplayVisibilityMenuOpen] = useState(false);
     const isExpanded = !isDesktopCollapsed;
     const navigate = useNavigate();
     const location = useLocation();
@@ -200,6 +201,18 @@ const CSS = () => {
                 <SubNavItem to="borders-shadows/accessibility" label="Accessibility Focus" icon={Eye} />
                 <SubNavItem to="borders-shadows/dimensionality" label="Box & Text Shadows" icon={Layers} />
                 <SubNavItem to="borders-shadows/alpha-mask" label="Alpha-Mask Shadows" icon={Sparkles} />
+            </DropdownNav>
+
+            <DropdownNav
+                label="CSS Display & Visibility"
+                icon={Eye}
+                isOpen={isDisplayVisibilityMenuOpen}
+                onToggle={() => setIsDisplayVisibilityMenuOpen(!isDisplayVisibilityMenuOpen)}
+            >
+                <SubNavItem to="display-visibility/intro" label="Display Values" icon={BookOpen} />
+                <SubNavItem to="display-visibility/visibility-opacity" label="Visibility Matrix" icon={Eye} />
+                <SubNavItem to="display-visibility/overflow-spillage" label="Overflow Property" icon={Maximize2} />
+                <SubNavItem to="display-visibility/exercises" label="Exercises & Summary" icon={CheckCircle} />
             </DropdownNav>
         </nav>
     );

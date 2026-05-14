@@ -5,27 +5,28 @@ import { Sparkles, Zap } from "lucide-react";
 
 export default function RecentlyReleased() {
     const RECENT_LESSONS = [
+      {
+          title: "Prototypes & OOP",
+          path: "/webdevelopment/javascript/prototype-chain",
+          desc: "Understand prototypal inheritance, ES6 classes, and why Composition over Inheritance solves the fragile base class problem.",
+          category: "Web Development",
+          isNew: true
+      },
+        {
+            title: "CSS Display & Visibility",
+            path: "/webdevelopment/css/display-visibility/intro",
+            desc: "Master CSS Document Flow by understanding display, visibility, opacity, and the overflow property.",
+            category: "Web Development",
+            isNew: true
+        },
         {
             title: "Mastering the 'this' Keyword",
             path: "/webdevelopment/javascript/the-golden-rule",
             desc: "Understand the 'this' keyword in JavaScript. Stop asking where the function was written, and start asking how it was called.",
             category: "Web Development",
-            isNew: true
+            isNew: false
         },
-        {
-            title: "CSS Borders & Shadows",
-            path: "/webdevelopment/css/borders-shadows/anatomy",
-            desc: "Master the CSS Box Model, accessibility with outlines, and photorealistic depth using box-shadow and filter: drop-shadow().",
-            category: "Web Development",
-            isNew: true
-        },
-        {
-            title: "Scope and Closures",
-            path: "/webdevelopment/javascript/lexical-scope",
-            desc: "Scope, Closures & Hoisting. Understand how the JavaScript engine reads, stores, and executes your code.",
-            category: "Web Development",
-            isNew: true
-        }
+        
     ];
 
   return (
