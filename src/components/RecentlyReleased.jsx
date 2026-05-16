@@ -5,6 +5,13 @@ import { Sparkles, Zap } from "lucide-react";
 
 export default function RecentlyReleased() {
     const RECENT_LESSONS = [
+        {
+            title: "Asynchronous JavaScript",
+            path: "/webdevelopment/javascript/async-exists",
+            desc: "Master the Event Loop, Callbacks, Promises, Async/Await, and Sequential vs Parallel execution in JavaScript.",
+            category: "Web Development",
+            isNew: true
+        },
       {
           title: "Prototypes & OOP",
           path: "/webdevelopment/javascript/prototype-chain",
@@ -19,14 +26,6 @@ export default function RecentlyReleased() {
             category: "Web Development",
             isNew: true
         },
-        {
-            title: "Mastering the 'this' Keyword",
-            path: "/webdevelopment/javascript/the-golden-rule",
-            desc: "Understand the 'this' keyword in JavaScript. Stop asking where the function was written, and start asking how it was called.",
-            category: "Web Development",
-            isNew: false
-        },
-        
     ];
 
   return (

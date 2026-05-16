@@ -187,6 +187,17 @@ import ConstructorFunctions from "./WebDev/Frontend/Javascript/Module8/Construct
 import ES6Classes from "./WebDev/Frontend/Javascript/Module8/ES6Classes";
 import InheritanceVsComposition from "./WebDev/Frontend/Javascript/Module8/InheritanceVsComposition";
 
+// JavaScript Module 9: Asynchronous JS
+import AsyncExists from "./WebDev/Frontend/Javascript/Module9/AsyncExists";
+import EventLoop from "./WebDev/Frontend/Javascript/Module9/EventLoop";
+import Callbacks from "./WebDev/Frontend/Javascript/Module9/Callbacks";
+import Promises from "./WebDev/Frontend/Javascript/Module9/Promises";
+import AsyncAwait from "./WebDev/Frontend/Javascript/Module9/AsyncAwait";
+import ErrorHandling from "./WebDev/Frontend/Javascript/Module9/ErrorHandling";
+import SequentialVsParallel from "./WebDev/Frontend/Javascript/Module9/SequentialVsParallel";
+import CommonMistakes from "./WebDev/Frontend/Javascript/Module9/CommonMistakes";
+import Cheatsheet from "./WebDev/Frontend/Javascript/Module9/Cheatsheet";
+
 // subcategory page
 import Java from "./Programming/Java/Java";               // main java container
 import WhatisJava from "./Programming/Java/WhatisJava";   // java topic pages
@@ -372,6 +383,15 @@ function App() {
         <Route path="constructor-functions" element={<ConstructorFunctions />} />
         <Route path="es6-classes" element={<ES6Classes />} />
         <Route path="inheritance-vs-composition" element={<InheritanceVsComposition />} />
+        <Route path="async-exists" element={<AsyncExists />} />
+        <Route path="event-loop" element={<EventLoop />} />
+        <Route path="callbacks" element={<Callbacks />} />
+        <Route path="promises" element={<Promises />} />
+        <Route path="async-await" element={<AsyncAwait />} />
+        <Route path="error-handling" element={<ErrorHandling />} />
+        <Route path="sequential-vs-parallel" element={<SequentialVsParallel />} />
+        <Route path="common-mistakes" element={<CommonMistakes />} />
+        <Route path="async-cheatsheet" element={<Cheatsheet />} />
       </Route>
 
       {/* Java Course */}

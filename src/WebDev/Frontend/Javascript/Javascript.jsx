@@ -2,7 +2,7 @@ import { Outlet, NavLink, useNavigate, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
     Menu, X, ArrowLeft, ChevronDown, ChevronRight, FileCode,
-    PanelLeftClose, PanelLeftOpen, TerminalSquare, BookOpen, Code2, PlaySquare, Globe2, GitBranch, Database, Layers, Target, Network
+    PanelLeftClose, PanelLeftOpen, TerminalSquare, BookOpen, Code2, PlaySquare, Globe2, GitBranch, Database, Layers, Target, Network, Clock
 } from "lucide-react";
 import { useState } from "react";
 
@@ -17,6 +17,7 @@ const Javascript = () => {
     const [isModule6Open, setIsModule6Open] = useState(false);
     const [isModule7Open, setIsModule7Open] = useState(false);
     const [isModule8Open, setIsModule8Open] = useState(false);
+    const [isModule9Open, setIsModule9Open] = useState(false);
     const isExpanded = !isDesktopCollapsed;
     const navigate = useNavigate();
     const location = useLocation();
@@ -172,6 +173,17 @@ const Javascript = () => {
                 <SubNavItem to="constructor-functions" label="8.2 Constructor Functions" />
                 <SubNavItem to="es6-classes" label="8.3 ES6 Classes" />
                 <SubNavItem to="inheritance-vs-composition" label="8.4 System Design" />
+            </DropdownNav>
+            <DropdownNav label="Asynchronous JS" icon={Clock} isOpen={isModule9Open} onToggle={() => setIsModule9Open(!isModule9Open)}>
+                <SubNavItem to="async-exists" label="9.1 Why Async Exists" />
+                <SubNavItem to="event-loop" label="9.2 The Event Loop" />
+                <SubNavItem to="callbacks" label="9.3 Callbacks" />
+                <SubNavItem to="promises" label="9.4 Promises" />
+                <SubNavItem to="async-await" label="9.5 Async / Await" />
+                <SubNavItem to="error-handling" label="9.6 Error Handling" />
+                <SubNavItem to="sequential-vs-parallel" label="9.7 Seq vs Parallel" />
+                <SubNavItem to="common-mistakes" label="9.8 Common Mistakes" />
+                <SubNavItem to="async-cheatsheet" label="9.9 Cheatsheet" />
             </DropdownNav>
         </nav>
     );
