@@ -133,6 +133,13 @@ import VisibilityOpacity from "./WebDev/Frontend/CSS/CssDisplayVisibility/Visibi
 import OverflowSpillage from "./WebDev/Frontend/CSS/CssDisplayVisibility/OverflowSpillage";
 import ExercisesSummary from "./WebDev/Frontend/CSS/CssDisplayVisibility/ExercisesSummary";
 
+// CSS Positioning module
+import IntroPositioning from "./WebDev/Frontend/CSS/CssPositioning/IntroPositioning";
+import RelativeAbsolute from "./WebDev/Frontend/CSS/CssPositioning/RelativeAbsolute";
+import FixedSticky from "./WebDev/Frontend/CSS/CssPositioning/FixedSticky";
+import ZIndexCentering from "./WebDev/Frontend/CSS/CssPositioning/ZIndexCentering";
+import ProjectsMistakes from "./WebDev/Frontend/CSS/CssPositioning/ProjectsMistakes";
+
 // JavaScript Course
 import Javascript from "./WebDev/Frontend/Javascript/Javascript";
 import IntroToJS from "./WebDev/Frontend/Javascript/IntroToJS";
@@ -340,6 +347,11 @@ function App() {
         <Route path="display-visibility/visibility-opacity" element={<VisibilityOpacity />} />
         <Route path="display-visibility/overflow-spillage" element={<OverflowSpillage />} />
         <Route path="display-visibility/exercises" element={<ExercisesSummary />} />
+        <Route path="positioning/intro" element={<IntroPositioning />} />
+        <Route path="positioning/relative-absolute" element={<RelativeAbsolute />} />
+        <Route path="positioning/fixed-sticky" element={<FixedSticky />} />
+        <Route path="positioning/z-index-centering" element={<ZIndexCentering />} />
+        <Route path="positioning/projects-mistakes" element={<ProjectsMistakes />} />
       </Route>
 
       {/* JavaScript Course */}

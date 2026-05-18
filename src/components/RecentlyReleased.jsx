@@ -5,6 +5,13 @@ import { Sparkles, Zap } from "lucide-react";
 
 export default function RecentlyReleased() {
     const RECENT_LESSONS = [
+      {
+          title: "CSS Positioning",
+          path: "/webdevelopment/css/positioning/intro",
+          desc: "Master CSS Positioning from scratch. Learn relative, absolute, fixed, and sticky positioning, and z-index stacking.",
+          category: "Web Development",
+          isNew: true
+      },
         {
             title: "Asynchronous JavaScript",
             path: "/webdevelopment/javascript/async-exists",
@@ -19,13 +26,6 @@ export default function RecentlyReleased() {
           category: "Web Development",
           isNew: true
       },
-        {
-            title: "CSS Display & Visibility",
-            path: "/webdevelopment/css/display-visibility/intro",
-            desc: "Master CSS Document Flow by understanding display, visibility, opacity, and the overflow property.",
-            category: "Web Development",
-            isNew: true
-        },
     ];
 
   return (

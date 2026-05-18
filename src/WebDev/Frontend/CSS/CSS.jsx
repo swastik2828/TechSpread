@@ -7,7 +7,7 @@ import {
     PanelLeftClose, PanelLeftOpen, Image as ImageIcon, ImagePlus, FileImage, Videotape, Clapperboard, MonitorPlay, FileAudio, ShieldAlert,
     List, ListOrdered, Table, Maximize2, LayoutGrid, ListTree, BookA,
     FormInput, CheckSquare, MousePointerClick, Smartphone, Ear, ShieldCheck, Zap,
-    Target, Shield, GitBranch, Star, Telescope, BookOpen, Code2, Palette, Ruler, Paintbrush, Eye, Sparkles
+    Target, Shield, GitBranch, Star, Telescope, BookOpen, Code2, Palette, Ruler, Paintbrush, Eye, Sparkles, Anchor, Move
 } from "lucide-react";
 import { useState } from "react";
 
@@ -21,6 +21,7 @@ const CSS = () => {
     const [isBackgroundsMenuOpen, setIsBackgroundsMenuOpen] = useState(false);
     const [isBordersShadowsMenuOpen, setIsBordersShadowsMenuOpen] = useState(false);
     const [isDisplayVisibilityMenuOpen, setIsDisplayVisibilityMenuOpen] = useState(false);
+    const [isPositioningMenuOpen, setIsPositioningMenuOpen] = useState(false);
     const isExpanded = !isDesktopCollapsed;
     const navigate = useNavigate();
     const location = useLocation();
@@ -213,6 +214,19 @@ const CSS = () => {
                 <SubNavItem to="display-visibility/visibility-opacity" label="Visibility Matrix" icon={Eye} />
                 <SubNavItem to="display-visibility/overflow-spillage" label="Overflow Property" icon={Maximize2} />
                 <SubNavItem to="display-visibility/exercises" label="Exercises & Summary" icon={CheckCircle} />
+            </DropdownNav>
+
+            <DropdownNav
+                label="CSS Positioning"
+                icon={Anchor}
+                isOpen={isPositioningMenuOpen}
+                onToggle={() => setIsPositioningMenuOpen(!isPositioningMenuOpen)}
+            >
+                <SubNavItem to="positioning/intro" label="Introduction" icon={BookOpen} />
+                <SubNavItem to="positioning/relative-absolute" label="Relative & Absolute" icon={Target} />
+                <SubNavItem to="positioning/fixed-sticky" label="Fixed & Sticky" icon={Move} />
+                <SubNavItem to="positioning/z-index-centering" label="Z-Index & Centering" icon={Layers} />
+                <SubNavItem to="positioning/projects-mistakes" label="Projects & Cheatsheet" icon={CheckCircle} />
             </DropdownNav>
         </nav>
     );
