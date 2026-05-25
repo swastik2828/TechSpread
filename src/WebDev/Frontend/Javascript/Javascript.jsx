@@ -18,6 +18,7 @@ const Javascript = () => {
     const [isModule7Open, setIsModule7Open] = useState(false);
     const [isModule8Open, setIsModule8Open] = useState(false);
     const [isModule9Open, setIsModule9Open] = useState(false);
+    const [isModule10Open, setIsModule10Open] = useState(false);
     const isExpanded = !isDesktopCollapsed;
     const navigate = useNavigate();
     const location = useLocation();
@@ -184,6 +185,23 @@ const Javascript = () => {
                 <SubNavItem to="sequential-vs-parallel" label="9.7 Seq vs Parallel" />
                 <SubNavItem to="common-mistakes" label="9.8 Common Mistakes" />
                 <SubNavItem to="async-cheatsheet" label="9.9 Cheatsheet" />
+            </DropdownNav>
+            <DropdownNav label="Event Loop & Concurrency" icon={Layers} isOpen={isModule10Open} onToggle={() => setIsModule10Open(!isModule10Open)}>
+                <SubNavItem to="why-exist" label="10.1 Why It Exists" />
+                <SubNavItem to="big-picture" label="10.2 The Big Picture" />
+                <SubNavItem to="concurrency-call-stack" label="10.3 The Call Stack" />
+                <SubNavItem to="web-apis" label="10.4 Web APIs Layer" />
+                <SubNavItem to="task-queues" label="10.5 Task Queues" />
+                <SubNavItem to="event-loop-orchestrator" label="10.6 The Event Loop" />
+                <SubNavItem to="priority-system" label="10.7 Priority System" />
+                <SubNavItem to="execution-order" label="10.8 Execution Order" />
+                <SubNavItem to="async-await-sugar" label="10.9 async/await Sugar" />
+                <SubNavItem to="rendering-pipeline" label="10.10 Render Pipeline" />
+                <SubNavItem to="node-differences" label="10.11 Node.js vs Browser" />
+                <SubNavItem to="common-bugs" label="10.12 Common Bugs" />
+                <SubNavItem to="performance-patterns" label="10.13 Best Practices" />
+                <SubNavItem to="mental-models" label="10.14 Cheat Sheet" />
+                <SubNavItem to="practice-problems" label="10.15 Practice Problems" />
             </DropdownNav>
         </nav>
     );

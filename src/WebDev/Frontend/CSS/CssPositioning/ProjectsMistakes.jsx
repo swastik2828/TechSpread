@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Rocket, AlertTriangle, FileText, CheckCircle } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Rocket, AlertTriangle, FileText, CheckCircle } from 'lucide-react';
 import SEO from '../../../../components/SEO';
 
 const Section = ({ title, icon: Icon, children }) => (
@@ -287,6 +287,9 @@ export default function ProjectsMistakes() {
             <div className="flex justify-between mt-12 pt-8 border-t border-gray-800">
                 <Link to="/webdevelopment/css/positioning/z-index-centering" className="flex items-center gap-2 text-gray-500 hover:text-white transition-colors">
                     <ArrowLeft size={16} /> Previous: Z-Index & Centering
+                </Link>
+                <Link to="/webdevelopment/css/flexbox/intro" className="flex items-center gap-2 text-sky-400 font-bold hover:text-sky-300 transition-colors">
+                    Next: CSS Flexbox <ArrowRight size={16} />
                 </Link>
             </div>
         </article>

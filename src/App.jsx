@@ -140,6 +140,13 @@ import FixedSticky from "./WebDev/Frontend/CSS/CssPositioning/FixedSticky";
 import ZIndexCentering from "./WebDev/Frontend/CSS/CssPositioning/ZIndexCentering";
 import ProjectsMistakes from "./WebDev/Frontend/CSS/CssPositioning/ProjectsMistakes";
 
+// CSS Flexbox module
+import IntroFlexbox from "./WebDev/Frontend/CSS/CssFlexbox/IntroFlexbox";
+import ContainerProperties from "./WebDev/Frontend/CSS/CssFlexbox/ContainerProperties";
+import ItemProperties from "./WebDev/Frontend/CSS/CssFlexbox/ItemProperties";
+import PitfallsPatterns from "./WebDev/Frontend/CSS/CssFlexbox/PitfallsPatterns";
+import FlexboxVsGridExercises from "./WebDev/Frontend/CSS/CssFlexbox/FlexboxVsGridExercises";
+
 // JavaScript Course
 import Javascript from "./WebDev/Frontend/Javascript/Javascript";
 import IntroToJS from "./WebDev/Frontend/Javascript/IntroToJS";
@@ -204,6 +211,24 @@ import ErrorHandling from "./WebDev/Frontend/Javascript/Module9/ErrorHandling";
 import SequentialVsParallel from "./WebDev/Frontend/Javascript/Module9/SequentialVsParallel";
 import CommonMistakes from "./WebDev/Frontend/Javascript/Module9/CommonMistakes";
 import Cheatsheet from "./WebDev/Frontend/Javascript/Module9/Cheatsheet";
+
+// JavaScript Module 10: Event Loop & Concurrency Model
+import WhyExist from "./WebDev/Frontend/Javascript/Module10/WhyExist";
+import BigPicture from "./WebDev/Frontend/Javascript/Module10/BigPicture";
+import Module10CallStack from "./WebDev/Frontend/Javascript/Module10/CallStack";
+import WebAPIs from "./WebDev/Frontend/Javascript/Module10/WebAPIs";
+import TaskQueues from "./WebDev/Frontend/Javascript/Module10/TaskQueues";
+import EventLoopOrchestrator from "./WebDev/Frontend/Javascript/Module10/EventLoopOrchestrator";
+import PrioritySystem from "./WebDev/Frontend/Javascript/Module10/PrioritySystem";
+import ExecutionOrder from "./WebDev/Frontend/Javascript/Module10/ExecutionOrder";
+import AsyncAwaitSugar from "./WebDev/Frontend/Javascript/Module10/AsyncAwaitSugar";
+import RenderingPipeline from "./WebDev/Frontend/Javascript/Module10/RenderingPipeline";
+import NodeDifferences from "./WebDev/Frontend/Javascript/Module10/NodeDifferences";
+import CommonBugs from "./WebDev/Frontend/Javascript/Module10/CommonBugs";
+import PerformancePatterns from "./WebDev/Frontend/Javascript/Module10/PerformancePatterns";
+import MentalModels from "./WebDev/Frontend/Javascript/Module10/MentalModels";
+import PracticeProblems from "./WebDev/Frontend/Javascript/Module10/PracticeProblems";
+
 
 // subcategory page
 import Java from "./Programming/Java/Java";               // main java container
@@ -352,6 +377,11 @@ function App() {
         <Route path="positioning/fixed-sticky" element={<FixedSticky />} />
         <Route path="positioning/z-index-centering" element={<ZIndexCentering />} />
         <Route path="positioning/projects-mistakes" element={<ProjectsMistakes />} />
+        <Route path="flexbox/intro" element={<IntroFlexbox />} />
+        <Route path="flexbox/container" element={<ContainerProperties />} />
+        <Route path="flexbox/items" element={<ItemProperties />} />
+        <Route path="flexbox/pitfalls-patterns" element={<PitfallsPatterns />} />
+        <Route path="flexbox/exercises-cheatsheet" element={<FlexboxVsGridExercises />} />
       </Route>
 
       {/* JavaScript Course */}
@@ -404,6 +434,23 @@ function App() {
         <Route path="sequential-vs-parallel" element={<SequentialVsParallel />} />
         <Route path="common-mistakes" element={<CommonMistakes />} />
         <Route path="async-cheatsheet" element={<Cheatsheet />} />
+
+        {/* JavaScript Module 10 Routes: Event Loop & Concurrency */}
+        <Route path="why-exist" element={<WhyExist />} />
+        <Route path="big-picture" element={<BigPicture />} />
+        <Route path="concurrency-call-stack" element={<Module10CallStack />} />
+        <Route path="web-apis" element={<WebAPIs />} />
+        <Route path="task-queues" element={<TaskQueues />} />
+        <Route path="event-loop-orchestrator" element={<EventLoopOrchestrator />} />
+        <Route path="priority-system" element={<PrioritySystem />} />
+        <Route path="execution-order" element={<ExecutionOrder />} />
+        <Route path="async-await-sugar" element={<AsyncAwaitSugar />} />
+        <Route path="rendering-pipeline" element={<RenderingPipeline />} />
+        <Route path="node-differences" element={<NodeDifferences />} />
+        <Route path="common-bugs" element={<CommonBugs />} />
+        <Route path="performance-patterns" element={<PerformancePatterns />} />
+        <Route path="mental-models" element={<MentalModels />} />
+        <Route path="practice-problems" element={<PracticeProblems />} />
       </Route>
 
       {/* Java Course */}

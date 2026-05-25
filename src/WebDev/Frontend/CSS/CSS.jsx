@@ -22,6 +22,7 @@ const CSS = () => {
     const [isBordersShadowsMenuOpen, setIsBordersShadowsMenuOpen] = useState(false);
     const [isDisplayVisibilityMenuOpen, setIsDisplayVisibilityMenuOpen] = useState(false);
     const [isPositioningMenuOpen, setIsPositioningMenuOpen] = useState(false);
+    const [isFlexboxMenuOpen, setIsFlexboxMenuOpen] = useState(false);
     const isExpanded = !isDesktopCollapsed;
     const navigate = useNavigate();
     const location = useLocation();
@@ -227,6 +228,19 @@ const CSS = () => {
                 <SubNavItem to="positioning/fixed-sticky" label="Fixed & Sticky" icon={Move} />
                 <SubNavItem to="positioning/z-index-centering" label="Z-Index & Centering" icon={Layers} />
                 <SubNavItem to="positioning/projects-mistakes" label="Projects & Cheatsheet" icon={CheckCircle} />
+            </DropdownNav>
+
+            <DropdownNav
+                label="CSS Flexbox"
+                icon={Layout}
+                isOpen={isFlexboxMenuOpen}
+                onToggle={() => setIsFlexboxMenuOpen(!isFlexboxMenuOpen)}
+            >
+                <SubNavItem to="flexbox/intro" label="Introduction" icon={BookOpen} />
+                <SubNavItem to="flexbox/container" label="Container Properties" icon={Box} />
+                <SubNavItem to="flexbox/items" label="Item Properties" icon={Layers} />
+                <SubNavItem to="flexbox/pitfalls-patterns" label="Pitfalls & Patterns" icon={CheckCircle} />
+                <SubNavItem to="flexbox/exercises-cheatsheet" label="Exercises & Cheatsheet" icon={Telescope} />
             </DropdownNav>
         </nav>
     );

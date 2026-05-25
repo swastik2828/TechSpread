@@ -6,23 +6,23 @@ import { Sparkles, Zap } from "lucide-react";
 export default function RecentlyReleased() {
     const RECENT_LESSONS = [
       {
-          title: "CSS Positioning",
-          path: "/webdevelopment/css/positioning/intro",
-          desc: "Master CSS Positioning from scratch. Learn relative, absolute, fixed, and sticky positioning, and z-index stacking.",
+          title: "CSS Flexbox Layout",
+          path: "/webdevelopment/css/flexbox/intro",
+          desc: "Master modern one-dimensional layouts. Learn about flex direction, wrap, alignment, gap, individual item properties, and responsive layout patterns.",
           category: "Web Development",
           isNew: true
       },
-        {
-            title: "Asynchronous JavaScript",
-            path: "/webdevelopment/javascript/async-exists",
-            desc: "Master the Event Loop, Callbacks, Promises, Async/Await, and Sequential vs Parallel execution in JavaScript.",
-            category: "Web Development",
-            isNew: true
-        },
       {
-          title: "Prototypes & OOP",
-          path: "/webdevelopment/javascript/prototype-chain",
-          desc: "Understand prototypal inheritance, ES6 classes, and why Composition over Inheritance solves the fragile base class problem.",
+          title: "Event Loop & Concurrency Model",
+          path: "/webdevelopment/javascript/why-exist",
+          desc: "Deep dive into JavaScript's single-threaded nature, task queues, Microtask vs Macrotask priorities, rendering pipeline, and libuv.",
+          category: "Web Development",
+          isNew: true
+      },
+      {
+          title: "CSS Positioning",
+          path: "/webdevelopment/css/positioning/intro",
+          desc: "Master CSS Positioning from scratch. Learn relative, absolute, fixed, and sticky positioning, and z-index stacking.",
           category: "Web Development",
           isNew: true
       },
