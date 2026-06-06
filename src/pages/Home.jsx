@@ -112,7 +112,7 @@ const Home = () => {
         keywords="learn programming, java tutorial, web development course, dsa for beginners, computer science basics, techspread"
         url="/"
       />
-  <CourseLivePopup />
+  {/* <CourseLivePopup /> */}
       <div className='bg-gradient-to-b from-[#0f172a] to-[#111827]'>
         <Header />
         
