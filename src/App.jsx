@@ -229,6 +229,13 @@ import PerformancePatterns from "./WebDev/Frontend/Javascript/Module10/Performan
 import MentalModels from "./WebDev/Frontend/Javascript/Module10/MentalModels";
 import PracticeProblems from "./WebDev/Frontend/Javascript/Module10/PracticeProblems";
 
+//JavaScript Module 11: Working with APIs, JSON & Authentication
+import Foundation from "./WebDev/Frontend/Javascript/Module11/Foundation";
+import FetchAPI from "./WebDev/Frontend/Javascript/Module11/FetchAPI";
+import HttpMethods from "./WebDev/Frontend/Javascript/Module11/HttpMethods";
+import WorkingWithJSON from "./WebDev/Frontend/Javascript/Module11/WorkingWithJSON";
+import AuthHeaders from "./WebDev/Frontend/Javascript/Module11/AuthHeaders";
+import APIErrorHandling from "./WebDev/Frontend/Javascript/Module11/ErrorHandling";
 
 // subcategory page
 import Java from "./Programming/Java/Java";               // main java container
@@ -451,6 +458,14 @@ function App() {
         <Route path="performance-patterns" element={<PerformancePatterns />} />
         <Route path="mental-models" element={<MentalModels />} />
         <Route path="practice-problems" element={<PracticeProblems />} />
+
+        {/* JavaScript Module 11 Routes: Working with APIs, JSON & Authentication */}
+        <Route path="web-apis-foundation" element={<Foundation />} />
+        <Route path="fetch-api" element={<FetchAPI />} />
+        <Route path="http-methods-rest" element={<HttpMethods />} />
+        <Route path="working-with-json" element={<WorkingWithJSON />} />
+        <Route path="auth-headers" element={<AuthHeaders />} />
+        <Route path="error-handling-architecture" element={<APIErrorHandling />} />
       </Route>
 
       {/* Java Course */}

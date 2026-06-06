@@ -2,14 +2,15 @@ import { Outlet, NavLink, useNavigate, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
     Menu, X, ArrowLeft, ChevronDown, ChevronRight, FileCode,
-    PanelLeftClose, PanelLeftOpen, TerminalSquare, BookOpen, Code2, PlaySquare, Globe2, GitBranch, Database, Layers, Target, Network, Clock
+    PanelLeftClose, PanelLeftOpen, TerminalSquare, BookOpen, Code2, PlaySquare, Globe2, GitBranch, Database, Layers, Target, Network, Clock, Server
 } from "lucide-react";
 import { useState } from "react";
 
 const Javascript = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [isDesktopCollapsed, setIsDesktopCollapsed] = useState(false);
-    const [isIntroMenuOpen, setIsIntroMenuOpen] = useState(false);
+    
+    // Module states
     const [isModule2Open, setIsModule2Open] = useState(false);
     const [isModule3Open, setIsModule3Open] = useState(false);
     const [isModule4Open, setIsModule4Open] = useState(false);
@@ -19,6 +20,8 @@ const Javascript = () => {
     const [isModule8Open, setIsModule8Open] = useState(false);
     const [isModule9Open, setIsModule9Open] = useState(false);
     const [isModule10Open, setIsModule10Open] = useState(false);
+    const [isModule11Open, setIsModule11Open] = useState(true); // Default open for the new module
+
     const isExpanded = !isDesktopCollapsed;
     const navigate = useNavigate();
     const location = useLocation();
@@ -123,6 +126,8 @@ const Javascript = () => {
     const SidebarContent = () => (
         <nav className="flex flex-col gap-2">
             <NavItem to="" end icon={BookOpen} label="Introduction to JavaScript" />
+            
+            {/* Modules 2 - 9 ... (keeping existing exact structure) */}
             <DropdownNav label="Variables & Types" icon={Code2} isOpen={isModule2Open} onToggle={() => setIsModule2Open(!isModule2Open)}>
                 <SubNavItem to="variables" label="2.1 Variables" />
                 <SubNavItem to="primitives" label="2.2 Primitive Types" />
@@ -203,6 +208,17 @@ const Javascript = () => {
                 <SubNavItem to="mental-models" label="10.14 Cheat Sheet" />
                 <SubNavItem to="practice-problems" label="10.15 Practice Problems" />
             </DropdownNav>
+
+            {/* NEW MODULE 11 */}
+            <DropdownNav label="Web APIs & Data" icon={Server} isOpen={isModule11Open} onToggle={() => setIsModule11Open(!isModule11Open)}>
+                <SubNavItem to="web-apis-foundation" label="11.1 How the Web Works" />
+                <SubNavItem to="fetch-api" label="11.2 The Fetch API" />
+                <SubNavItem to="http-methods-rest" label="11.3 HTTP Methods" />
+                <SubNavItem to="working-with-json" label="11.4 Working with JSON" />
+                <SubNavItem to="auth-headers" label="11.5 Auth & Headers" />
+                <SubNavItem to="error-handling-architecture" label="11.6 Error Handling" />
+            </DropdownNav>
+
         </nav>
     );
 
@@ -295,4 +311,4 @@ const Javascript = () => {
         </div>
     );
 };
-export default Javascript;
+export default Javascript;  
