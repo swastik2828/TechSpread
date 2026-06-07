@@ -9,6 +9,7 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import UserDashboard from "./pages/UserDashboard";
 
+
 // Tutorials-related pages
 import Tutorial from "./pages/Tutorial";          // main tutorials hub
 import Programming from "./Programming/Programming";
@@ -147,6 +148,16 @@ import ItemProperties from "./WebDev/Frontend/CSS/CssFlexbox/ItemProperties";
 import PitfallsPatterns from "./WebDev/Frontend/CSS/CssFlexbox/PitfallsPatterns";
 import FlexboxVsGridExercises from "./WebDev/Frontend/CSS/CssFlexbox/FlexboxVsGridExercises";
 
+// CSS Grid
+import IntroGrid from "./WebDev/Frontend/CSS/CssGrid/IntroGrid";
+import GridColumnsRows from "./WebDev/Frontend/CSS/CssGrid/GridColumnsRows";
+import ResponsiveGrids from "./WebDev/Frontend/CSS/CssGrid/ResponsiveGrids";
+import PlacingItems from "./WebDev/Frontend/CSS/CssGrid/PlacingItems";
+import GridTemplateAreas from "./WebDev/Frontend/CSS/CssGrid/GridTemplateAreas";
+import GridAlignment from "./WebDev/Frontend/CSS/CssGrid/GridAlignment";
+import ImplicitGrid from "./WebDev/Frontend/CSS/CssGrid/ImplicitGrid";
+import GridPatternsSummary from "./WebDev/Frontend/CSS/CssGrid/GridPatternsSummary";
+
 // JavaScript Course
 import Javascript from "./WebDev/Frontend/Javascript/Javascript";
 import IntroToJS from "./WebDev/Frontend/Javascript/IntroToJS";
@@ -229,13 +240,6 @@ import PerformancePatterns from "./WebDev/Frontend/Javascript/Module10/Performan
 import MentalModels from "./WebDev/Frontend/Javascript/Module10/MentalModels";
 import PracticeProblems from "./WebDev/Frontend/Javascript/Module10/PracticeProblems";
 
-//JavaScript Module 11: Working with APIs, JSON & Authentication
-import Foundation from "./WebDev/Frontend/Javascript/Module11/Foundation";
-import FetchAPI from "./WebDev/Frontend/Javascript/Module11/FetchAPI";
-import HttpMethods from "./WebDev/Frontend/Javascript/Module11/HttpMethods";
-import WorkingWithJSON from "./WebDev/Frontend/Javascript/Module11/WorkingWithJSON";
-import AuthHeaders from "./WebDev/Frontend/Javascript/Module11/AuthHeaders";
-import APIErrorHandling from "./WebDev/Frontend/Javascript/Module11/ErrorHandling";
 
 // subcategory page
 import Java from "./Programming/Java/Java";               // main java container
@@ -389,6 +393,14 @@ function App() {
         <Route path="flexbox/items" element={<ItemProperties />} />
         <Route path="flexbox/pitfalls-patterns" element={<PitfallsPatterns />} />
         <Route path="flexbox/exercises-cheatsheet" element={<FlexboxVsGridExercises />} />
+        <Route path="grid/intro" element={<IntroGrid />} />
+        <Route path="grid/columns-rows" element={<GridColumnsRows />} />
+        <Route path="grid/responsive" element={<ResponsiveGrids />} />
+        <Route path="grid/placing-items" element={<PlacingItems />} />
+        <Route path="grid/template-areas" element={<GridTemplateAreas />} />
+        <Route path="grid/alignment" element={<GridAlignment />} />
+        <Route path="grid/implicit-grid" element={<ImplicitGrid />} />
+        <Route path="grid/patterns-summary" element={<GridPatternsSummary />} />
       </Route>
 
       {/* JavaScript Course */}
@@ -458,14 +470,6 @@ function App() {
         <Route path="performance-patterns" element={<PerformancePatterns />} />
         <Route path="mental-models" element={<MentalModels />} />
         <Route path="practice-problems" element={<PracticeProblems />} />
-
-        {/* JavaScript Module 11 Routes: Working with APIs, JSON & Authentication */}
-        <Route path="web-apis-foundation" element={<Foundation />} />
-        <Route path="fetch-api" element={<FetchAPI />} />
-        <Route path="http-methods-rest" element={<HttpMethods />} />
-        <Route path="working-with-json" element={<WorkingWithJSON />} />
-        <Route path="auth-headers" element={<AuthHeaders />} />
-        <Route path="error-handling-architecture" element={<APIErrorHandling />} />
       </Route>
 
       {/* Java Course */}
@@ -483,6 +487,8 @@ function App() {
         {/* Index route shows "What is AI" by default */}
         <Route index element={<WhatisAI />} />
       </Route>
+
+     
       {/* Default route for invalid URLs */}
       <Route path="*" element={<Home />} />
     </Routes>

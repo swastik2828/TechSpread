@@ -32,6 +32,7 @@ export const useAuth = () => useContext(AuthContext);
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState(null); // Firebase user object
   const [userData, setUserData] = useState(null); // App-level user doc from Firestore
+  const [adminStatus, setAdminStatus] = useState(null); // { isAdmin: bool, approvalStatus: "pending"|"approved"|"rejected" }
   const [loading, setLoading] = useState(true);
 
   // Helper: write user document to Firestore when user signs up
@@ -138,6 +139,59 @@ export function AuthProvider({ children }) {
     }
   };
 
+  // Register as admin (creates pending registration)
+  const registerAsAdmin = async (email, password) => {
+    const cred = await createUserWithEmailAndPassword(auth, email, password);
+    const uid = cred.user.uid;
+
+    try {
+      await sendEmailVerification(cred.user);
+    } catch (err) {
+      console.error("Email verification failed:", err);
+    }
+
+    // Create admin record with pending approval
+    try {
+      const adminRef = doc(db, "adminUsers", uid);
+      await setDoc(adminRef, {
+        email,
+        role: "admin",
+        approvalStatus: "pending",
+        createdAt: serverTimestamp(),
+        approvedBy: null,
+      });
+    } catch (err) {
+      console.error("Failed to create admin registration:", err);
+      throw err;
+    }
+
+    return cred;
+  };
+
+  // Check if current user is an approved admin
+  const checkAdminStatus = async (uid) => {
+    try {
+      const adminRef = doc(db, "adminUsers", uid);
+      const snap = await getDoc(adminRef);
+      if (snap.exists()) {
+        const data = snap.data();
+        setAdminStatus({
+          isAdmin: data.approvalStatus === "approved",
+          approvalStatus: data.approvalStatus,
+          role: data.role,
+        });
+        return data;
+      } else {
+        setAdminStatus({ isAdmin: false, approvalStatus: null });
+        return null;
+      }
+    } catch (err) {
+      console.error("checkAdminStatus error:", err);
+      setAdminStatus({ isAdmin: false, approvalStatus: null });
+      return null;
+    }
+  };
+
   // Listen to auth state changes once
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
@@ -159,8 +213,12 @@ export function AuthProvider({ children }) {
         } catch (err) {
           console.error("onAuthStateChanged - load user doc error:", err);
         }
+
+        // Check admin status
+        await checkAdminStatus(user.uid);
       } else {
         setUserData(null);
+        setAdminStatus(null);
       }
       setLoading(false);
     });
@@ -173,6 +231,7 @@ export function AuthProvider({ children }) {
   const value = {
     currentUser,   // firebase auth user (or null)
     userData,      // Firestore user doc (or null)
+    adminStatus,   // admin info or null
     loading,
     signup,
     login,
@@ -180,6 +239,8 @@ export function AuthProvider({ children }) {
     signInWithGoogle,
     resetPassword,
     updateUserDoc,
+    registerAsAdmin,
+    checkAdminStatus,
   };
 
   return (

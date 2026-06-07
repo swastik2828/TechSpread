@@ -315,9 +315,9 @@ justify-content: center;`}</CodeBlock>
                 <Link to="/webdevelopment/css/flexbox/pitfalls-patterns" className="flex items-center gap-2 text-gray-500 hover:text-white transition-colors">
                     <ArrowLeft size={16} /> Previous: Pitfalls & Patterns
                 </Link>
-                <div className="flex items-center gap-2 text-green-400 font-bold select-none">
-                    <Star size={16} fill="currentColor" /> Module Complete!
-                </div>
+                 <Link to="/webdevelopment/css/grid/intro" className="flex items-center gap-2 text-sky-400 font-bold hover:text-sky-300 transition-colors">
+                                    Next: Css Grid <ArrowRight size={16} />
+                                </Link>
             </div>
         </article>
     );

@@ -6,6 +6,13 @@ import { Sparkles, Zap } from "lucide-react";
 export default function RecentlyReleased() {
     const RECENT_LESSONS = [
       {
+          title: "CSS Grid — The Complete Guide",
+          path: "/webdevelopment/css/grid/intro",
+          desc: "Master two-dimensional layouts. Build responsive galleries, dashboards, and complex UI structures natively without media queries.",
+          category: "Web Development",
+          isNew: true
+      },
+      {
           title: "Web APIs & Data Handling",
           path: "/webdevelopment/javascript/web-apis-foundation",
           desc: "Master modern data fetching. Learn about HTTP, the Fetch API, RESTful design, JSON, Authentication, and robust error handling.",
@@ -18,16 +25,8 @@ export default function RecentlyReleased() {
           desc: "Master modern one-dimensional layouts. Learn about flex direction, wrap, alignment, gap, individual item properties, and responsive patterns.",
           category: "Web Development",
           isNew: false
-      },
-      {
-          title: "Event Loop & Concurrency Model",
-          path: "/webdevelopment/javascript/why-exist",
-          desc: "Deep dive into JavaScript's single-threaded nature, task queues, Microtask vs Macrotask priorities, rendering pipeline, and libuv.",
-          category: "Web Development",
-          isNew: false
-      },
+      }
     ];
-
   return (
     <section className="relative bg-[#0f172a] border-b border-gray-800/50 py-12 px-6">
       <div className="max-w-7xl mx-auto">
