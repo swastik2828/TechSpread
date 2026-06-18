@@ -2,7 +2,7 @@ import { Outlet, NavLink, useNavigate, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
     Menu, X, ArrowLeft, ChevronDown, ChevronRight, FileCode,
-    PanelLeftClose, PanelLeftOpen, TerminalSquare, BookOpen, Code2, PlaySquare, Globe2, GitBranch, Database, Layers, Target, Network, Clock, Server
+    PanelLeftClose, PanelLeftOpen, TerminalSquare, BookOpen, Code2, PlaySquare, Globe2, GitBranch, Database, Layers, Target, Network, Clock, Server, AppWindow
 } from "lucide-react";
 import { useState } from "react";
 
@@ -20,7 +20,8 @@ const Javascript = () => {
     const [isModule8Open, setIsModule8Open] = useState(false);
     const [isModule9Open, setIsModule9Open] = useState(false);
     const [isModule10Open, setIsModule10Open] = useState(false);
-    const [isModule11Open, setIsModule11Open] = useState(true); // Default open for the new module
+    const [isModule11Open, setIsModule11Open] = useState(false); 
+    const [isModule12Open, setIsModule12Open] = useState(true); // Default open for the new module
 
     const isExpanded = !isDesktopCollapsed;
     const navigate = useNavigate();
@@ -127,7 +128,6 @@ const Javascript = () => {
         <nav className="flex flex-col gap-2">
             <NavItem to="" end icon={BookOpen} label="Introduction to JavaScript" />
             
-            {/* Modules 2 - 9 ... (keeping existing exact structure) */}
             <DropdownNav label="Variables & Types" icon={Code2} isOpen={isModule2Open} onToggle={() => setIsModule2Open(!isModule2Open)}>
                 <SubNavItem to="variables" label="2.1 Variables" />
                 <SubNavItem to="primitives" label="2.2 Primitive Types" />
@@ -208,15 +208,25 @@ const Javascript = () => {
                 <SubNavItem to="mental-models" label="10.14 Cheat Sheet" />
                 <SubNavItem to="practice-problems" label="10.15 Practice Problems" />
             </DropdownNav>
-
-            {/* NEW MODULE 11 */}
             <DropdownNav label="Web APIs & Data" icon={Server} isOpen={isModule11Open} onToggle={() => setIsModule11Open(!isModule11Open)}>
                 <SubNavItem to="web-apis-foundation" label="11.1 How the Web Works" />
                 <SubNavItem to="fetch-api" label="11.2 The Fetch API" />
-                <SubNavItem to="http-methods-rest" label="11.3 HTTP Methods" />
+                <SubNavItem to="http-methods" label="11.3 HTTP Methods" />
                 <SubNavItem to="working-with-json" label="11.4 Working with JSON" />
                 <SubNavItem to="auth-headers" label="11.5 Auth & Headers" />
-                <SubNavItem to="error-handling-architecture" label="11.6 Error Handling" />
+                <SubNavItem to="error-handling" label="11.6 Error Handling" />
+            </DropdownNav>
+
+            {/* NEW MODULE 12 */}
+            <DropdownNav label="DOM Manipulation" icon={AppWindow} isOpen={isModule12Open} onToggle={() => setIsModule12Open(!isModule12Open)}>
+                <SubNavItem to="what-is-the-dom" label="12.1 What is the DOM" />
+                <SubNavItem to="selecting-elements" label="12.2 Selecting Elements" />
+                <SubNavItem to="modifying-elements" label="12.3 Modifying Elements" />
+                <SubNavItem to="data-attributes" label="12.4 Data Attributes" />
+                <SubNavItem to="handling-events" label="12.5 Handling Events" />
+                <SubNavItem to="dom-performance" label="12.6 DOM Performance" />
+                <SubNavItem to="common-dom-pitfalls" label="12.7 Common Pitfalls" />
+                <SubNavItem to="dom-working-example" label="12.8 Working Example" />
             </DropdownNav>
 
         </nav>
@@ -311,4 +321,4 @@ const Javascript = () => {
         </div>
     );
 };
-export default Javascript;  
+export default Javascript;

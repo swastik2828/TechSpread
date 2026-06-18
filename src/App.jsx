@@ -9,9 +9,8 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import UserDashboard from "./pages/UserDashboard";
 
-
 // Tutorials-related pages
-import Tutorial from "./pages/Tutorial";          // main tutorials hub
+import Tutorial from "./pages/Tutorial"; // main tutorials hub
 import Programming from "./Programming/Programming";
 import AIML from "./AIML/AIML";
 import AI from "./AIML/AI/AI";
@@ -240,17 +239,34 @@ import PerformancePatterns from "./WebDev/Frontend/Javascript/Module10/Performan
 import MentalModels from "./WebDev/Frontend/Javascript/Module10/MentalModels";
 import PracticeProblems from "./WebDev/Frontend/Javascript/Module10/PracticeProblems";
 
+// Javascript Module 11: Web APIs
+import Foundation from "./WebDev/Frontend/Javascript/Module11/Foundation";
+import AuthHeaders from "./WebDev/Frontend/Javascript/Module11/AuthHeaders";
+import Errorhandling from "./WebDev/Frontend/Javascript/Module11/ErrorHandling";
+import FetchAPI from "./WebDev/Frontend/Javascript/Module11/FetchAPI";
+import HttpMethods from "./WebDev/Frontend/Javascript/Module11/HttpMethods";
+import WorkingWithJSON from "./WebDev/Frontend/Javascript/Module11/WorkingWithJSON";
+
+// JavaScript Module 12: DOM Manipulation
+import WhatIsTheDom from "./WebDev/Frontend/Javascript/Module12/WhatIsTheDom";
+import SelectingElements from "./WebDev/Frontend/Javascript/Module12/SelectingElements";
+import ModifyingElements from "./WebDev/Frontend/Javascript/Module12/ModifyingElements";
+import DataAttributes from "./WebDev/Frontend/Javascript/Module12/DataAttributes";
+import HandlingEvents from "./WebDev/Frontend/Javascript/Module12/HandlingEvents";
+import DomPerformance from "./WebDev/Frontend/Javascript/Module12/DomPerformance";
+import CommonDomPitfalls from "./WebDev/Frontend/Javascript/Module12/CommonDomPitfalls";
+import DomWorkingExample from "./WebDev/Frontend/Javascript/Module12/DomWorkingExample";
 
 // subcategory page
-import Java from "./Programming/Java/Java";               // main java container
-import WhatisJava from "./Programming/Java/WhatisJava";   // java topic pages
+import Java from "./Programming/Java/Java"; // main java container
+import WhatisJava from "./Programming/Java/WhatisJava"; // java topic pages
 import HistoryofJava from "./Programming/Java/HistoryofJava";
 import FeaturesJava from "./Programming/Java/FeaturesJava";
 import WhatisJDKJVMJRE from "./Programming/Java/WhatisJDKJVMJRE";
 import JavaInstallation from "./Programming/Java/JavaInstallation";
 import JavavsCPP from "./Programming/Java/JavavsCPP";
 // AI course
-import WhatisAI from "./AIML/AI/WhatisAI"
+import WhatisAI from "./AIML/AI/WhatisAI";
 
 function App() {
   return (
@@ -335,14 +351,22 @@ function App() {
         <Route path="forms/accessible-forms" element={<AccessibleForms />} />
 
         {/* Semantic HTML */}
-        <Route path="/webdevelopment/html/semantic" element={<SemanticHTML />} />
+        <Route
+          path="/webdevelopment/html/semantic"
+          element={<SemanticHTML />}
+        />
 
         {/* Best Practices */}
-        <Route path="/webdevelopment/html/best-practices" element={<HTMLBestPractices />} />
+        <Route
+          path="/webdevelopment/html/best-practices"
+          element={<HTMLBestPractices />}
+        />
 
         {/* Integration of HTML with CSS & JS */}
-        <Route path="/webdevelopment/html/integration" element={<HTMLCSSJSConnection />} />
-
+        <Route
+          path="/webdevelopment/html/integration"
+          element={<HTMLCSSJSConnection />}
+        />
       </Route>
 
       {/* CSS Course */}
@@ -361,14 +385,23 @@ function App() {
         <Route path="colors-units/exercises" element={<CssExercises />} />
         <Route path="box-model/intro" element={<IntroBoxModel />} />
         <Route path="box-model/layers" element={<BoxModelLayers />} />
-        <Route path="box-model/shorthand" element={<MarginPaddingShorthand />} />
+        <Route
+          path="box-model/shorthand"
+          element={<MarginPaddingShorthand />}
+        />
         <Route path="box-model/collapse" element={<MarginCollapse />} />
         <Route path="box-model/box-sizing" element={<BoxSizing />} />
         <Route path="box-model/width-height" element={<WidthHeight />} />
-        <Route path="box-model/mistakes-exercises" element={<MistakesExercises />} />
+        <Route
+          path="box-model/mistakes-exercises"
+          element={<MistakesExercises />}
+        />
         <Route path="typography/intro" element={<IntroTypography />} />
         <Route path="typography/formatting" element={<TextFormatting />} />
-        <Route path="typography/responsive" element={<ResponsiveTypography />} />
+        <Route
+          path="typography/responsive"
+          element={<ResponsiveTypography />}
+        />
         <Route path="backgrounds/intro" element={<IntroBackgrounds />} />
         <Route path="backgrounds/color" element={<BackgroundColor />} />
         <Route path="backgrounds/image" element={<BackgroundImage />} />
@@ -376,23 +409,56 @@ function App() {
         <Route path="backgrounds/layering" element={<BackgroundLayering />} />
         <Route path="backgrounds/summary" element={<BackgroundSummary />} />
         <Route path="borders-shadows/anatomy" element={<AnatomyBoxModel />} />
-        <Route path="borders-shadows/accessibility" element={<AccessibilityFocus />} />
-        <Route path="borders-shadows/dimensionality" element={<DimensionalityShadows />} />
-        <Route path="borders-shadows/alpha-mask" element={<AlphaMaskRealWorld />} />
+        <Route
+          path="borders-shadows/accessibility"
+          element={<AccessibilityFocus />}
+        />
+        <Route
+          path="borders-shadows/dimensionality"
+          element={<DimensionalityShadows />}
+        />
+        <Route
+          path="borders-shadows/alpha-mask"
+          element={<AlphaMaskRealWorld />}
+        />
         <Route path="display-visibility/intro" element={<IntroDisplay />} />
-        <Route path="display-visibility/visibility-opacity" element={<VisibilityOpacity />} />
-        <Route path="display-visibility/overflow-spillage" element={<OverflowSpillage />} />
-        <Route path="display-visibility/exercises" element={<ExercisesSummary />} />
+        <Route
+          path="display-visibility/visibility-opacity"
+          element={<VisibilityOpacity />}
+        />
+        <Route
+          path="display-visibility/overflow-spillage"
+          element={<OverflowSpillage />}
+        />
+        <Route
+          path="display-visibility/exercises"
+          element={<ExercisesSummary />}
+        />
         <Route path="positioning/intro" element={<IntroPositioning />} />
-        <Route path="positioning/relative-absolute" element={<RelativeAbsolute />} />
+        <Route
+          path="positioning/relative-absolute"
+          element={<RelativeAbsolute />}
+        />
         <Route path="positioning/fixed-sticky" element={<FixedSticky />} />
-        <Route path="positioning/z-index-centering" element={<ZIndexCentering />} />
-        <Route path="positioning/projects-mistakes" element={<ProjectsMistakes />} />
+        <Route
+          path="positioning/z-index-centering"
+          element={<ZIndexCentering />}
+        />
+        <Route
+          path="positioning/projects-mistakes"
+          element={<ProjectsMistakes />}
+        />
         <Route path="flexbox/intro" element={<IntroFlexbox />} />
         <Route path="flexbox/container" element={<ContainerProperties />} />
         <Route path="flexbox/items" element={<ItemProperties />} />
-        <Route path="flexbox/pitfalls-patterns" element={<PitfallsPatterns />} />
-        <Route path="flexbox/exercises-cheatsheet" element={<FlexboxVsGridExercises />} />
+        <Route
+          path="flexbox/pitfalls-patterns"
+          element={<PitfallsPatterns />}
+        />
+        <Route
+          path="flexbox/exercises-cheatsheet"
+          element={<FlexboxVsGridExercises />}
+        />
         <Route path="grid/intro" element={<IntroGrid />} />
         <Route path="grid/columns-rows" element={<GridColumnsRows />} />
         <Route path="grid/responsive" element={<ResponsiveGrids />} />
@@ -413,7 +479,10 @@ function App() {
         <Route path="type-conversion" element={<TypeConversion />} />
         <Route path="operators" element={<Operators />} />
         <Route path="expressions" element={<Expressions />} />
-        <Route path="conditional-statements" element={<ConditionalStatements />} />
+        <Route
+          path="conditional-statements"
+          element={<ConditionalStatements />}
+        />
         <Route path="truthy-falsy" element={<TruthyFalsy />} />
         <Route path="loops" element={<Loops />} />
         <Route path="break-continue" element={<BreakContinue />} />
@@ -438,19 +507,31 @@ function App() {
         <Route path="the-golden-rule" element={<TheGoldenRule />} />
         <Route path="new-binding" element={<NewBinding />} />
         <Route path="explicit-binding" element={<ExplicitBinding />} />
-        <Route path="implicit-default-binding" element={<ImplicitDefaultBinding />} />
+        <Route
+          path="implicit-default-binding"
+          element={<ImplicitDefaultBinding />}
+        />
         <Route path="arrow-functions-this" element={<ArrowFunctionsThis />} />
         <Route path="prototype-chain" element={<PrototypeChain />} />
-        <Route path="constructor-functions" element={<ConstructorFunctions />} />
+        <Route
+          path="constructor-functions"
+          element={<ConstructorFunctions />}
+        />
         <Route path="es6-classes" element={<ES6Classes />} />
-        <Route path="inheritance-vs-composition" element={<InheritanceVsComposition />} />
+        <Route
+          path="inheritance-vs-composition"
+          element={<InheritanceVsComposition />}
+        />
         <Route path="async-exists" element={<AsyncExists />} />
         <Route path="event-loop" element={<EventLoop />} />
         <Route path="callbacks" element={<Callbacks />} />
         <Route path="promises" element={<Promises />} />
         <Route path="async-await" element={<AsyncAwait />} />
         <Route path="error-handling" element={<ErrorHandling />} />
-        <Route path="sequential-vs-parallel" element={<SequentialVsParallel />} />
+        <Route
+          path="sequential-vs-parallel"
+          element={<SequentialVsParallel />}
+        />
         <Route path="common-mistakes" element={<CommonMistakes />} />
         <Route path="async-cheatsheet" element={<Cheatsheet />} />
 
@@ -460,7 +541,10 @@ function App() {
         <Route path="concurrency-call-stack" element={<Module10CallStack />} />
         <Route path="web-apis" element={<WebAPIs />} />
         <Route path="task-queues" element={<TaskQueues />} />
-        <Route path="event-loop-orchestrator" element={<EventLoopOrchestrator />} />
+        <Route
+          path="event-loop-orchestrator"
+          element={<EventLoopOrchestrator />}
+        />
         <Route path="priority-system" element={<PrioritySystem />} />
         <Route path="execution-order" element={<ExecutionOrder />} />
         <Route path="async-await-sugar" element={<AsyncAwaitSugar />} />
@@ -470,6 +554,24 @@ function App() {
         <Route path="performance-patterns" element={<PerformancePatterns />} />
         <Route path="mental-models" element={<MentalModels />} />
         <Route path="practice-problems" element={<PracticeProblems />} />
+
+        {/* Module 11 Web APIs */}
+        <Route path="web-apis-foundation" element={<Foundation />} />
+        <Route path="fetch-api" element={<FetchAPI />} />
+        <Route path="http-methods" element={<HttpMethods />} />
+        <Route path="auth-headers" element={<AuthHeaders />} />
+        <Route path="error-handling" element={<Errorhandling />} />
+        <Route path="working-with-json" element={<WorkingWithJSON />} />
+
+        {/* JavaScript Module 12 Routes: DOM Manipulation */}
+        <Route path="what-is-the-dom" element={<WhatIsTheDom />} />
+        <Route path="selecting-elements" element={<SelectingElements />} />
+        <Route path="modifying-elements" element={<ModifyingElements />} />
+        <Route path="data-attributes" element={<DataAttributes />} />
+        <Route path="handling-events" element={<HandlingEvents />} />
+        <Route path="dom-performance" element={<DomPerformance />} />
+        <Route path="common-dom-pitfalls" element={<CommonDomPitfalls />} />
+        <Route path="dom-working-example" element={<DomWorkingExample />} />
       </Route>
 
       {/* Java Course */}
@@ -488,7 +590,6 @@ function App() {
         <Route index element={<WhatisAI />} />
       </Route>
 
-     
       {/* Default route for invalid URLs */}
       <Route path="*" element={<Home />} />
     </Routes>

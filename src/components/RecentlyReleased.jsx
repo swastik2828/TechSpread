@@ -6,6 +6,13 @@ import { Sparkles, Zap } from "lucide-react";
 export default function RecentlyReleased() {
     const RECENT_LESSONS = [
       {
+          title: "JavaScript DOM Manipulation",
+          path: "/webdevelopment/javascript/what-is-the-dom",
+          desc: "Master the Document Object Model. Learn to select, create, and modify elements, handle events, and build highly interactive UIs without frameworks.",
+          category: "Web Development",
+          isNew: true
+      },
+      {
           title: "CSS Grid — The Complete Guide",
           path: "/webdevelopment/css/grid/intro",
           desc: "Master two-dimensional layouts. Build responsive galleries, dashboards, and complex UI structures natively without media queries.",
@@ -16,13 +23,6 @@ export default function RecentlyReleased() {
           title: "Web APIs & Data Handling",
           path: "/webdevelopment/javascript/web-apis-foundation",
           desc: "Master modern data fetching. Learn about HTTP, the Fetch API, RESTful design, JSON, Authentication, and robust error handling.",
-          category: "Web Development",
-          isNew: true
-      },
-      {
-          title: "CSS Flexbox Layout",
-          path: "/webdevelopment/css/flexbox/intro",
-          desc: "Master modern one-dimensional layouts. Learn about flex direction, wrap, alignment, gap, individual item properties, and responsive patterns.",
           category: "Web Development",
           isNew: false
       }
