@@ -4,29 +4,29 @@ import { motion } from "framer-motion";
 import { Sparkles, Zap } from "lucide-react";
 
 export default function RecentlyReleased() {
-    const RECENT_LESSONS = [
-      {
-        title: "Responsive Design Complete Guide",
-        path: "/webdevelopment/css/responsive/intro",
-        desc: "Master modern responsive design. Learn mobile-first workflows, container queries, clamp(), and fluid layouts without guessing breakpoints.",
-        category: "Web Development",
-        isNew: true
+  const RECENT_LESSONS = [
+    {
+      title: "Advanced Event Handling",
+      path: "/webdevelopment/javascript/the-event-system",
+      desc: "Master the DOM event system. Learn propagation, delegation, custom events, and memory leak prevention for bulletproof UIs.",
+      category: "Web Development",
+      isNew: true,
     },
     {
-        title: "JavaScript DOM Manipulation",
-        path: "/webdevelopment/javascript/what-is-the-dom",
-        desc: "Master the Document Object Model. Learn to select, create, and modify elements, handle events, and build highly interactive UIs without frameworks.",
-        category: "Web Development",
-        isNew: true
+      title: "Responsive Design Complete Guide",
+      path: "/webdevelopment/css/responsive/intro",
+      desc: "Master modern responsive design. Learn mobile-first workflows, container queries, clamp(), and fluid layouts without guessing breakpoints.",
+      category: "Web Development",
+      isNew: true,
     },
     {
-        title: "CSS Grid — The Complete Guide",
-        path: "/webdevelopment/css/grid/intro",
-        desc: "Master two-dimensional layouts. Build responsive galleries, dashboards, and complex UI structures natively without media queries.",
-        category: "Web Development",
-        isNew: false
-    }
-    ];
+      title: "JavaScript DOM Manipulation",
+      path: "/webdevelopment/javascript/what-is-the-dom",
+      desc: "Master the Document Object Model. Learn to select, create, and modify elements, handle events, and build highly interactive UIs without frameworks.",
+      category: "Web Development",
+      isNew: true,
+    },
+  ];
   return (
     <section className="relative bg-[#0f172a] border-b border-gray-800/50 py-12 px-6">
       <div className="max-w-7xl mx-auto">
@@ -62,12 +62,13 @@ export default function RecentlyReleased() {
               <Link to={lesson.path} className="block h-full">
                 <div className="flex justify-between items-start mb-2">
                   <span
-                    className={`text-xs font-semibold px-2 py-1 rounded ${lesson.category.includes("AI")
-                      ? "bg-blue-900/40 text-blue-300 border border-blue-800/50"
-                      : lesson.category.includes("Web Development")
-                        ? "bg-teal-900/40 text-teal-300 border border-teal-800/50"
-                        : "bg-orange-900/40 text-orange-300 border border-orange-800/50"
-                      }`}
+                    className={`text-xs font-semibold px-2 py-1 rounded ${
+                      lesson.category.includes("AI")
+                        ? "bg-blue-900/40 text-blue-300 border border-blue-800/50"
+                        : lesson.category.includes("Web Development")
+                          ? "bg-teal-900/40 text-teal-300 border border-teal-800/50"
+                          : "bg-orange-900/40 text-orange-300 border border-orange-800/50"
+                    }`}
                   >
                     {lesson.category}
                   </span>

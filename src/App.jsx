@@ -263,6 +263,20 @@ import DomPerformance from "./WebDev/Frontend/Javascript/Module12/DomPerformance
 import CommonDomPitfalls from "./WebDev/Frontend/Javascript/Module12/CommonDomPitfalls";
 import DomWorkingExample from "./WebDev/Frontend/Javascript/Module12/DomWorkingExample";
 
+// ==========================================
+// Javascript Module 13: Event Handling
+// ==========================================
+import TheEventSystem from "./WebDev/Frontend/Javascript/Module13/TheEventSystem";
+import EventPropagation from "./WebDev/Frontend/Javascript/Module13/EventPropagation";
+import TheEventObject from "./WebDev/Frontend/Javascript/Module13/TheEventObject";
+import EventDelegation from "./WebDev/Frontend/Javascript/Module13/EventDelegation";
+import CustomEvents from "./WebDev/Frontend/Javascript/Module13/CustomEvents";
+import AsyncEventHandling from "./WebDev/Frontend/Javascript/Module13/AsyncEventHandling";
+import FocusManagement from "./WebDev/Frontend/Javascript/Module13/FocusManagement";
+import OrganisingEventCode from "./WebDev/Frontend/Javascript/Module13/OrganisingEventCode";
+import MemoryLeaks from "./WebDev/Frontend/Javascript/Module13/MemoryLeaks";
+import QuickReferenceEvents from "./WebDev/Frontend/Javascript/Module13/QuickReferenceEvents";
+
 // subcategory page
 import Java from "./Programming/Java/Java"; // main java container
 import WhatisJava from "./Programming/Java/WhatisJava"; // java topic pages
@@ -477,7 +491,10 @@ function App() {
         {/* Responsive Design */}
         <Route path="responsive/intro" element={<IntroResponsive />} />
         <Route path="responsive/media-queries" element={<MediaQueries />} />
-        <Route path="responsive/flexible-layouts" element={<FlexibleLayouts />} />
+        <Route
+          path="responsive/flexible-layouts"
+          element={<FlexibleLayouts />}
+        />
         <Route path="responsive/modern" element={<ModernResponsive />} />
       </Route>
 
@@ -584,6 +601,23 @@ function App() {
         <Route path="dom-performance" element={<DomPerformance />} />
         <Route path="common-dom-pitfalls" element={<CommonDomPitfalls />} />
         <Route path="dom-working-example" element={<DomWorkingExample />} />
+
+        {/* ========================================== */}
+        {/* Module 13: Event Handling                  */}
+        {/* ========================================== */}
+        <Route path="the-event-system" element={<TheEventSystem />} />
+        <Route path="event-propagation" element={<EventPropagation />} />
+        <Route path="the-event-object" element={<TheEventObject />} />
+        <Route path="event-delegation" element={<EventDelegation />} />
+        <Route path="custom-events" element={<CustomEvents />} />
+        <Route path="async-event-handling" element={<AsyncEventHandling />} />
+        <Route path="focus-management" element={<FocusManagement />} />
+        <Route path="organising-event-code" element={<OrganisingEventCode />} />
+        <Route path="memory-leaks" element={<MemoryLeaks />} />
+        <Route
+          path="quick-reference-events"
+          element={<QuickReferenceEvents />}
+        />
       </Route>
 
       {/* Java Course */}
