@@ -25,6 +25,7 @@ const CSS = () => {
     const [isPositioningMenuOpen, setIsPositioningMenuOpen] = useState(false);
     const [isFlexboxMenuOpen, setIsFlexboxMenuOpen] = useState(false);
     const [isGridMenuOpen, setIsGridMenuOpen] = useState(false);
+    const [isResponsiveMenuOpen, setIsResponsiveMenuOpen] = useState(false);
     
     const isExpanded = !isDesktopCollapsed;
     const navigate = useNavigate();
@@ -189,6 +190,13 @@ const CSS = () => {
                 <SubNavItem to="grid/alignment" label="Alignment Matrix" icon={AlignCenter} />
                 <SubNavItem to="grid/implicit-grid" label="Implicit Grid" icon={Layers} />
                 <SubNavItem to="grid/patterns-summary" label="Patterns & Summary" icon={BookCheck} />
+            </DropdownNav>
+
+            <DropdownNav label="Responsive Design" icon={Smartphone} isOpen={isResponsiveMenuOpen} onToggle={() => setIsResponsiveMenuOpen(!isResponsiveMenuOpen)}>
+                <SubNavItem to="responsive/intro" label="Viewport & Intro" icon={BookOpen} />
+                <SubNavItem to="responsive/media-queries" label="Media Queries" icon={MonitorPlay} />
+                <SubNavItem to="responsive/flexible-layouts" label="Fluid Layouts & Clamp" icon={Maximize2} />
+                <SubNavItem to="responsive/modern" label="Container Queries" icon={BoxSelect} />
             </DropdownNav>
         </nav>
     );

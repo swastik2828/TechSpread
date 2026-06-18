@@ -6,26 +6,26 @@ import { Sparkles, Zap } from "lucide-react";
 export default function RecentlyReleased() {
     const RECENT_LESSONS = [
       {
-          title: "JavaScript DOM Manipulation",
-          path: "/webdevelopment/javascript/what-is-the-dom",
-          desc: "Master the Document Object Model. Learn to select, create, and modify elements, handle events, and build highly interactive UIs without frameworks.",
-          category: "Web Development",
-          isNew: true
-      },
-      {
-          title: "CSS Grid — The Complete Guide",
-          path: "/webdevelopment/css/grid/intro",
-          desc: "Master two-dimensional layouts. Build responsive galleries, dashboards, and complex UI structures natively without media queries.",
-          category: "Web Development",
-          isNew: true
-      },
-      {
-          title: "Web APIs & Data Handling",
-          path: "/webdevelopment/javascript/web-apis-foundation",
-          desc: "Master modern data fetching. Learn about HTTP, the Fetch API, RESTful design, JSON, Authentication, and robust error handling.",
-          category: "Web Development",
-          isNew: false
-      }
+        title: "Responsive Design Complete Guide",
+        path: "/webdevelopment/css/responsive/intro",
+        desc: "Master modern responsive design. Learn mobile-first workflows, container queries, clamp(), and fluid layouts without guessing breakpoints.",
+        category: "Web Development",
+        isNew: true
+    },
+    {
+        title: "JavaScript DOM Manipulation",
+        path: "/webdevelopment/javascript/what-is-the-dom",
+        desc: "Master the Document Object Model. Learn to select, create, and modify elements, handle events, and build highly interactive UIs without frameworks.",
+        category: "Web Development",
+        isNew: true
+    },
+    {
+        title: "CSS Grid — The Complete Guide",
+        path: "/webdevelopment/css/grid/intro",
+        desc: "Master two-dimensional layouts. Build responsive galleries, dashboards, and complex UI structures natively without media queries.",
+        category: "Web Development",
+        isNew: false
+    }
     ];
   return (
     <section className="relative bg-[#0f172a] border-b border-gray-800/50 py-12 px-6">

@@ -157,6 +157,12 @@ import GridAlignment from "./WebDev/Frontend/CSS/CssGrid/GridAlignment";
 import ImplicitGrid from "./WebDev/Frontend/CSS/CssGrid/ImplicitGrid";
 import GridPatternsSummary from "./WebDev/Frontend/CSS/CssGrid/GridPatternsSummary";
 
+// Responsive design
+import IntroResponsive from "./WebDev/Frontend/CSS/CssResponsive/IntroResponsive";
+import MediaQueries from "./WebDev/Frontend/CSS/CssResponsive/MediaQueries";
+import FlexibleLayouts from "./WebDev/Frontend/CSS/CssResponsive/FlexibleLayouts";
+import ModernResponsive from "./WebDev/Frontend/CSS/CssResponsive/ModernResponsive";
+
 // JavaScript Course
 import Javascript from "./WebDev/Frontend/Javascript/Javascript";
 import IntroToJS from "./WebDev/Frontend/Javascript/IntroToJS";
@@ -467,6 +473,12 @@ function App() {
         <Route path="grid/alignment" element={<GridAlignment />} />
         <Route path="grid/implicit-grid" element={<ImplicitGrid />} />
         <Route path="grid/patterns-summary" element={<GridPatternsSummary />} />
+
+        {/* Responsive Design */}
+        <Route path="responsive/intro" element={<IntroResponsive />} />
+        <Route path="responsive/media-queries" element={<MediaQueries />} />
+        <Route path="responsive/flexible-layouts" element={<FlexibleLayouts />} />
+        <Route path="responsive/modern" element={<ModernResponsive />} />
       </Route>
 
       {/* JavaScript Course */}
