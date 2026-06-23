@@ -163,6 +163,13 @@ import MediaQueries from "./WebDev/Frontend/CSS/CssResponsive/MediaQueries";
 import FlexibleLayouts from "./WebDev/Frontend/CSS/CssResponsive/FlexibleLayouts";
 import ModernResponsive from "./WebDev/Frontend/CSS/CssResponsive/ModernResponsive";
 
+// CSS Transition
+import IntroTransitions from "./WebDev/Frontend/CSS/CssTransition/IntroTransitions";
+import TimingFunctions from "./WebDev/Frontend/CSS/CssTransition/TimingFunctions";
+import TransformProperty from "./WebDev/Frontend/CSS/CssTransition/TransformProperty";
+import TransitionProperties from "./WebDev/Frontend/CSS/CssTransition/TransitionProperties";
+import AccessibilityBugs from "./WebDev/Frontend/CSS/CssTransition/AccessibilityBugs";
+
 // JavaScript Course
 import Javascript from "./WebDev/Frontend/Javascript/Javascript";
 import IntroToJS from "./WebDev/Frontend/Javascript/IntroToJS";
@@ -496,6 +503,13 @@ function App() {
           element={<FlexibleLayouts />}
         />
         <Route path="responsive/modern" element={<ModernResponsive />} />
+
+        {/* CSS Transition */}
+        <Route path="transitions/intro" element={<IntroTransitions />} />
+        <Route path="transitions/timing" element={<TimingFunctions />} />
+        <Route path="transitions/transform" element={<TransformProperty />} />
+        <Route path="transitions/properties" element={<TransitionProperties />} />
+        <Route path="transitions/accessibility" element={<AccessibilityBugs />} />
       </Route>
 
       {/* JavaScript Course */}

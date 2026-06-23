@@ -6,6 +6,13 @@ import { Sparkles, Zap } from "lucide-react";
 export default function RecentlyReleased() {
   const RECENT_LESSONS = [
     {
+      title: "CSS Transitions Complete Guide",
+      path: "/webdevelopment/css/transitions/intro",
+      desc: "Master CSS animations. Learn the transition property, timing functions, GPU-accelerated transforms, and how to fix common layout bugs.",
+      category: "Web Development",
+      isNew: true,
+    },
+    {
       title: "Advanced Event Handling",
       path: "/webdevelopment/javascript/the-event-system",
       desc: "Master the DOM event system. Learn propagation, delegation, custom events, and memory leak prevention for bulletproof UIs.",
@@ -19,13 +26,7 @@ export default function RecentlyReleased() {
       category: "Web Development",
       isNew: true,
     },
-    {
-      title: "JavaScript DOM Manipulation",
-      path: "/webdevelopment/javascript/what-is-the-dom",
-      desc: "Master the Document Object Model. Learn to select, create, and modify elements, handle events, and build highly interactive UIs without frameworks.",
-      category: "Web Development",
-      isNew: true,
-    },
+    
   ];
   return (
     <section className="relative bg-[#0f172a] border-b border-gray-800/50 py-12 px-6">

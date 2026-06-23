@@ -26,6 +26,7 @@ const CSS = () => {
     const [isFlexboxMenuOpen, setIsFlexboxMenuOpen] = useState(false);
     const [isGridMenuOpen, setIsGridMenuOpen] = useState(false);
     const [isResponsiveMenuOpen, setIsResponsiveMenuOpen] = useState(false);
+    const [isTransitionsMenuOpen, setIsTransitionsMenuOpen] = useState(false);
     
     const isExpanded = !isDesktopCollapsed;
     const navigate = useNavigate();
@@ -197,6 +198,13 @@ const CSS = () => {
                 <SubNavItem to="responsive/media-queries" label="Media Queries" icon={MonitorPlay} />
                 <SubNavItem to="responsive/flexible-layouts" label="Fluid Layouts & Clamp" icon={Maximize2} />
                 <SubNavItem to="responsive/modern" label="Container Queries" icon={BoxSelect} />
+            </DropdownNav>
+            <DropdownNav label="CSS Transitions" icon={Sparkles} isOpen={isTransitionsMenuOpen} onToggle={() => setIsTransitionsMenuOpen(!isTransitionsMenuOpen)}>
+                <SubNavItem to="transitions/intro" label="Introduction & Syntax" icon={BookOpen} />
+                <SubNavItem to="transitions/timing" label="Timing Functions" icon={Zap} />
+                <SubNavItem to="transitions/transform" label="The Transform Property" icon={Move} />
+                <SubNavItem to="transitions/properties" label="What Can Transition" icon={Layers} />
+                <SubNavItem to="transitions/accessibility" label="Accessibility & Bugs" icon={Eye} />
             </DropdownNav>
         </nav>
     );
