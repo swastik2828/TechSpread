@@ -22,6 +22,7 @@ import {
   Clock,
   Server,
   AppWindow,
+  Save,
 } from "lucide-react";
 import { useState } from "react";
 
@@ -42,6 +43,7 @@ const Javascript = () => {
   const [isModule11Open, setIsModule11Open] = useState(false);
   const [isModule12Open, setIsModule12Open] = useState(false);
   const [isModule13Open, setIsModule13Open] = useState(false);
+  const [isModule14Open, setIsModule14Open] = useState(false);
 
   const isExpanded = !isDesktopCollapsed;
   const navigate = useNavigate();
@@ -349,6 +351,18 @@ const Javascript = () => {
         <SubNavItem to="organising-event-code" label="13.8 Code Patterns" />
         <SubNavItem to="memory-leaks" label="13.9 Memory Leaks" />
         <SubNavItem to="quick-reference-events" label="13.10 Quick Reference" />
+      </DropdownNav>
+
+      {/* Module 14 */}
+      <DropdownNav
+        label="Forms & Storage"
+        icon={Save}
+        isOpen={isModule14Open}
+        onToggle={() => setIsModule14Open(!isModule14Open)}
+      >
+        <SubNavItem to="forms-intro" label="14.1 Forms & FormData" />
+        <SubNavItem to="form-validation" label="14.2 Form Validation" />
+        <SubNavItem to="browser-storage" label="14.3 Browser Storage" />
       </DropdownNav>
     </nav>
   );

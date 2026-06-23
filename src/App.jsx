@@ -284,6 +284,13 @@ import OrganisingEventCode from "./WebDev/Frontend/Javascript/Module13/Organisin
 import MemoryLeaks from "./WebDev/Frontend/Javascript/Module13/MemoryLeaks";
 import QuickReferenceEvents from "./WebDev/Frontend/Javascript/Module13/QuickReferenceEvents";
 
+// ==========================================
+// Javascript Module 14: Forms & Storage
+// ==========================================
+import JSFormsIntro from "./WebDev/Frontend/Javascript/Module14/FormsIntro";
+import JSFormValidation from "./WebDev/Frontend/Javascript/Module14/FormValidation";
+import BrowserStorage from "./WebDev/Frontend/Javascript/Module14/BrowserStorage";
+
 // subcategory page
 import Java from "./Programming/Java/Java"; // main java container
 import WhatisJava from "./Programming/Java/WhatisJava"; // java topic pages
@@ -632,6 +639,13 @@ function App() {
           path="quick-reference-events"
           element={<QuickReferenceEvents />}
         />
+
+        {/* ========================================== */}
+        {/* Module 14: Forms & Storage                 */}
+        {/* ========================================== */}
+        <Route path="forms-intro" element={<JSFormsIntro />} />
+        <Route path="form-validation" element={<JSFormValidation />} />
+        <Route path="browser-storage" element={<BrowserStorage />} />
       </Route>
 
       {/* Java Course */}

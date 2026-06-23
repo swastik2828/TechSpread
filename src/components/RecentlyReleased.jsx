@@ -6,6 +6,13 @@ import { Sparkles, Zap } from "lucide-react";
 export default function RecentlyReleased() {
   const RECENT_LESSONS = [
     {
+      title: "Forms and Browser Storage",
+      path: "/webdevelopment/javascript/forms-intro",
+      desc: "Master how forms actually work under the hood. Learn FormData, custom validation, and the differences between localStorage, sessionStorage, and Cookies.",
+      category: "Web Development",
+      isNew: true,
+    },
+    {
       title: "CSS Transitions Complete Guide",
       path: "/webdevelopment/css/transitions/intro",
       desc: "Master CSS animations. Learn the transition property, timing functions, GPU-accelerated transforms, and how to fix common layout bugs.",
@@ -19,13 +26,7 @@ export default function RecentlyReleased() {
       category: "Web Development",
       isNew: true,
     },
-    {
-      title: "Responsive Design Complete Guide",
-      path: "/webdevelopment/css/responsive/intro",
-      desc: "Master modern responsive design. Learn mobile-first workflows, container queries, clamp(), and fluid layouts without guessing breakpoints.",
-      category: "Web Development",
-      isNew: true,
-    },
+    
     
   ];
   return (
