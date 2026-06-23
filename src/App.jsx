@@ -170,6 +170,12 @@ import TransformProperty from "./WebDev/Frontend/CSS/CssTransition/TransformProp
 import TransitionProperties from "./WebDev/Frontend/CSS/CssTransition/TransitionProperties";
 import AccessibilityBugs from "./WebDev/Frontend/CSS/CssTransition/AccessibilityBugs";
 
+// CSS Animations module
+import IntroKeyframes from "./WebDev/Frontend/CSS/CssAnimations/IntroKeyframes";
+import AnimationProperties from "./WebDev/Frontend/CSS/CssAnimations/AnimationProperties";
+import AnimationExamples from "./WebDev/Frontend/CSS/CssAnimations/AnimationExamples";
+import BestPracticesRecap from "./WebDev/Frontend/CSS/CssAnimations/BestPracticesRecap";
+
 // JavaScript Course
 import Javascript from "./WebDev/Frontend/Javascript/Javascript";
 import IntroToJS from "./WebDev/Frontend/Javascript/IntroToJS";
@@ -517,6 +523,13 @@ function App() {
         <Route path="transitions/transform" element={<TransformProperty />} />
         <Route path="transitions/properties" element={<TransitionProperties />} />
         <Route path="transitions/accessibility" element={<AccessibilityBugs />} />
+
+
+        {/* CSS Animations */}
+        <Route path="animations/intro" element={<IntroKeyframes />} />
+        <Route path="animations/properties" element={<AnimationProperties />} />
+        <Route path="animations/examples" element={<AnimationExamples />} />
+        <Route path="animations/recap" element={<BestPracticesRecap />} />
       </Route>
 
       {/* JavaScript Course */}

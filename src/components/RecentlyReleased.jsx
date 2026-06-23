@@ -6,6 +6,13 @@ import { Sparkles, Zap } from "lucide-react";
 export default function RecentlyReleased() {
   const RECENT_LESSONS = [
     {
+      title: "CSS Animations Masterclass",
+      path: "/webdevelopment/css/animations/intro",
+      desc: "Master keyframes and the animation property. Build loading spinners, pulsing dots, and complex staggered effects entirely in CSS.",
+      category: "Web Development",
+      isNew: true,
+    },
+    {
       title: "Forms and Browser Storage",
       path: "/webdevelopment/javascript/forms-intro",
       desc: "Master how forms actually work under the hood. Learn FormData, custom validation, and the differences between localStorage, sessionStorage, and Cookies.",
@@ -19,13 +26,7 @@ export default function RecentlyReleased() {
       category: "Web Development",
       isNew: true,
     },
-    {
-      title: "Advanced Event Handling",
-      path: "/webdevelopment/javascript/the-event-system",
-      desc: "Master the DOM event system. Learn propagation, delegation, custom events, and memory leak prevention for bulletproof UIs.",
-      category: "Web Development",
-      isNew: true,
-    },
+    
     
     
   ];

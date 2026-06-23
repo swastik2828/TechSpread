@@ -27,7 +27,8 @@ const CSS = () => {
     const [isGridMenuOpen, setIsGridMenuOpen] = useState(false);
     const [isResponsiveMenuOpen, setIsResponsiveMenuOpen] = useState(false);
     const [isTransitionsMenuOpen, setIsTransitionsMenuOpen] = useState(false);
-    
+    const [isAnimationsMenuOpen, setIsAnimationsMenuOpen] = useState(false);
+
     const isExpanded = !isDesktopCollapsed;
     const navigate = useNavigate();
     const location = useLocation();
@@ -205,6 +206,13 @@ const CSS = () => {
                 <SubNavItem to="transitions/transform" label="The Transform Property" icon={Move} />
                 <SubNavItem to="transitions/properties" label="What Can Transition" icon={Layers} />
                 <SubNavItem to="transitions/accessibility" label="Accessibility & Bugs" icon={Eye} />
+            </DropdownNav>
+
+            <DropdownNav label="CSS Animations" icon={Clapperboard} isOpen={isAnimationsMenuOpen} onToggle={() => setIsAnimationsMenuOpen(!isAnimationsMenuOpen)}>
+                <SubNavItem to="animations/intro" label="Intro & Keyframes" icon={BookOpen} />
+                <SubNavItem to="animations/properties" label="Animation Properties" icon={Layers} />
+                <SubNavItem to="animations/examples" label="Real Examples" icon={Sparkles} />
+                <SubNavItem to="animations/recap" label="Best Practices & Recap" icon={CheckCircle} />
             </DropdownNav>
         </nav>
     );
