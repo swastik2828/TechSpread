@@ -297,6 +297,11 @@ import JSFormsIntro from "./WebDev/Frontend/Javascript/Module14/FormsIntro";
 import JSFormValidation from "./WebDev/Frontend/Javascript/Module14/FormValidation";
 import BrowserStorage from "./WebDev/Frontend/Javascript/Module14/BrowserStorage";
 
+// JavaScript Module 15: Error Handling & Debugging
+import ErrorHandlingTryCatch from "./WebDev/Frontend/Javascript/Module15/ErrorHandlingTryCatch";
+import DebuggingGlobal from "./WebDev/Frontend/Javascript/Module15/DebuggingGlobal";
+
+
 // subcategory page
 import Java from "./Programming/Java/Java"; // main java container
 import WhatisJava from "./Programming/Java/WhatisJava"; // java topic pages
@@ -659,6 +664,12 @@ function App() {
         <Route path="forms-intro" element={<JSFormsIntro />} />
         <Route path="form-validation" element={<JSFormValidation />} />
         <Route path="browser-storage" element={<BrowserStorage />} />
+
+        {/* ========================================== */}
+        {/* Module 15: Error Handling & Debugging      */}
+        {/* ========================================== */}
+        <Route path="error-handling-try-catch" element={<ErrorHandlingTryCatch />} />
+        <Route path="debugging-global" element={<DebuggingGlobal />} />
       </Route>
 
       {/* Java Course */}

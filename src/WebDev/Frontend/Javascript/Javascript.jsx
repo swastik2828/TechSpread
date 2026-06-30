@@ -23,6 +23,7 @@ import {
   Server,
   AppWindow,
   Save,
+  AlertTriangle
 } from "lucide-react";
 import { useState } from "react";
 
@@ -44,6 +45,7 @@ const Javascript = () => {
   const [isModule12Open, setIsModule12Open] = useState(false);
   const [isModule13Open, setIsModule13Open] = useState(false);
   const [isModule14Open, setIsModule14Open] = useState(false);
+  const [isModule15Open, setIsModule15Open] = useState(false);
 
   const isExpanded = !isDesktopCollapsed;
   const navigate = useNavigate();
@@ -363,6 +365,17 @@ const Javascript = () => {
         <SubNavItem to="forms-intro" label="14.1 Forms & FormData" />
         <SubNavItem to="form-validation" label="14.2 Form Validation" />
         <SubNavItem to="browser-storage" label="14.3 Browser Storage" />
+      </DropdownNav>
+
+      {/* Module 15 */}
+      <DropdownNav
+        label="Error Handling & Debugging"
+        icon={AlertTriangle} // Make sure to import AlertTriangle from 'lucide-react'
+        isOpen={isModule15Open}
+        onToggle={() => setIsModule15Open(!isModule15Open)}
+      >
+        <SubNavItem to="error-handling-try-catch" label="15.1 Errors & Try/Catch" />
+        <SubNavItem to="debugging-global" label="15.2 Debugging & Global Handlers" />
       </DropdownNav>
     </nav>
   );
