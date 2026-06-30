@@ -28,6 +28,7 @@ const CSS = () => {
     const [isResponsiveMenuOpen, setIsResponsiveMenuOpen] = useState(false);
     const [isTransitionsMenuOpen, setIsTransitionsMenuOpen] = useState(false);
     const [isAnimationsMenuOpen, setIsAnimationsMenuOpen] = useState(false);
+    const [isVariablesMenuOpen, setIsVariablesMenuOpen] = useState(false);
 
     const isExpanded = !isDesktopCollapsed;
     const navigate = useNavigate();
@@ -214,6 +215,14 @@ const CSS = () => {
                 <SubNavItem to="animations/examples" label="Real Examples" icon={Sparkles} />
                 <SubNavItem to="animations/recap" label="Best Practices & Recap" icon={CheckCircle} />
             </DropdownNav>
+
+            <DropdownNav label="CSS Variables" icon={Palette} isOpen={isVariablesMenuOpen} onToggle={() => setIsVariablesMenuOpen(!isVariablesMenuOpen)}>
+    <SubNavItem to="variables/intro" label="Introduction & Syntax" icon={BookOpen} />
+    <SubNavItem to="variables/palette-fallbacks" label="Palettes & Fallbacks" icon={Layers} />
+    <SubNavItem to="variables/scoping-theme" label="Scoping & Dark Mode" icon={MonitorPlay} />
+    <SubNavItem to="variables/js-calc" label="JS & Calc()" icon={Code} />
+    <SubNavItem to="variables/advanced" label="Architecture & Recap" icon={CheckCircle} />
+</DropdownNav>
         </nav>
     );
 

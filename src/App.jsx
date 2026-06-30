@@ -176,6 +176,13 @@ import AnimationProperties from "./WebDev/Frontend/CSS/CssAnimations/AnimationPr
 import AnimationExamples from "./WebDev/Frontend/CSS/CssAnimations/AnimationExamples";
 import BestPracticesRecap from "./WebDev/Frontend/CSS/CssAnimations/BestPracticesRecap";
 
+// CSS Variables module
+import IntroVariables from "./WebDev/Frontend/CSS/CssVariables/IntroVariables";
+import PaletteFallbacks from "./WebDev/Frontend/CSS/CssVariables/PaletteFallbacks";
+import ScopingTheme from "./WebDev/Frontend/CSS/CssVariables/ScopingTheme";
+import JavascriptCalc from "./WebDev/Frontend/CSS/CssVariables/JavascriptCalc";
+import AdvancedVariables from "./WebDev/Frontend/CSS/CssVariables/AdvancedVariables";
+
 // JavaScript Course
 import Javascript from "./WebDev/Frontend/Javascript/Javascript";
 import IntroToJS from "./WebDev/Frontend/Javascript/IntroToJS";
@@ -535,6 +542,14 @@ function App() {
         <Route path="animations/properties" element={<AnimationProperties />} />
         <Route path="animations/examples" element={<AnimationExamples />} />
         <Route path="animations/recap" element={<BestPracticesRecap />} />
+
+
+        {/* CSS Variables */}
+        <Route path="variables/intro" element={<IntroVariables />} />
+<Route path="variables/palette-fallbacks" element={<PaletteFallbacks />} />
+<Route path="variables/scoping-theme" element={<ScopingTheme />} />
+<Route path="variables/js-calc" element={<JavascriptCalc />} />
+<Route path="variables/advanced" element={<AdvancedVariables />} />
       </Route>
 
       {/* JavaScript Course */}
